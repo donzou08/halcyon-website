@@ -493,20 +493,24 @@
     #contact { border-top: 1px solid var(--smoke); }
     .contact-layout {
       display: flex; flex-wrap: wrap;
-      gap: clamp(48px,8vw,88px); margin-top: 48px;
+      gap: clamp(48px,8vw,88px); margin-top: 40px;
       align-items: flex-start;
     }
-    .c-left { flex: 1 1 200px; }
+    .c-left {
+      flex: 1 1 200px;
+      border-top: 1px solid var(--smoke);
+      padding-top: 28px;
+    }
     .c-name {
       font-family: var(--d); font-weight: 300;
-      font-size: 26px; color: var(--offwhite); line-height: 1.1;
+      font-size: 30px; color: var(--offwhite); line-height: 1.1;
     }
     .c-role {
       margin-top: 6px;
       font-family: var(--m); font-size: 10px;
       letter-spacing: 0.14em; color: var(--teal);
     }
-    .c-details { margin-top: 28px; display: flex; flex-direction: column; gap: 16px; }
+    .c-details { margin-top: 24px; display: flex; flex-direction: column; gap: 14px; }
     .c-detail-label {
       display: block;
       font-family: var(--m); font-size: 9px;
