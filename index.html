@@ -288,12 +288,11 @@
     }
     .cards {
       display: flex; flex-wrap: wrap;
-      gap: 1px; margin-top: 48px;
-      background: var(--smoke);
-      border: 0.5px solid var(--smoke);
+      gap: 16px; margin-top: 48px;
     }
     .card {
       flex: 1 1 210px; background: var(--charcoal);
+      border: 0.5px solid var(--smoke);
       padding: 28px 26px; position: relative; overflow: hidden;
       transition: background 0.22s var(--ease);
     }
@@ -321,11 +320,9 @@
     #how { background: var(--charcoal); border-top: 1px solid var(--smoke); }
     .steps {
       display: flex; flex-wrap: wrap;
-      gap: 1px; margin-top: 48px;
-      background: var(--smoke);
-      border: 0.5px solid var(--smoke);
+      gap: 16px; margin-top: 48px;
     }
-    .step { flex: 1 1 180px; background: var(--charcoal); padding: 28px 24px; }
+    .step { flex: 1 1 180px; background: var(--charcoal); border: 0.5px solid var(--smoke); padding: 28px 24px; }
     .step-n {
       font-family: var(--m); font-size: 11px;
       letter-spacing: 0.2em; color: var(--gold);
@@ -390,13 +387,12 @@
     #engagements { border-top: 1px solid var(--smoke); background: var(--charcoal); }
     .eng-grid {
       display: flex; flex-wrap: wrap;
-      gap: 1px; margin-top: 48px;
-      background: var(--smoke);
-      border: 0.5px solid var(--smoke);
+      gap: 16px; margin-top: 48px;
     }
     .eng {
       flex: 1 1 240px;
       background: var(--charcoal);
+      border: 0.5px solid var(--smoke);
       padding: 34px 28px;
       display: flex; flex-direction: column;
       position: relative; overflow: hidden;
@@ -647,11 +643,6 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .f-meta { text-align: left; }
-    }
-    @media (max-width: 600px) {
-      .eng-grid { gap: 0; background: none; border: 0.5px solid var(--smoke); }
-      .eng { border: none; border-bottom: 0.5px solid var(--smoke); }
-      .eng:last-child { border-bottom: none; }
     }
   </style>
 </head>
