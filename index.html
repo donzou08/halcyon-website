@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HALCYON — Operational Intelligence</title>
-  <meta name="description" content="Halcyon builds bespoke operational systems for Indian businesses in manufacturing, construction, and industrial supply. Chennai, India.">
+  <meta name="description" content="Halcyon builds bespoke operational systems for SMEs in manufacturing, construction, and industrial supply. Based in Chennai, India.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
@@ -238,12 +238,6 @@
       font-size: 10px; letter-spacing: 0.22em;
       text-transform: uppercase; color: var(--teal);
       opacity: 0; animation: heroIn 0.8s var(--ease) 0.1s forwards;
-    }
-    .h-the {
-      display: block; margin-top: 26px;
-      font-family: var(--d); font-weight: 300;
-      font-size: 13px; letter-spacing: 0.44em; color: var(--gold);
-      opacity: 0; animation: heroIn 0.8s var(--ease) 0.28s forwards;
     }
     .h-name {
       font-family: var(--d); font-weight: 300;
@@ -677,6 +671,7 @@
     <a class="nav-link" data-nav="what" href="#what">What We Do</a>
     <a class="nav-link" data-nav="how" href="#how">How We Work</a>
     <a class="nav-link" data-nav="work" href="#work">Our Work</a>
+    <a class="nav-link" data-nav="engagements" href="#engagements">Engagements</a>
     <a class="nav-link" data-nav="contact" href="#contact">Contact</a>
   </div>
   <button class="hamburger" id="ham" aria-label="Open menu">
@@ -737,7 +732,7 @@
       <div class="card r-scale d2">
         <div class="card-bar"></div>
         <div class="card-title">Ongoing Partnership</div>
-        <p class="card-body">No disappearing after delivery. Monthly improvements, same-day support, and API costs included.</p>
+        <p class="card-body">No disappearing after delivery. Monthly improvements, same-day support, and running costs included.</p>
       </div>
     </div>
   </div>
@@ -806,7 +801,7 @@
         <span class="w-client">Currently in development</span>
       </div>
     </div>
-    <p class="work-note r">Client names withheld. References available on request.</p>
+    <p class="work-note r">References available on request.</p>
   </div>
 </section>
 
@@ -876,7 +871,7 @@
       </div>
     </div>
 
-    <p class="eng-note r">All retainers include monthly improvements, same-day support, and API usage up to a baseline. Every new application is scoped and quoted separately.</p>
+    <p class="eng-note r">All retainers include monthly improvements, same-day support, and running costs up to a baseline. Every new application is scoped and quoted separately.</p>
 
     <div class="eng-cta-bar r">
       <a href="#contact" class="btn">Begin a Conversation</a>
@@ -953,7 +948,7 @@
             </div>
             <div class="field">
               <input id="ob-phone" type="tel" placeholder=" ">
-              <label for="ob-phone">Phone (optional)</label>
+              <label for="ob-phone">WhatsApp / Phone (optional)</label>
             </div>
           </div>
           <div class="ob-nav">
@@ -1026,7 +1021,7 @@
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['what','how','work','contact'].forEach(id => { const s = document.getElementById(id); if (s) navIO.observe(s); });
+  ['what','how','work','engagements','contact'].forEach(id => { const s = document.getElementById(id); if (s) navIO.observe(s); });
 
   /* ── Hero parallax ── */
   const heroName = document.querySelector('.h-name');
