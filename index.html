@@ -1111,10 +1111,21 @@
         challenge:     data.problem,
       };
 
+      const body = JSON.stringify(payload);
+
+      /* Google Apps Script — logs to Sheets + sends email */
+      fetch('https://script.google.com/a/macros/halcyon.uno/s/AKfycbyBys5ISNQzCsNEplcHt81oPM1MDOlcXXJJip-fOfC9hfP4yKTQEioqOaREr-MkeNw/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body,
+      });
+
+      /* Formspree — backup email, drives success/error state */
       fetch('https://formspree.io/f/xjgqkkkq', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload),
+        body,
       })
       .then(res => {
         if (res.ok) {
