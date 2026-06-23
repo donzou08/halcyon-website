@@ -1103,25 +1103,32 @@
       data.email = email;
       data.phone = document.getElementById('ob-phone').value.trim();
 
-      const lines = [
-        `Business type: ${data.sector}`,
-        ``,
-        `Challenge:`,
-        data.problem,
-        ``,
-        `Name: ${data.name}`,
-        `Email: ${data.email}`,
-      ];
-      if (data.phone) lines.push(`Phone: ${data.phone}`);
+      const payload = {
+        name:          data.name,
+        email:         data.email,
+        phone:         data.phone || 'Not provided',
+        business_type: data.sector,
+        challenge:     data.problem,
+      };
 
-      window.location.href =
-        `mailto:sanjith@halcyon.uno?subject=${encodeURIComponent('Enquiry from ' + data.name)}&body=${encodeURIComponent(lines.join('\n'))}`;
-
-      /* Show success */
-      obSteps.forEach(s => s.classList.remove('active'));
-      document.querySelector('.ob-prog').style.display = 'none';
-      count.style.display = 'none';
-      done.style.display = 'block';
+      fetch('https://formspree.io/f/xjgqkkkq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      .then(res => {
+        if (res.ok) {
+          obSteps.forEach(s => s.classList.remove('active'));
+          document.querySelector('.ob-prog').style.display = 'none';
+          count.style.display = 'none';
+          done.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please email sanjith@halcyon.uno directly.');
+        }
+      })
+      .catch(() => {
+        alert('Something went wrong. Please email sanjith@halcyon.uno directly.');
+      });
     });
 
     /* Init */
