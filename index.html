@@ -683,6 +683,17 @@
     @media (max-width: 500px) {
       .h-name { font-size: clamp(44px, 14vw, 68px); }
     }
+    #scroll-track {
+      position: fixed; right: 20px; top: 0;
+      width: 1px; height: 100%;
+      background: var(--smoke);
+      z-index: 50; pointer-events: none;
+    }
+    #scroll-fill {
+      width: 100%; height: 0%;
+      background: var(--gold);
+    }
+    @media (max-width: 768px) { #scroll-track { display: none; } }
   </style>
 </head>
 <body>
@@ -989,6 +1000,8 @@
   </div>
 </footer>
 
+<div id="scroll-track"><div id="scroll-fill"></div></div>
+
 <script>
   /* ── Mobile menu ── */
   const mobMenu = document.getElementById('mob-menu');
@@ -1029,11 +1042,12 @@
   }, { rootMargin: '-45% 0px -50% 0px' });
   ['what','how','work','engagements','contact'].forEach(id => { const s = document.getElementById(id); if (s) navIO.observe(s); });
 
-  /* ── Hero parallax ── */
-  const heroName = document.querySelector('.h-name');
-  const heroTag  = document.querySelector('.h-tag');
-  const heroBody = document.querySelector('.h-body');
-  const heroCta  = document.querySelector('.h-cta');
+  /* ── Hero parallax + scroll line ── */
+  const heroName   = document.querySelector('.h-name');
+  const heroTag    = document.querySelector('.h-tag');
+  const heroBody   = document.querySelector('.h-body');
+  const heroCta    = document.querySelector('.h-cta');
+  const scrollFill = document.getElementById('scroll-fill');
   let ticking = false;
   function doParallax() {
     const y = window.scrollY;
@@ -1045,6 +1059,8 @@
       heroBody.style.opacity = fade;
       heroCta.style.opacity  = fade;
     }
+    const progress = y / (document.documentElement.scrollHeight - vh);
+    scrollFill.style.height = `${Math.min(progress * 100, 100)}%`;
     ticking = false;
   }
   window.addEventListener('scroll', () => {
