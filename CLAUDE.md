@@ -122,7 +122,7 @@ Two-column layout:
 
 **Left column (c-left):**
 - Sanjith Dhandapani / Founder, Halcyon
-- Email: sanjithsuresh08@gmail.com
+- Email: sanjith@halcyon.uno
 - Location: Chennai, Tamil Nadu, India
 - Response: Personal, within 24 hours.
 
@@ -131,7 +131,7 @@ Two-column layout:
 2. **Step 2:** "What's the main challenge you want to solve?" — textarea with descriptive placeholder
 3. **Step 3:** "Where can you be reached?" — Name + Email (required) + Phone (optional)
 
-On submit → constructs `mailto:sanjithsuresh08@gmail.com` with structured body (business type + challenge + contact info). Shows "Message sent. / Sanjith will be in touch personally within 24 hours."
+On submit → posts to Formspree (`https://formspree.io/f/xjgqkkkq`) with structured JSON (business type + challenge + contact info). Shows "Message sent. / Sanjith will be in touch personally within 24 hours." Fallback error message directs to sanjith@halcyon.uno.
 
 Progress bar: thin gold line at top of right column, fills 33% → 66% → 100% as steps advance. Back button slides content back from left. "← Back" link on steps 2 and 3.
 
