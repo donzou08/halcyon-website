@@ -7,6 +7,7 @@
   <meta name="description" content="Operational systems built to remove friction within your business. Bespoke, intelligent, and precise. Halcyon — based in Chennai, India.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://halcyon.uno">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -193,6 +194,7 @@
       animation: heroIn 0.9s var(--ease) both;
     }
     .nav-logo {
+      display: flex; align-items: center;
       font-family: var(--d);
       font-weight: 300;
       letter-spacing: 0.22em;
@@ -700,7 +702,11 @@
 
 <!-- ── NAV ── -->
 <nav id="nav">
-  <a href="#hero" class="nav-logo">HALCYON</a>
+  <a href="#hero" class="nav-logo">
+    <svg viewBox="0 0 100 100" width="18" height="18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:10px;flex-shrink:0">
+      <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" fill="none" stroke="#C49A38" stroke-width="5"/>
+      <text x="50" y="70" font-family="Georgia,serif" font-size="56" fill="#C49A38" text-anchor="middle">H</text>
+    </svg>HALCYON</a>
   <div class="nav-links">
     <a class="nav-link" data-nav="what" href="#what">What We Do</a>
     <a class="nav-link" data-nav="how" href="#how">How We Work</a>
