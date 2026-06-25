@@ -1230,7 +1230,7 @@
 
       const body = JSON.stringify(payload);
 
-      /* Google Apps Script — logs to Sheets + sends email */
+      /* Google Apps Script — logs to Sheets + sends email (machine keys) */
       fetch('https://script.google.com/a/macros/halcyon.uno/s/AKfycbyBys5ISNQzCsNEplcHt81oPM1MDOlcXXJJip-fOfC9hfP4yKTQEioqOaREr-MkeNw/exec', {
         method: 'POST',
         mode: 'no-cors',
@@ -1238,11 +1238,26 @@
         body,
       });
 
-      /* Formspree — backup email, drives success/error state */
+      /* Formspree — backup email, drives success/error state.
+         Human-readable labels so every submission/email is clearly organised. */
+      const formBody = JSON.stringify({
+        '_subject':              'New enquiry — ' + (data.company || data.name),
+        'Name':                  data.name,
+        'Role':                  data.role || 'Not provided',
+        'Email':                 data.email,
+        'Phone / WhatsApp':      data.phone || 'Not provided',
+        'Company':               data.company,
+        'City':                  data.city || 'Not provided',
+        'Industry':              data.sector,
+        'What the business does': data.does,
+        'Main challenge':        data.problem,
+        'Handled today':         data.current || 'Not provided',
+      });
+
       fetch('https://formspree.io/f/xjgqkkkq', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body,
+        body: formBody,
       })
       .then(res => {
         if (res.ok) {
