@@ -575,6 +575,13 @@
       margin-bottom: 24px;
     }
 
+    /* Field caption */
+    .ob-cap {
+      font-family: var(--m); font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--stone); margin-bottom: 12px;
+    }
+    .ob-cap span { opacity: 0.6; text-transform: none; letter-spacing: 0.04em; }
+
     /* Chips */
     .ob-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
     .ob-chip {
@@ -941,9 +948,10 @@
         <div class="ob-prog"><div class="ob-fill" id="ob-fill"></div></div>
         <div class="ob-count" id="ob-count">01 / 03</div>
 
-        <!-- Step 1 — Business type -->
+        <!-- Step 1 — The business -->
         <div class="ob-step active" id="ob-s1">
-          <div class="ob-q">What kind of business do you run?</div>
+          <div class="ob-q">Tell me about your business.</div>
+          <div class="ob-cap">Industry</div>
           <div class="ob-chips">
             <button class="ob-chip" data-val="Manufacturing">Manufacturing</button>
             <button class="ob-chip" data-val="Construction">Construction</button>
@@ -951,6 +959,16 @@
             <button class="ob-chip" data-val="Trading">Trading</button>
             <button class="ob-chip" data-val="Services">Services</button>
             <button class="ob-chip" data-val="Other">Other</button>
+          </div>
+          <div class="ob-fields">
+            <div class="field">
+              <input id="ob-company" type="text" placeholder=" " required>
+              <label for="ob-company">Company name</label>
+            </div>
+            <div class="field">
+              <input id="ob-does" type="text" placeholder=" " required>
+              <label for="ob-does">What the business makes or does</label>
+            </div>
           </div>
           <button class="btn" id="s1-next">Continue →</button>
         </div>
@@ -960,6 +978,9 @@
           <div class="ob-q">What's the main challenge you want to solve?</div>
           <textarea class="ob-ta" id="ob-problem" rows="4"
             placeholder="Where is time, money, or accuracy being lost in your operation?"></textarea>
+          <div class="ob-cap">How is it handled today? <span>— optional</span></div>
+          <textarea class="ob-ta" id="ob-current" rows="2" style="min-height:60px"
+            placeholder="Spreadsheets, WhatsApp, paper, existing software — whatever's in place now."></textarea>
           <div class="ob-nav">
             <button class="ob-back" data-to="0">← Back</button>
             <button class="btn" id="s2-next">Continue →</button>
@@ -973,6 +994,14 @@
             <div class="field">
               <input id="ob-name" type="text" placeholder=" " required>
               <label for="ob-name">Your name</label>
+            </div>
+            <div class="field">
+              <input id="ob-role" type="text" placeholder=" ">
+              <label for="ob-role">Your role (optional)</label>
+            </div>
+            <div class="field">
+              <input id="ob-city" type="text" placeholder=" ">
+              <label for="ob-city">City — helps plan a visit (optional)</label>
             </div>
             <div class="field">
               <input id="ob-email" type="email" placeholder=" " required>
@@ -1119,7 +1148,11 @@
     const wrap  = document.getElementById('ob-wrap');
 
     let cur = 0;
-    const data = { sector: '', problem: '', name: '', email: '', phone: '' };
+    const data = {
+      sector: '', company: '', does: '',
+      problem: '', current: '',
+      name: '', role: '', city: '', email: '', phone: ''
+    };
 
     function pct(i) { return ((i + 1) / obSteps.length * 100).toFixed(2) + '%'; }
 
@@ -1143,7 +1176,13 @@
 
     /* Step 1 → 2 */
     document.getElementById('s1-next').addEventListener('click', () => {
+      const company = document.getElementById('ob-company').value.trim();
+      const does    = document.getElementById('ob-does').value.trim();
       if (!data.sector) return;
+      if (!company) { document.getElementById('ob-company').focus(); return; }
+      if (!does)    { document.getElementById('ob-does').focus(); return; }
+      data.company = company;
+      data.does    = does;
       goTo(1, false);
     });
 
@@ -1152,6 +1191,7 @@
       const v = document.getElementById('ob-problem').value.trim();
       if (!v) { document.getElementById('ob-problem').focus(); return; }
       data.problem = v;
+      data.current = document.getElementById('ob-current').value.trim();
       goTo(2, false);
     });
 
@@ -1171,14 +1211,21 @@
       }
       data.name  = name;
       data.email = email;
+      data.role  = document.getElementById('ob-role').value.trim();
+      data.city  = document.getElementById('ob-city').value.trim();
       data.phone = document.getElementById('ob-phone').value.trim();
 
       const payload = {
-        name:          data.name,
-        email:         data.email,
-        phone:         data.phone || 'Not provided',
-        business_type: data.sector,
-        challenge:     data.problem,
+        name:            data.name,
+        role:            data.role || 'Not provided',
+        email:           data.email,
+        phone:           data.phone || 'Not provided',
+        company:         data.company,
+        city:            data.city || 'Not provided',
+        business_type:   data.sector,
+        business_detail: data.does,
+        challenge:       data.problem,
+        current_process: data.current || 'Not provided',
       };
 
       const body = JSON.stringify(payload);

@@ -126,12 +126,24 @@ Two-column layout:
 - Location: Chennai, Tamil Nadu, India
 - Response: Personal, within 24 hours.
 
-**Right column (c-right) — 3-step onboarding:**
-1. **Step 1:** "What kind of business do you run?" — chip selector (Manufacturing / Construction / Industrial Supply / Trading / Services / Other)
-2. **Step 2:** "What's the main challenge you want to solve?" — textarea with descriptive placeholder
-3. **Step 3:** "Where can you be reached?" — Name + Email (required) + Phone (optional)
+**Right column (c-right) — 3-step onboarding.** The flow is intentionally enriched to give Sanjith enough to prep for a first call/visit before he replies:
+1. **Step 1: "Tell me about your business."**
+   - Industry chip selector (Manufacturing / Construction / Industrial Supply / Trading / Services / Other) — **required**
+   - Company name — **required**
+   - "What the business makes or does" — **required** (the specific business, beyond the broad industry chip)
+2. **Step 2: "What's the main challenge you want to solve?"**
+   - Main challenge textarea — **required**
+   - "How is it handled today?" textarea — **optional** (spreadsheets / WhatsApp / paper / existing software)
+3. **Step 3: "Where can you be reached?"**
+   - Your name — **required**
+   - Your role — optional (e.g. Managing Director)
+   - City — optional ("helps plan a visit", since Sanjith delivers in person)
+   - Email — **required**
+   - WhatsApp / Phone — optional
 
-On submit → posts to Formspree (`https://formspree.io/f/xjgqkkkq`) with structured JSON (business type + challenge + contact info). Shows "Message sent. / Sanjith will be in touch personally within 24 hours." Fallback error message directs to sanjith@halcyon.uno.
+`.ob-cap` is a DM Mono 9px uppercase caption used above field groups (e.g. "Industry") and for the optional-field hints; its `<span>` renders the "— optional" suffix de-emphasised.
+
+On submit → posts the same structured JSON to **both** the Google Apps Script endpoint (Sheets log + email) and Formspree (`https://formspree.io/f/xjgqkkkq`, drives success/error state). Payload keys: `name, role, email, phone, company, city, business_type, business_detail, challenge, current_process` (optional fields fall back to `'Not provided'`). Shows "Message sent. / Sanjith will be in touch personally within 24 hours." Fallback error message directs to sanjith@halcyon.uno.
 
 Progress bar: thin gold line at top of right column, fills 33% → 66% → 100% as steps advance. Back button slides content back from left. "← Back" link on steps 2 and 3.
 
