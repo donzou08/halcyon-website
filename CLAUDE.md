@@ -130,7 +130,7 @@ Two-column layout:
 1. **Step 1: "Tell me about your business."**
    - Industry chip selector (Manufacturing / Construction / Industrial Supply / Trading / Services / Other) — **required**
    - Company name — **required**
-   - "What the business makes or does" — **required** (the specific business, beyond the broad industry chip)
+   - "What does your business do?" — **required** (the specific business, beyond the broad industry chip)
 2. **Step 2: "What's the main challenge you want to solve?"**
    - Main challenge textarea — **required**
    - "How is it handled today?" textarea — **optional** (spreadsheets / WhatsApp / paper / existing software)
