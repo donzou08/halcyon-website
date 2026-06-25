@@ -123,7 +123,7 @@ Two-column layout:
 **Left column (c-left):**
 - Sanjith Dhandapani / Founder, Halcyon
 - Email: sanjith@halcyon.uno
-- Location: Chennai, Tamil Nadu, India
+- Location: Plot No. 2041, 15th Main Road, H Block, Anna Nagar West, Chennai – 600040 (also in the JSON-LD `PostalAddress`)
 - Response: Personal, within 24 hours.
 
 **Right column (c-right) — 3-step onboarding.** The flow is intentionally enriched to give Sanjith enough to prep for a first call/visit before he replies:
