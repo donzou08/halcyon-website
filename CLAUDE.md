@@ -110,7 +110,7 @@ Three pricing tiers (updated to match Sanjith's current pricing structure):
 | Tier | For | What | Setup | Monthly |
 |------|-----|------|-------|---------|
 | **Starter** | Small business, 1 problem | 1 custom automation or workflow | ₹15,000–40,000 | ₹8,000/mo |
-| **Growth** | Active SME, multiple workflows | 2–3 apps or agents built over time | ₹60,000–1,20,000 | ₹15,000–20,000/mo |
+| **Growth** | Active SME, multiple workflows | 3 apps or agents built over time | ₹60,000–1,20,000 | ₹15,000–20,000/mo |
 | **Partner** | Serious operation, ongoing build | Continuous build + strategy | Quoted per project | ₹25,000–35,000/mo |
 
 Features per tier: 1 / 2 / Unlimited within scope. Support: Email / WhatsApp / Dedicated + monthly call. All include "Discovery session included."
