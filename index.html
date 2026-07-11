@@ -9,19 +9,15 @@
   <link rel="canonical" href="https://halcyon.uno">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://halcyon.uno">
   <meta property="og:site_name" content="Halcyon">
   <meta property="og:title" content="Halcyon | Operational Intelligence">
   <meta property="og:description" content="Halcyon builds the systems businesses actually run on. Operational systems for industrial and field-based businesses, mapped to how the work really happens. Chennai, India.">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Halcyon | Operational Intelligence">
   <meta name="twitter:description" content="Halcyon builds the systems businesses actually run on. Operational systems for industrial and field-based businesses, mapped to how the work really happens. Chennai, India.">
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,697 +37,662 @@
     "founder": { "@type": "Person", "name": "Sanjith Dhandapani" }
   }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --obsidian:#0C0C0C; --charcoal:#161616; --smoke:#2C2C2C;
-      --gold:#C49A38; --teal:#1E7A72; --offwhite:#F0EEEA; --stone:#888480;
+      --gold:#C49A38; --offwhite:#F0EEEA; --stone:#888480; --teal:#1E7A72;
+      --body:#b8b4ae; --faint:#5f5c58; --gold-dim:#4a3f1e; --hairline:#1c1c1c;
+      --gold-hover:#d4ab48; --gold-press:#ab8530;
+      --font-display:'Cormorant Garamond',Georgia,serif;
+      --font-ui:'Jost',system-ui,sans-serif;
       --ease:cubic-bezier(0.4,0,0.2,1);
-      --spring:cubic-bezier(0.16,1,0.3,1);
-      --d:'Cormorant Garamond',Georgia,serif;
-      --b:'Inter',system-ui,sans-serif;
-      --m:'DM Mono',ui-monospace,monospace;
     }
     *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-    html { -webkit-text-size-adjust:100%; }
-    body { background:var(--obsidian); color:var(--offwhite); font-family:var(--b); font-weight:300; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; overflow-x:hidden; }
-    a { color:inherit; text-decoration:none; }
-    button { font:inherit; color:inherit; }
+    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+    body { background:var(--obsidian); color:var(--offwhite); font-family:var(--font-ui); font-weight:300; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    a { color:var(--gold); text-decoration:none; }
+    a:hover { color:var(--gold-hover); }
+    ::selection { background:rgba(196,154,56,0.22); }
+    img,svg { display:block; }
+    .wrap { max-width:1200px; margin:0 auto; }
 
-    @keyframes viewIn { from{opacity:0; transform:translateY(18px);} to{opacity:1; transform:none;} }
-    @keyframes railIn { from{opacity:0;} to{opacity:1;} }
-    @keyframes stepIn { from{opacity:0; transform:translateX(18px);} to{opacity:1; transform:none;} }
-    @keyframes stepInBack { from{opacity:0; transform:translateX(-18px);} to{opacity:1; transform:none;} }
-    @keyframes fadeUp { from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;} }
+    /* Eyebrow / headings */
+    .eyebrow { font-family:var(--font-ui); font-weight:400; font-size:14px; letter-spacing:0.24em; text-transform:uppercase; color:var(--teal); }
+    .h2 { font-family:var(--font-display); font-weight:300; font-size:clamp(38px,5.2vw,60px); line-height:1.05; color:var(--offwhite); }
+    .sec-intro { font-family:var(--font-ui); font-weight:300; font-size:18px; line-height:1.75; color:var(--body); }
 
-    /* ===== Shell ===== */
-    .shell { display:grid; grid-template-columns:272px 1fr; min-height:100vh; }
+    /* Buttons */
+    .btn { display:inline-flex; align-items:center; justify-content:center; height:52px; padding:0 30px;
+      font-family:var(--font-ui); font-weight:500; font-size:14px; letter-spacing:0.02em;
+      border:1px solid var(--gold); background:var(--gold); color:var(--obsidian); border-radius:6px; cursor:pointer;
+      transition:background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease), transform .12s ease; }
+    .btn:hover { background:var(--gold-hover); border-color:var(--gold-hover); color:var(--obsidian); }
+    .btn-ghost { background:transparent; color:var(--offwhite); border-color:var(--smoke); }
+    .btn-ghost:hover { background:transparent; color:var(--gold); border-color:var(--gold); }
+    .btn-sm { height:38px; padding:0 20px; font-size:13px; }
+    .btn-block { width:100%; }
 
-    .rail {
-      position:sticky; top:0; height:100vh;
-      border-right:1px solid var(--smoke);
-      padding:38px 36px; display:flex; flex-direction:column;
-      animation:railIn 1s var(--ease) both;
-    }
-    .rail-mark { width:36px; height:36px; display:block; flex-shrink:0; }
-    .rail-nav { margin-top:70px; display:flex; flex-direction:column; }
-    .rail-link {
-      position:relative; display:flex; align-items:baseline; gap:14px;
-      padding:13px 0 13px 16px; cursor:pointer; background:none; border:none; text-align:left; width:100%;
-    }
-    .rail-link::before {
-      content:''; position:absolute; left:0; top:50%; transform:translateY(-50%);
-      width:2px; height:0; background:var(--gold); transition:height .35s var(--spring);
-    }
-    .rail-link.active::before { height:22px; }
-    .rl-num { font-family:var(--m); font-size:10px; letter-spacing:0.1em; color:var(--stone); width:22px; flex-shrink:0; transition:color .25s var(--ease); }
-    .rl-name { font-family:var(--d); font-weight:400; font-size:20px; color:var(--stone); transition:color .25s var(--ease); }
-    .rail-link:hover .rl-name, .rail-link.active .rl-name { color:var(--offwhite); }
-    .rail-link.active .rl-num { color:var(--gold); }
-    .rail-foot { margin-top:auto; }
-    .rail-tag { font-family:var(--d); font-style:italic; font-weight:300; font-size:15px; color:var(--gold); }
-    .rail-meta { margin-top:14px; font-family:var(--m); font-size:9.5px; letter-spacing:0.06em; color:var(--stone); line-height:2; }
-    .rail-meta a { transition:color .2s var(--ease); }
-    .rail-meta a:hover { color:var(--gold); }
+    /* Header */
+    header.site { position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between;
+      padding:20px clamp(20px,5vw,56px); border-bottom:1px solid var(--hairline);
+      background:rgba(12,12,12,0.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+    .brand { display:flex; align-items:center; gap:14px; }
+    .brand .wm { font-family:var(--font-display); font-weight:300; font-size:19px; letter-spacing:0.34em; padding-left:0.34em; color:var(--offwhite); }
+    .site-nav { display:flex; gap:36px; align-items:center; }
+    .site-nav a.nl { font-family:var(--font-ui); font-size:13px; letter-spacing:0.08em; color:var(--stone); transition:color .15s var(--ease); }
+    .site-nav a.nl:hover, .site-nav a.nl.active { color:var(--offwhite); }
+    .hamburger { display:none; flex-direction:column; gap:5px; width:40px; height:40px; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; }
+    .hamburger span { display:block; width:22px; height:1px; background:var(--offwhite); }
 
-    .rail-bar-actions { display:none; }
-    .hamburger { display:none; flex-direction:column; gap:5px; width:38px; height:38px; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; }
-    .hamburger span { display:block; width:20px; height:1px; background:var(--offwhite); }
+    /* Hero */
+    .hero { position:relative; overflow:hidden; padding:clamp(90px,14vh,150px) clamp(20px,5vw,56px) 110px; text-align:center; }
+    .hero-hex { position:absolute; top:50%; left:50%; transform:translate(-50%,-52%); opacity:0.05; pointer-events:none; width:min(620px,120vw); height:auto; }
+    .hero-in { position:relative; max-width:940px; margin:0 auto; }
+    .hero h1 { font-family:var(--font-display); font-weight:300; font-size:clamp(52px,10vw,104px); line-height:1; color:var(--offwhite); margin:26px 0 0; }
+    .hero h1 em { font-style:italic; color:var(--gold); }
+    .hero-sub { font-family:var(--font-ui); font-weight:300; font-size:clamp(17px,2.1vw,21px); line-height:1.7; color:var(--body); max-width:620px; margin:34px auto 0; }
+    .hero-cta { display:flex; gap:16px; justify-content:center; margin-top:42px; flex-wrap:wrap; }
+    .hero-meta { display:flex; justify-content:center; align-items:center; margin-top:56px; font-size:13px; letter-spacing:0.04em; color:var(--stone); flex-wrap:wrap; gap:10px 0; }
+    .dot { width:3px; height:3px; border-radius:50%; background:var(--gold-dim); margin:0 16px; }
 
-    /* ===== Stage / Views ===== */
-    .stage { position:relative; min-width:0; }
-    .view { display:none; min-height:100vh; padding:clamp(56px,8vh,104px) clamp(28px,6vw,92px); }
-    .view.active { display:block; animation:viewIn .6s var(--spring) both; }
-    .view-inner { max-width:820px; }
-    .view-inner.wide { max-width:1040px; }
+    section.band { border-top:1px solid var(--hairline); }
+    .band.charcoal { background:var(--charcoal); border-bottom:1px solid var(--hairline); }
+    .sec-pad { padding:clamp(72px,10vw,120px) clamp(20px,5vw,56px); }
 
-    .eyebrow { font-family:var(--m); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--teal); }
-    .view-h { margin-top:18px; font-family:var(--d); font-weight:300; font-size:clamp(32px,5vw,58px); line-height:1.04; letter-spacing:0.01em; color:var(--offwhite); }
-    .view-sub { margin-top:20px; font-family:var(--b); font-weight:300; font-size:15px; line-height:1.85; color:var(--stone); max-width:600px; }
+    /* What we do */
+    .what-head { display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:end; margin-bottom:64px; }
+    .what-head h2 { margin-top:20px; }
+    .caps { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--hairline); }
+    .cap { padding:46px 46px 6px 0; }
+    .cap + .cap { border-left:1px solid var(--hairline); padding-left:46px; }
+    .cap:last-child { padding-right:0; }
+    .cap-n { font-family:var(--font-display); font-weight:300; font-size:34px; color:var(--gold); line-height:1; }
+    .cap h3 { font-family:var(--font-display); font-weight:400; font-size:27px; color:var(--offwhite); margin:22px 0 12px; }
+    .cap p { font-size:16px; line-height:1.7; color:var(--body); }
 
-    /* ===== Buttons ===== */
-    .btn { display:inline-block; border:1px solid var(--gold); background:transparent; color:var(--gold);
-      font-family:var(--b); font-weight:500; font-size:11px; letter-spacing:0.16em; text-transform:uppercase;
-      padding:14px 34px; cursor:pointer; will-change:transform;
-      transition:background .22s var(--ease), color .22s var(--ease), transform .5s var(--spring); }
-    .btn:hover { background:var(--gold); color:var(--obsidian); }
-    .btn-ghost { display:inline-flex; align-items:center; gap:10px; cursor:pointer; background:none; border:none;
-      font-family:var(--b); font-weight:500; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--stone);
-      transition:color .22s var(--ease); }
-    .btn-ghost:hover { color:var(--offwhite); }
-    .btn-ghost::after { content:''; width:22px; height:1px; background:currentColor; }
+    /* How we work */
+    .how-head { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:24px; }
+    .how-head h2 { margin-top:20px; }
+    .tl { margin-top:70px; }
+    .tl-rail { position:relative; height:14px; margin-bottom:38px; }
+    .tl-rail .line { position:absolute; top:6px; left:7px; right:7px; height:1px; background:var(--smoke); }
+    .tl-dots { position:relative; display:grid; grid-template-columns:repeat(4,1fr); }
+    .tl-dot { width:13px; height:13px; border-radius:50%; background:var(--obsidian); border:1px solid var(--gold); box-shadow:0 0 0 4px var(--charcoal); }
+    .tl-cols { display:grid; grid-template-columns:repeat(4,1fr); gap:36px; }
+    .tl-n { font-family:var(--font-display); font-weight:300; font-size:66px; line-height:1; color:var(--gold); }
+    .tl-col h3 { font-family:var(--font-display); font-weight:400; font-size:29px; color:var(--offwhite); margin:20px 0 10px; }
+    .tl-col p { font-size:15px; line-height:1.7; color:var(--body); }
 
-    /* ===== Home ===== */
-    .home { display:flex; flex-direction:column; justify-content:center; min-height:calc(100vh - clamp(112px,16vh,208px)); }
-    .home-op { font-family:var(--m); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--teal); animation:fadeUp .8s var(--ease) .1s both; }
-    .home-name { margin-top:14px; font-family:var(--d); font-weight:300; font-size:clamp(56px,11vw,132px); line-height:0.92; letter-spacing:0.14em; color:var(--offwhite); animation:fadeUp .9s var(--ease) .24s both; }
-    .home-tag { margin-top:18px; font-family:var(--d); font-style:italic; font-weight:300; font-size:clamp(18px,2.6vw,26px); color:var(--gold); animation:fadeUp .9s var(--ease) .4s both; }
-    .home-body { margin-top:32px; max-width:560px; font-family:var(--b); font-weight:300; font-size:clamp(15px,1.7vw,17px); line-height:1.9; color:var(--offwhite); animation:fadeUp .9s var(--ease) .55s both; }
-    .home-body b { color:var(--offwhite); font-weight:400; }
-    .home-cta { margin-top:40px; display:flex; align-items:center; gap:28px; flex-wrap:wrap; animation:fadeUp .9s var(--ease) .7s both; }
-    .home-nums { margin-top:56px; padding-top:34px; border-top:1px solid var(--smoke); display:flex; gap:clamp(28px,5vw,64px); flex-wrap:wrap; animation:fadeUp .9s var(--ease) .85s both; }
-    .hn-v { font-family:var(--d); font-weight:400; font-size:clamp(26px,3vw,34px); color:var(--gold); line-height:1; }
-    .hn-l { margin-top:8px; font-family:var(--b); font-weight:300; font-size:11px; letter-spacing:0.02em; color:var(--stone); }
+    /* Our work */
+    .work-head { text-align:center; margin-bottom:72px; }
+    .work-head h2 { margin-top:20px; }
+    .cases { display:flex; flex-direction:column; gap:28px; }
+    .case { background:var(--charcoal); border:1px solid var(--smoke); border-radius:12px; padding:48px; display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:center; transition:border-color .24s var(--ease); }
+    .case:hover { border-color:var(--stone); }
+    .case-tags { display:flex; align-items:center; gap:12px; margin-bottom:22px; flex-wrap:wrap; }
+    .pill { font-family:var(--font-ui); font-weight:400; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border-radius:4px; padding:5px 11px; }
+    .pill.sector { color:var(--teal); border:1px solid rgba(30,122,114,0.4); }
+    .pill.live { color:var(--teal); border:1px solid rgba(30,122,114,0.4); }
+    .pill.wip { color:var(--stone); border:1px solid var(--smoke); }
+    .case-client { font-size:13px; color:var(--stone); }
+    .case h3 { font-family:var(--font-display); font-weight:400; font-size:clamp(28px,3.4vw,38px); line-height:1.1; color:var(--offwhite); margin:0 0 16px; }
+    .case p { font-size:17px; line-height:1.75; color:var(--body); max-width:44ch; }
+    .metrics { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); }
+    .metric { padding:26px 16px 26px 0; }
+    .metric .v { font-family:var(--font-display); font-weight:300; font-size:clamp(26px,3vw,34px); line-height:1.05; color:var(--gold); margin-bottom:8px; }
+    .metric .l { font-size:13px; line-height:1.4; color:var(--stone); }
+    .work-note { text-align:center; margin-top:34px; font-size:13px; letter-spacing:0.04em; color:var(--stone); }
 
-    /* ===== Capability list (What We Do) ===== */
-    .lead { margin-top:22px; font-family:var(--b); font-weight:300; font-size:clamp(15px,1.7vw,17px); line-height:1.9; color:var(--offwhite); max-width:640px; }
-    .cap-list { margin-top:46px; border-top:1px solid var(--smoke); }
-    .cap { display:grid; grid-template-columns:30px 220px 1fr; gap:26px; align-items:baseline; padding:26px 0; border-bottom:1px solid var(--smoke); }
-    .cap-n { font-family:var(--m); font-size:10px; letter-spacing:0.1em; color:var(--gold); }
-    .cap-t { font-family:var(--d); font-weight:400; font-size:21px; color:var(--offwhite); }
-    .cap-b { font-family:var(--b); font-weight:300; font-size:13.5px; line-height:1.8; color:var(--stone); }
+    /* Engagements */
+    .eng-head { text-align:center; margin-bottom:64px; }
+    .eng-head h2 { margin:20px 0 14px; }
+    .eng-head .sec-intro { max-width:52ch; margin:0 auto; color:var(--stone); }
+    .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .tier { background:var(--obsidian); border:1px solid var(--smoke); border-radius:12px; padding:42px; display:flex; flex-direction:column; transition:border-color .24s var(--ease); }
+    .tier:hover { border-color:var(--gold); }
+    .tier.feat { border-color:var(--gold-dim); }
+    .tier-name { font-family:var(--font-ui); font-weight:500; font-size:13px; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); }
+    .tier.feat .tier-name { color:var(--gold); }
+    .tier h3 { font-family:var(--font-display); font-weight:400; font-size:28px; line-height:1.2; color:var(--offwhite); margin:20px 0 14px; }
+    .tier-desc { font-size:15px; line-height:1.7; color:var(--body); margin-bottom:28px; min-height:72px; }
+    .tier-rule { height:1px; background:var(--hairline); margin-bottom:24px; }
+    .tier-points { display:flex; flex-direction:column; gap:14px; margin-bottom:34px; }
+    .tier-point { display:flex; align-items:flex-start; gap:12px; font-size:15px; line-height:1.6; color:var(--body); }
+    .tier-point span.b { width:4px; height:4px; border-radius:50%; background:var(--gold-dim); margin-top:9px; flex-shrink:0; }
+    .tier-cta { margin-top:auto; font-family:var(--font-ui); font-weight:400; font-size:14px; }
+    .eng-note { text-align:center; font-size:14px; line-height:1.7; color:var(--stone); max-width:64ch; margin:48px auto 0; }
 
-    /* ===== How timeline ===== */
-    .sub-h { margin-top:72px; font-family:var(--m); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--teal); }
-    .how-list { position:relative; margin-top:34px; }
-    .how-list::before { content:''; position:absolute; left:26px; top:8px; bottom:8px; width:1px; background:var(--smoke); }
-    .how-step { position:relative; display:grid; grid-template-columns:96px 1fr; gap:34px; padding:20px 0; align-items:start; }
-    .how-n { position:relative; z-index:1; background:var(--obsidian); padding:2px 0 10px; font-family:var(--d); font-weight:300; font-size:clamp(36px,4.4vw,52px); line-height:0.82; color:var(--gold); }
-    .how-t { font-family:var(--d); font-weight:400; font-size:22px; color:var(--offwhite); }
-    .how-b { margin-top:10px; font-family:var(--b); font-weight:300; font-size:14px; line-height:1.75; color:var(--stone); max-width:540px; }
+    /* Principle */
+    .principle { max-width:860px; margin:0 auto; text-align:center; }
+    .rule-row { display:flex; align-items:center; margin:0; }
+    .rule-row .ln { flex:1; height:1px; background:var(--hairline); }
+    .rule-row .rd { width:4px; height:4px; border-radius:50%; background:var(--gold-dim); margin:0 14px; }
+    .principle q, .principle .quote { font-family:var(--font-display); font-weight:300; font-style:italic; font-size:clamp(28px,4.4vw,42px); line-height:1.35; color:var(--offwhite); display:block; }
+    .principle .cap { font-family:var(--font-ui); font-weight:400; font-size:13px; letter-spacing:0.24em; text-transform:uppercase; color:var(--teal); margin-top:34px; }
 
-    /* ===== Proof showcase ===== */
-    .stat-strip { display:grid; grid-template-columns:repeat(4,1fr); margin-top:44px; border:1px solid var(--smoke); }
-    .stat { padding:26px 22px; border-left:1px solid var(--smoke); }
-    .stat:first-child { border-left:none; }
-    .stat-v { font-family:var(--d); font-weight:400; font-size:clamp(28px,3.4vw,40px); line-height:1; color:var(--gold); white-space:nowrap; }
-    .stat-l { margin-top:14px; font-family:var(--b); font-weight:500; font-size:11px; letter-spacing:0.03em; color:var(--offwhite); }
-    .stat-d { margin-top:8px; font-family:var(--b); font-weight:300; font-size:11px; line-height:1.65; color:var(--stone); }
+    /* Contact */
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(48px,7vw,90px); align-items:start; }
+    .contact-head h2 { margin:20px 0 26px; }
+    .contact-lead { font-size:17px; line-height:1.75; color:var(--body); max-width:44ch; }
+    .contact-card-meta { margin-top:44px; padding-top:32px; border-top:1px solid var(--hairline); font-size:15px; line-height:2; color:var(--stone); }
+    .contact-card-meta .nm { color:var(--offwhite); }
+    .form-card { background:var(--obsidian); border:1px solid var(--smoke); border-radius:12px; padding:clamp(28px,4vw,40px); }
 
-    .proof { margin-top:54px; }
-    .proof-tabs { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--smoke); border-bottom:1px solid var(--smoke); }
-    .proof-tab { position:relative; text-align:left; cursor:pointer; background:transparent; border:none; border-left:1px solid var(--smoke); padding:22px 24px; display:flex; flex-direction:column; gap:9px; transition:background .25s var(--ease); }
-    .proof-tab:first-child { border-left:none; }
-    .proof-tab:hover, .proof-tab.active { background:var(--charcoal); }
-    .proof-tab.active::after { content:''; position:absolute; left:0; right:0; bottom:-1px; height:1px; background:var(--gold); }
-    .pt-name { font-family:var(--d); font-weight:400; font-size:19px; color:var(--stone); line-height:1.15; transition:color .25s var(--ease); }
-    .proof-tab:hover .pt-name, .proof-tab.active .pt-name { color:var(--offwhite); }
-    .pt-status { font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; }
-    .pt-status.live { color:var(--teal); }
-    .pt-status.wip { color:var(--stone); }
-    .proof-panel { display:none; padding-top:34px; }
-    .proof-panel.active { display:block; animation:fadeUp .5s var(--spring) both; }
-    .pp-client { font-family:var(--m); font-size:10px; letter-spacing:0.1em; color:var(--stone); }
-    .pp-rows { margin-top:26px; display:grid; grid-template-columns:repeat(3,1fr); gap:34px; }
-    .pp-k { display:block; margin-bottom:12px; font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); }
-    .pp-v { font-family:var(--b); font-weight:300; font-size:13.5px; line-height:1.75; color:var(--stone); }
-    .pp-v .num { color:var(--gold); }
-    .proof-close { margin-top:44px; padding-top:26px; border-top:1px solid var(--smoke); font-family:var(--b); font-weight:300; font-size:13px; line-height:1.85; color:var(--stone); max-width:640px; }
-
-    /* ===== Engagements ===== */
-    .eng-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:46px; border:1px solid var(--smoke); }
-    .eng { padding:32px 28px; border-left:1px solid var(--smoke); display:flex; flex-direction:column; }
-    .eng:first-child { border-left:none; }
-    .eng-t { font-family:var(--m); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); }
-    .eng-h { margin-top:14px; font-family:var(--d); font-weight:400; font-size:23px; line-height:1.15; color:var(--offwhite); }
-    .eng-d { margin-top:10px; font-family:var(--b); font-weight:300; font-size:12.5px; line-height:1.7; color:var(--stone); }
-    .eng-bar { width:20px; height:1px; background:var(--gold); margin:22px 0; }
-    .eng-feats { display:flex; flex-direction:column; gap:10px; }
-    .eng-feat { display:flex; gap:11px; font-family:var(--b); font-weight:300; font-size:12.5px; line-height:1.6; color:var(--stone); }
-    .eng-dash { flex:none; width:8px; height:1px; background:var(--gold); margin-top:8px; }
-    .eng-note { margin-top:26px; font-family:var(--m); font-size:10px; letter-spacing:0.03em; line-height:1.8; color:#5a564f; max-width:640px; }
-
-    /* ===== FAQ ===== */
-    .faq-list { margin-top:30px; border-top:1px solid var(--smoke); }
-    .faq details { border-bottom:1px solid var(--smoke); }
-    .faq-q { list-style:none; cursor:pointer; position:relative; padding:22px 46px 22px 0;
-      font-family:var(--d); font-weight:400; font-size:clamp(17px,2.2vw,20px); color:var(--stone); line-height:1.3; transition:color .25s var(--ease); }
-    .faq-q::-webkit-details-marker { display:none; }
-    .faq-q:hover, details[open] .faq-q { color:var(--offwhite); }
-    .faq-q::before, .faq-q::after { content:''; position:absolute; background:var(--gold); transition:opacity .25s var(--ease); }
-    .faq-q::after { right:4px; top:50%; width:12px; height:1px; margin-top:-0.5px; }
-    .faq-q::before { right:9.5px; top:50%; width:1px; height:12px; margin-top:-6px; }
-    details[open] .faq-q::before { opacity:0; }
-    .faq-a { padding:0 46px 24px 0; font-family:var(--b); font-weight:300; font-size:14px; line-height:1.85; color:var(--stone); max-width:700px; }
-
-    /* ===== Contact / Founder ===== */
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,80px); margin-top:44px; align-items:start; }
-    .founder-body { font-family:var(--b); font-weight:300; font-size:clamp(14px,1.6vw,15px); line-height:1.9; color:var(--offwhite); max-width:520px; }
-    .c-block { margin-top:34px; padding-top:26px; border-top:1px solid var(--smoke); }
-    .c-name { font-family:var(--d); font-weight:300; font-size:26px; color:var(--offwhite); line-height:1.1; }
-    .c-role { margin-top:6px; font-family:var(--m); font-size:10px; letter-spacing:0.14em; color:var(--teal); }
-    .c-details { margin-top:22px; display:flex; flex-direction:column; gap:14px; }
-    .c-detail-label { display:block; font-family:var(--m); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
-    .c-detail-val { font-family:var(--b); font-weight:300; font-size:13px; color:var(--offwhite); line-height:1.6; }
-    .c-email-link { font-family:var(--b); font-weight:300; font-size:13px; color:var(--offwhite); transition:color .2s var(--ease); }
-    .c-email-link:hover { color:var(--gold); }
-
-    /* ===== Onboarding form ===== */
+    /* Onboarding form */
     .ob-prog { width:100%; height:1px; background:var(--smoke); margin-bottom:26px; }
-    .ob-fill { height:100%; background:var(--gold); width:33.33%; transition:width .7s var(--spring); }
-    .ob-count { font-family:var(--m); font-size:10px; letter-spacing:0.14em; color:var(--stone); margin-bottom:20px; }
+    .ob-fill { height:100%; background:var(--gold); width:33.33%; transition:width .7s cubic-bezier(0.16,1,0.3,1); }
+    .ob-count { font-family:var(--font-ui); font-size:11px; letter-spacing:0.14em; color:var(--stone); margin-bottom:20px; }
     .ob-step { display:none; }
-    .ob-step.active { display:block; animation:stepIn .45s var(--spring) both; }
-    .ob-step.back-in { animation:stepInBack .45s var(--spring) both; }
-    .ob-q { font-family:var(--d); font-weight:300; font-size:clamp(20px,3vw,26px); color:var(--offwhite); line-height:1.2; margin-bottom:24px; }
-    .ob-cap { font-family:var(--m); font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--stone); margin-bottom:12px; }
-    .ob-cap span { opacity:0.6; text-transform:none; letter-spacing:0.04em; }
+    .ob-step.active { display:block; animation:stepIn .45s cubic-bezier(0.16,1,0.3,1) both; }
+    .ob-step.back-in { animation:stepInBack .45s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes stepIn { from{opacity:0; transform:translateX(16px);} to{opacity:1; transform:none;} }
+    @keyframes stepInBack { from{opacity:0; transform:translateX(-16px);} to{opacity:1; transform:none;} }
+    .ob-q { font-family:var(--font-display); font-weight:300; font-size:clamp(22px,3vw,27px); color:var(--offwhite); line-height:1.2; margin-bottom:24px; }
+    .ob-cap { font-family:var(--font-ui); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--stone); margin-bottom:12px; }
+    .ob-cap span { opacity:0.6; text-transform:none; letter-spacing:0.02em; }
     .ob-chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
-    .ob-chip { background:transparent; cursor:pointer; border:0.5px solid var(--smoke); color:var(--stone); font-family:var(--b); font-size:13px; font-weight:300; padding:9px 18px; transition:border-color .2s ease, color .2s ease, background .2s ease; }
+    .ob-chip { background:transparent; cursor:pointer; border:1px solid var(--smoke); color:var(--stone); font-family:var(--font-ui); font-size:13px; font-weight:300; padding:9px 16px; border-radius:6px; transition:border-color .2s, color .2s, background .2s; }
     .ob-chip:hover { border-color:rgba(196,154,56,0.5); color:var(--offwhite); }
     .ob-chip.sel { border-color:var(--gold); color:var(--gold); background:rgba(196,154,56,0.06); }
-    .ob-ta { width:100%; background:transparent; border:none; border-bottom:1px solid var(--smoke); color:var(--offwhite); font-family:var(--b); font-weight:300; font-size:14px; line-height:1.75; padding:10px 0; outline:none; resize:none; min-height:88px; transition:border-color .25s ease; margin-bottom:26px; }
-    .ob-ta:focus { border-bottom-color:var(--gold); }
-    .ob-ta::placeholder { color:var(--stone); }
-    .ob-fields { display:flex; flex-direction:column; margin-bottom:22px; }
-    .field { position:relative; margin-bottom:22px; }
-    .field input { width:100%; background:transparent; border:none; border-bottom:1px solid var(--smoke); color:var(--offwhite); font-family:var(--b); font-weight:300; font-size:15px; padding:22px 0 10px; outline:none; transition:border-color .25s var(--ease); }
-    .field input:focus { border-bottom-color:var(--gold); }
-    .field label { position:absolute; left:0; top:22px; color:var(--stone); font-family:var(--b); font-weight:300; font-size:14px; pointer-events:none; transition:all .25s var(--ease); }
-    .field input:focus + label, .field input:not(:placeholder-shown) + label { top:2px; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); font-family:var(--m); }
-    .field input::placeholder { color:transparent; }
-    .ob-nav { display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
-    .ob-back { background:transparent; border:none; color:var(--stone); cursor:pointer; font-family:var(--b); font-size:12px; letter-spacing:0.06em; padding:0; transition:color .2s ease; }
+    .ob-ta { width:100%; background:var(--charcoal); border:1px solid var(--smoke); border-radius:6px; color:var(--offwhite); font-family:var(--font-ui); font-weight:300; font-size:14px; line-height:1.7; padding:14px 15px; outline:none; resize:none; min-height:92px; transition:border-color .2s; margin-bottom:22px; }
+    .ob-ta:focus { border-color:var(--gold); }
+    .ob-ta::placeholder { color:var(--faint); }
+    .ob-fields { display:flex; flex-direction:column; gap:16px; margin-bottom:22px; }
+    .field label { display:block; font-family:var(--font-ui); font-size:12px; letter-spacing:0.02em; color:var(--stone); margin-bottom:8px; }
+    .field input { width:100%; background:var(--charcoal); border:1px solid var(--smoke); border-radius:6px; color:var(--offwhite); font-family:var(--font-ui); font-weight:300; font-size:15px; padding:13px 15px; outline:none; transition:border-color .2s; }
+    .field input:focus { border-color:var(--gold); }
+    .field input::placeholder { color:var(--faint); }
+    .ob-nav { display:flex; align-items:center; gap:22px; flex-wrap:wrap; margin-top:6px; }
+    .ob-back { background:transparent; border:none; color:var(--stone); cursor:pointer; font-family:var(--font-ui); font-size:13px; padding:0; transition:color .2s; }
     .ob-back:hover { color:var(--offwhite); }
-    .ob-done { animation:fadeUp .6s var(--spring) both; }
-    .ob-done-head { font-family:var(--d); font-style:italic; font-weight:300; font-size:26px; color:var(--gold); margin-bottom:10px; }
-    .ob-done-body { font-family:var(--b); font-weight:300; font-size:14px; color:var(--stone); line-height:1.7; }
+    .ob-done-head { font-family:var(--font-display); font-style:italic; font-weight:300; font-size:27px; color:var(--gold); margin-bottom:10px; }
+    .ob-done-body { font-size:14px; color:var(--stone); line-height:1.7; }
 
-    /* ===== Mobile menu overlay ===== */
-    #mmenu { position:fixed; inset:0; z-index:300; background:var(--obsidian); display:flex; flex-direction:column; padding:0 28px; transform:translateX(100%); transition:transform .4s var(--ease); }
+    /* Footer */
+    footer.site { border-top:1px solid var(--hairline); padding:48px clamp(20px,5vw,56px); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; }
+    footer .brand .wm { font-size:16px; }
+    .f-tag { font-family:var(--font-display); font-weight:300; font-style:italic; font-size:15px; color:var(--stone); margin-left:8px; }
+    .f-meta { font-size:12px; letter-spacing:0.04em; color:var(--faint); text-align:right; line-height:1.7; }
+
+    /* Mobile menu */
+    #mmenu { position:fixed; inset:0; z-index:60; background:var(--obsidian); transform:translateX(100%); transition:transform .4s var(--ease); display:flex; flex-direction:column; padding:0 28px; }
     #mmenu.open { transform:translateX(0); }
-    .mm-head { height:56px; display:flex; align-items:center; justify-content:flex-end; }
-    .mm-close { background:none; border:none; color:var(--offwhite); font-size:26px; cursor:pointer; width:44px; height:44px; }
-    .mm-links { display:flex; flex-direction:column; margin-top:36px; }
-    .mm-link { display:flex; align-items:baseline; gap:14px; padding:15px 0; border-bottom:0.5px solid var(--smoke); background:none; border-left:none; border-right:none; border-top:none; text-align:left; cursor:pointer; }
-    .mm-link .rl-num { font-size:11px; }
-    .mm-link .rl-name { font-size:30px; }
-    .mm-tag { margin-top:auto; margin-bottom:36px; font-family:var(--d); font-style:italic; font-size:15px; color:var(--gold); }
+    .mm-head { height:64px; display:flex; align-items:center; justify-content:flex-end; }
+    .mm-close { background:none; border:none; color:var(--offwhite); font-size:28px; cursor:pointer; width:44px; height:44px; }
+    .mm-links { display:flex; flex-direction:column; margin-top:30px; }
+    .mm-links a { font-family:var(--font-display); font-weight:300; font-size:30px; color:var(--offwhite); padding:14px 0; border-bottom:1px solid var(--hairline); }
+    .mm-tag { margin-top:auto; margin-bottom:36px; font-family:var(--font-display); font-style:italic; font-size:15px; color:var(--gold); }
 
-    /* ===== Responsive ===== */
-    @media (max-width:900px) {
-      .shell { grid-template-columns:1fr; }
-      .rail { position:fixed; top:0; left:0; right:0; width:auto; height:56px; flex-direction:row; align-items:center; justify-content:space-between; padding:0 20px; border-right:none; border-bottom:1px solid var(--smoke); background:rgba(12,12,12,0.92); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); z-index:200; }
-      .rail-nav, .rail-foot { display:none; }
-      .rail-bar-actions { display:flex; }
-      .hamburger { display:flex; }
-      .stage { margin-top:56px; }
-      .view { min-height:calc(100vh - 56px); }
-      .cap { grid-template-columns:30px 1fr; }
-      .cap-b { grid-column:1 / -1; }
-    }
-    @media (max-width:760px) {
-      .proof-tabs { grid-template-columns:1fr; }
-      .proof-tab { border-left:none; border-top:1px solid var(--smoke); }
-      .proof-tab:first-child { border-top:none; }
-      .pp-rows { grid-template-columns:1fr; gap:22px; }
-      .eng-grid { grid-template-columns:1fr; }
-      .eng { border-left:none; border-top:1px solid var(--smoke); }
-      .eng:first-child { border-top:none; }
+    [data-reveal] { will-change:opacity, transform; }
+
+    /* Responsive */
+    @media (max-width:980px) {
+      .what-head { grid-template-columns:1fr; gap:26px; align-items:start; }
+      .case { grid-template-columns:1fr; gap:34px; }
       .contact-grid { grid-template-columns:1fr; }
     }
-    @media (max-width:720px) {
-      .stat-strip { grid-template-columns:1fr; }
-      .stat { border-left:none; border-top:1px solid var(--smoke); }
-      .stat:first-child { border-top:none; }
+    @media (max-width:820px) {
+      .site-nav { display:none; }
+      .hamburger { display:flex; }
+      .caps { grid-template-columns:1fr; }
+      .cap, .cap + .cap { padding:34px 0 6px 0; border-left:none; border-top:1px solid var(--hairline); }
+      .caps > .cap:first-child { border-top:none; }
+      .tiers { grid-template-columns:1fr; }
+      .tier-desc { min-height:0; }
+      .tl-rail { display:none; }
+      .tl { margin-top:44px; }
+      .tl-cols { grid-template-columns:1fr; gap:34px; }
+      .tl-n { font-size:52px; }
     }
-    @media (max-width:520px) {
-      .cap { grid-template-columns:1fr; gap:6px; }
-      .how-step { grid-template-columns:52px 1fr; gap:18px; }
+    @media (max-width:600px) {
+      .case { padding:32px; }
+      .metrics { grid-template-columns:1fr; }
+      .metric { padding:20px 0; border-top:1px solid var(--hairline); }
+      .metrics .metric:first-child { border-top:none; }
+      .hero-meta .dot:nth-of-type(2) { display:none; }
     }
   </style>
 </head>
-<body>
+<body id="top">
 
-<div class="shell">
-
-  <!-- ===== RAIL ===== -->
-  <aside class="rail">
-    <button class="rail-mark-btn" data-view="home" aria-label="Halcyon home" style="background:none;border:none;cursor:pointer;padding:0;width:36px;height:36px">
-      <svg class="rail-mark" viewBox="430 280 340 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path transform="matrix(2.538461,0,0,2.538461,434.999984,272.307692)" fill="none" stroke="#c49a38" stroke-width="4.5" stroke-opacity="0.92" stroke-linejoin="miter" stroke-miterlimit="4" d="M 65.000008 9.999645 L 114.999535 40.000593 L 114.999535 99.99941 L 65.000008 130.000358 L 15.00048 99.99941 L 15.00048 40.000593 Z M 65.000008 9.999645 "/>
-        <path transform="matrix(2.538461,0,0,2.538461,434.999984,272.307692)" fill="none" stroke="#c49a38" stroke-width="2" stroke-opacity="0.38" stroke-linejoin="miter" stroke-miterlimit="4" d="M 65.000008 21.000711 L 105.000245 45.000238 L 105.000245 94.999765 L 65.000008 118.999292 L 24.99977 94.999765 L 24.99977 45.000238 Z M 65.000008 21.000711 "/>
-        <path fill="#c49a38" d="M 628.277344 486.707031 L 628.277344 421.1875 C 628.277344 418.429688 628 416.339844 627.441406 414.917969 C 626.867188 413.496094 625.679688 412.507812 623.886719 411.949219 C 622.074219 411.375 619.324219 411.085938 615.636719 411.085938 C 615.347656 411.085938 615.207031 410.804688 615.207031 410.246094 C 615.207031 409.671875 615.347656 409.382812 615.636719 409.382812 C 617.820312 409.382812 620.308594 409.453125 623.101562 409.585938 C 625.890625 409.738281 628.90625 409.816406 632.136719 409.816406 C 635.167969 409.816406 638.101562 409.738281 640.945312 409.585938 C 643.789062 409.453125 646.300781 409.382812 648.484375 409.382812 C 648.753906 409.382812 648.890625 409.671875 648.890625 410.246094 C 648.890625 410.804688 648.753906 411.085938 648.484375 411.085938 C 644.878906 411.085938 642.15625 411.347656 640.3125 411.871094 C 638.449219 412.398438 637.214844 413.34375 636.605469 414.714844 C 635.996094 416.085938 635.691406 418.152344 635.691406 420.910156 L 635.691406 486.707031 C 635.691406 489.464844 635.996094 491.554688 636.605469 492.976562 C 637.214844 494.398438 638.449219 495.34375 640.3125 495.820312 C 642.15625 496.292969 644.878906 496.53125 648.484375 496.53125 C 648.753906 496.53125 648.890625 496.808594 648.890625 497.367188 C 648.890625 497.941406 648.753906 498.230469 648.484375 498.230469 C 646.300781 498.230469 643.789062 498.179688 640.945312 498.078125 C 638.101562 497.992188 635.167969 497.953125 632.136719 497.953125 C 628.90625 497.953125 625.890625 497.992188 623.101562 498.078125 C 620.308594 498.179688 617.820312 498.230469 615.636719 498.230469 C 615.347656 498.230469 615.207031 497.941406 615.207031 497.367188 C 615.207031 496.808594 615.347656 496.53125 615.636719 496.53125 C 619.324219 496.53125 622.074219 496.292969 623.886719 495.820312 C 625.679688 495.34375 626.867188 494.398438 627.441406 492.976562 C 628 491.554688 628.277344 489.464844 628.277344 486.707031 Z M 631.425781 453.300781 L 567.457031 453.300781 L 567.457031 450.609375 L 631.425781 450.609375 Z M 564.03125 486.707031 L 564.03125 420.910156 C 564.03125 418.152344 563.726562 416.085938 563.117188 414.714844 C 562.488281 413.34375 561.28125 412.398438 559.484375 411.871094 C 557.691406 411.347656 554.992188 411.085938 551.386719 411.085938 C 551.203125 411.085938 551.109375 410.804688 551.109375 410.246094 C 551.109375 409.671875 551.203125 409.382812 551.386719 409.382812 C 553.65625 409.382812 556.1875 409.453125 558.976562 409.585938 C 561.789062 409.738281 564.707031 409.816406 567.734375 409.816406 C 571.054688 409.816406 574.082031 409.738281 576.824219 409.585938 C 579.582031 409.453125 582.042969 409.382812 584.210938 409.382812 C 584.414062 409.382812 584.515625 409.671875 584.515625 410.246094 C 584.515625 410.804688 584.414062 411.085938 584.210938 411.085938 C 580.625 411.085938 577.921875 411.375 576.113281 411.949219 C 574.320312 412.507812 573.109375 413.496094 572.484375 414.917969 C 571.875 416.339844 571.570312 418.429688 571.570312 421.1875 L 571.570312 486.707031 C 571.570312 489.464844 571.855469 491.554688 572.433594 492.976562 C 572.992188 494.398438 574.191406 495.34375 576.035156 495.820312 C 577.898438 496.292969 580.625 496.53125 584.210938 496.53125 C 584.414062 496.53125 584.515625 496.808594 584.515625 497.367188 C 584.515625 497.941406 584.414062 498.230469 584.210938 498.230469 C 581.941406 498.230469 579.457031 498.179688 576.746094 498.078125 C 574.058594 497.992188 571.054688 497.953125 567.734375 497.953125 C 564.707031 497.953125 561.769531 497.992188 558.925781 498.078125 C 556.085938 498.179688 553.519531 498.230469 551.234375 498.230469 C 551.050781 498.230469 550.957031 497.941406 550.957031 497.367188 C 550.957031 496.808594 551.050781 496.53125 551.234375 496.53125 C 554.839844 496.53125 557.566406 496.292969 559.410156 495.820312 C 561.253906 495.34375 562.488281 494.398438 563.117188 492.976562 C 563.726562 491.554688 564.03125 489.464844 564.03125 486.707031 Z M 564.03125 486.707031 "/>
+  <!-- HEADER -->
+  <header class="site">
+    <a href="#top" class="brand" aria-label="Halcyon home">
+      <svg width="26" height="28" viewBox="0 0 130 140" fill="none" aria-hidden="true">
+        <polygon points="65,10 115,40 115,100 65,130 15,100 15,40" stroke="#C49A38" stroke-width="2.4"></polygon>
+        <polygon points="65,21 105,45 105,95 65,119 25,95 25,45" stroke="#C49A38" stroke-width="1" opacity="0.4"></polygon>
+        <text x="65" y="89" font-family="'Cormorant Garamond',serif" font-weight="400" font-size="54" fill="#C49A38" text-anchor="middle">H</text>
       </svg>
-    </button>
-
-    <nav class="rail-nav">
-      <button class="rail-link active" data-view="home"><span class="rl-num">01</span><span class="rl-name">Home</span></button>
-      <button class="rail-link" data-view="work"><span class="rl-num">02</span><span class="rl-name">Work</span></button>
-      <button class="rail-link" data-view="approach"><span class="rl-num">03</span><span class="rl-name">Approach</span></button>
-      <button class="rail-link" data-view="engagements"><span class="rl-num">04</span><span class="rl-name">Engagements</span></button>
-      <button class="rail-link" data-view="contact"><span class="rl-num">05</span><span class="rl-name">Contact</span></button>
+      <span class="wm">HALCYON</span>
+    </a>
+    <nav class="site-nav">
+      <a class="nl" href="#what">What we do</a>
+      <a class="nl" href="#how">How we work</a>
+      <a class="nl" href="#work">Our work</a>
+      <a class="nl" href="#engagements">Engagements</a>
+      <a class="btn btn-ghost btn-sm" href="#contact">Begin</a>
     </nav>
+    <button class="hamburger" id="ham" aria-label="Open menu"><span></span><span></span></button>
+  </header>
 
-    <div class="rail-foot">
-      <div class="rail-tag">Tranquility engineered.</div>
-      <div class="rail-meta">
-        Operational Intelligence<br>
-        Chennai, India<br>
-        <a href="mailto:sanjith@halcyon.uno">sanjith@halcyon.uno</a>
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-hex" viewBox="0 0 130 140" fill="none" aria-hidden="true">
+      <polygon points="65,6 118,38 118,102 65,134 12,102 12,38" stroke="#C49A38" stroke-width="0.7"></polygon>
+      <polygon points="65,20 106,45 106,95 65,120 24,95 24,45" stroke="#C49A38" stroke-width="0.5"></polygon>
+    </svg>
+    <div class="hero-in" data-reveal>
+      <span class="eyebrow">Operational Intelligence</span>
+      <h1>Tranquility <em>engineered</em>.</h1>
+      <p class="hero-sub">Halcyon learns how your business runs, then builds the systems it needs. From a document that fills itself to a full operational app, shaped around the way you already work.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">Begin a conversation</a>
+        <a class="btn btn-ghost" href="#what">What we do</a>
+      </div>
+      <div class="hero-meta">
+        <span>Built from scratch</span><span class="dot"></span>
+        <span>Support within 24 hours</span><span class="dot"></span>
+        <span>Chennai, India</span>
       </div>
     </div>
+  </section>
 
-    <div class="rail-bar-actions">
-      <button class="hamburger" id="ham" aria-label="Open menu"><span></span><span></span></button>
+  <!-- WHAT WE DO -->
+  <section class="band" id="what">
+    <div class="wrap sec-pad">
+      <div class="what-head" data-reveal>
+        <div>
+          <span class="eyebrow">What we do</span>
+          <h2 class="h2">The systems your<br>business runs on.</h2>
+        </div>
+        <p class="sec-intro">Most businesses run on manual work and memory. Halcyon builds the systems that replace both, and builds them so the people doing the work can actually understand them.</p>
+      </div>
+      <div class="caps" data-reveal>
+        <div class="cap">
+          <div class="cap-n">01</div>
+          <h3>Workflow intelligence</h3>
+          <p>Operations mapped. Every bottleneck surfaced before anything is built.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-n">02</div>
+          <h3>Bespoke systems</h3>
+          <p>Built from scratch. No templates, no off-the-shelf software.</p>
+        </div>
+        <div class="cap">
+          <div class="cap-n">03</div>
+          <h3>Ongoing partnership</h3>
+          <p>Monthly improvements, support within 24 hours, running costs included.</p>
+        </div>
+      </div>
     </div>
-  </aside>
+  </section>
 
-  <!-- ===== STAGE ===== -->
-  <main class="stage">
-
-    <!-- HOME -->
-    <section class="view active" id="v-home">
-      <div class="home">
-        <span class="home-op">Operational Intelligence</span>
-        <h1 class="home-name">HALCYON</h1>
-        <div class="home-tag">Tranquility engineered.</div>
-        <p class="home-body">Halcyon learns how your business runs, then builds the exact systems it needs. Branded documents that build themselves. Field work tracked in real time. A simple tool that grows into a full operations app. <b>Made around how you work, and built to just run.</b></p>
-        <div class="home-cta">
-          <button class="btn" data-view="contact">Begin a Conversation</button>
-          <button class="btn-ghost" data-view="work">See the proof</button>
+  <!-- HOW WE WORK -->
+  <section class="band charcoal" id="how">
+    <div class="wrap sec-pad">
+      <div class="how-head" data-reveal>
+        <div>
+          <span class="eyebrow">How we work</span>
+          <h2 class="h2">Four steps.<br>No surprises.</h2>
         </div>
-        <div class="home-nums">
-          <div><div class="hn-v">38 hrs</div><div class="hn-l">saved every month</div></div>
-          <div><div class="hn-v">95%</div><div class="hn-l">site visits GPS verified</div></div>
-          <div><div class="hn-v">&lt; 1 min</div><div class="hn-l">per quotation</div></div>
-          <div><div class="hn-v">5 min</div><div class="hn-l">tender research</div></div>
+        <p class="sec-intro" style="max-width:34ch; color:var(--stone)">From the first conversation to a system you own, with progress you can see the whole way through.</p>
+      </div>
+      <div class="tl" data-reveal>
+        <div class="tl-rail">
+          <div class="line"></div>
+          <div class="tl-dots">
+            <div><span class="tl-dot"></span></div>
+            <div><span class="tl-dot"></span></div>
+            <div><span class="tl-dot"></span></div>
+            <div><span class="tl-dot"></span></div>
+          </div>
+        </div>
+        <div class="tl-cols">
+          <div class="tl-col"><div class="tl-n">01</div><h3>Meet</h3><p>A conversation about your business and the problems worth solving. No cost, no obligation.</p></div>
+          <div class="tl-col"><div class="tl-n">02</div><h3>Map</h3><p>Every workflow watched and documented. Mapped from how the work really happens, not a spec.</p></div>
+          <div class="tl-col"><div class="tl-n">03</div><h3>Build</h3><p>Built from scratch. Visible at every stage. No black boxes.</p></div>
+          <div class="tl-col"><div class="tl-n">04</div><h3>Stay</h3><p>A 15 working day stabilization window per system, then monthly improvements.</p></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- WORK -->
-    <section class="view" id="v-work">
-      <div class="view-inner wide">
-        <span class="eyebrow">Work</span>
-        <h2 class="view-h">Proof, not promises.</h2>
-        <p class="view-sub">Every number here comes from a live production system. Nothing is an average, a projection across unrelated projects, or an estimate. The methodology behind every number is available on request.</p>
-
-        <div class="stat-strip">
-          <div class="stat"><div class="stat-v">38 hrs</div><div class="stat-l">Saved every month</div><div class="stat-d">Coordination time recovered, projected from 9 days of live data.</div></div>
-          <div class="stat"><div class="stat-v">95%</div><div class="stat-l">GPS verified</div><div class="stat-d">Site visits proven by location, not self reported.</div></div>
-          <div class="stat"><div class="stat-v">&lt; 1 min</div><div class="stat-l">Per quotation</div><div class="stat-d">Down from about an hour of sales relay, manual pricing and PDF formatting.</div></div>
-          <div class="stat"><div class="stat-v">5 min</div><div class="stat-l">Tender research</div><div class="stat-d">Down from 5 hours across 9 government portals, 4 with automated CAPTCHA handling.</div></div>
-        </div>
-
-        <div class="proof">
-          <div class="proof-tabs" role="tablist">
-            <button class="proof-tab active" data-i="0" role="tab"><span class="pt-name">Supervisor Field App</span><span class="pt-status live">Live</span></button>
-            <button class="proof-tab" data-i="1" role="tab"><span class="pt-name">Quotation Engine</span><span class="pt-status live">Live</span></button>
-            <button class="proof-tab" data-i="2" role="tab"><span class="pt-name">Tender Intelligence App</span><span class="pt-status wip">In progress</span></button>
-          </div>
-          <div class="proof-panels">
-            <div class="proof-panel active" data-i="0" role="tabpanel">
-              <div class="pp-client">Swathi Engineering Agencies</div>
-              <div class="pp-rows">
-                <div class="pp-row"><span class="pp-k">Problem</span><p class="pp-v">Knowing where field supervisors were and how work was progressing meant a stream of phone calls and messages. No record, no way to verify any of it.</p></div>
-                <div class="pp-row"><span class="pp-k">Numbers</span><p class="pp-v"><span class="num">28</span> team members active. <span class="num">42</span> site visits captured in <span class="num">9 days</span>. <span class="num">23</span> sites tracked live. <span class="num">95%</span> GPS verified.</p></div>
-                <div class="pp-row"><span class="pp-k">What changed</span><p class="pp-v">Every check-in is GPS stamped and time stamped. Every completed job gets an automatic progress report. The owner sees the full picture without making a call.</p></div>
-              </div>
-            </div>
-            <div class="proof-panel" data-i="1" role="tabpanel">
-              <div class="pp-client">Swathi Engineering Agencies</div>
-              <div class="pp-rows">
-                <div class="pp-row"><span class="pp-k">Problem</span><p class="pp-v">A quote meant relaying details from the sales person to the office, calculating pricing by hand, formatting a PDF, then manually adjusting terms, warranty language and rounding. About an hour, every time.</p></div>
-                <div class="pp-row"><span class="pp-k">Numbers</span><p class="pp-v"><span class="num">1 hour</span> down to <span class="num">under 1 minute</span>. <span class="num">40+</span> products across <span class="num">8</span> application categories, matched automatically to the enquiry.</p></div>
-                <div class="pp-row"><span class="pp-k">What changed</span><p class="pp-v">What used to route through two people and several manual steps now happens in one, and the quote is already in the customer's inbox.</p></div>
-              </div>
-            </div>
-            <div class="proof-panel" data-i="2" role="tabpanel">
-              <div class="pp-client">Swathi Engineering Agencies</div>
-              <div class="pp-rows">
-                <div class="pp-row"><span class="pp-k">Problem</span><p class="pp-v">One person's job was searching and scraping tender listings across government sites by hand. Several hours most days, for a handful of relevant results.</p></div>
-                <div class="pp-row"><span class="pp-k">Numbers</span><p class="pp-v"><span class="num">5 hours</span> down to <span class="num">5 minutes</span> per scan. <span class="num">129</span> relevant tenders surfaced in a single validated scan across GeM, Defence, CPPP, etenders.gov.in and TN Tenders. <span class="num">9</span> sources checked every time, ranked by fit.</p></div>
-                <div class="pp-row"><span class="pp-k">What changed</span><p class="pp-v">The zero-result portals, BHEL, CPCL, NTPC and HLL Biotech, still get checked every scan. The system does not pad results to look busy. It only shows genuine matches.</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p class="proof-close">Two systems live, one more on the way, all inside one business. References available on request. Every engagement starts by mapping workflows like these, not by selling a template.</p>
+  <!-- OUR WORK -->
+  <section class="band" id="work">
+    <div class="wrap sec-pad">
+      <div class="work-head" data-reveal>
+        <span class="eyebrow">Our work</span>
+        <h2 class="h2">What's been built.</h2>
       </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section class="view" id="v-approach">
-      <div class="view-inner">
-        <span class="eyebrow">Approach</span>
-        <h2 class="view-h">Built around the work, not the other way round.</h2>
-        <p class="lead">Halcyon builds the systems businesses actually run on. The work is mapped as it really happens before anything is built, and the tool is shaped around that.</p>
-
-        <div class="cap-list">
-          <div class="cap"><span class="cap-n">01</span><div class="cap-t">Workflow Intelligence</div><div class="cap-b">Operations mapped. Every bottleneck surfaced before anything is built.</div></div>
-          <div class="cap"><span class="cap-n">02</span><div class="cap-t">Bespoke Systems</div><div class="cap-b">Every solution built from scratch. No templates. No off-the-shelf software.</div></div>
-          <div class="cap"><span class="cap-n">03</span><div class="cap-t">Ongoing Partnership</div><div class="cap-b">No disappearing after delivery. Monthly improvements, same-day support, and running costs included.</div></div>
-        </div>
-
-        <div class="sub-h">How we work</div>
-        <div class="how-list">
-          <div class="how-step"><div class="how-n">01</div><div><div class="how-t">Meet</div><p class="how-b">A conversation about the business and the problems worth solving. No cost, no obligation.</p></div></div>
-          <div class="how-step"><div class="how-n">02</div><div><div class="how-t">Map</div><p class="how-b">Every workflow watched and documented. Mapped from how the work really happens, not from a spec.</p></div></div>
-          <div class="how-step"><div class="how-n">03</div><div><div class="how-t">Build</div><p class="how-b">Built from scratch. Visible at every stage. No black boxes.</p></div></div>
-          <div class="how-step"><div class="how-n">04</div><div><div class="how-t">Stay</div><p class="how-b">A 15 working day stabilization window on each system, then monthly improvements. Never build and vanish.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ENGAGEMENTS -->
-    <section class="view" id="v-engagements">
-      <div class="view-inner wide">
-        <span class="eyebrow">Engagements</span>
-        <h2 class="view-h">Three shapes, not three price tags.</h2>
-        <p class="view-sub">Which one fits depends on how much of the business needs covering, and that only becomes clear after the first conversation. What is fixed: monthly improvements, same-day support, and running costs are included in every engagement, never billed as extras.</p>
-
-        <div class="eng-grid">
-          <div class="eng">
-            <span class="eng-t">Starter</span>
-            <div class="eng-h">A single system, built right.</div>
-            <p class="eng-d">One operational gap, addressed with a purpose-built system.</p>
-            <div class="eng-bar"></div>
-            <div class="eng-feats">
-              <div class="eng-feat"><span class="eng-dash"></span>1 custom automation or workflow</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Ongoing improvements each month</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Email support</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Discovery session included</div>
-            </div>
-          </div>
-          <div class="eng">
-            <span class="eng-t">Growth</span>
-            <div class="eng-h">Multiple workflows, one partner.</div>
-            <p class="eng-d">Multiple inefficiencies across the business, addressed over time.</p>
-            <div class="eng-bar"></div>
-            <div class="eng-feats">
-              <div class="eng-feat"><span class="eng-dash"></span>3 systems built over time</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Regular feature additions each month</div>
-              <div class="eng-feat"><span class="eng-dash"></span>WhatsApp support</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Discovery session included</div>
-            </div>
-          </div>
-          <div class="eng">
-            <span class="eng-t">Partner</span>
-            <div class="eng-h">Halcyon as your operational arm.</div>
-            <p class="eng-d">Larger in scale, deeper in scope. Built for businesses with multiple systems to design and serious operational complexity.</p>
-            <div class="eng-bar"></div>
-            <div class="eng-feats">
-              <div class="eng-feat"><span class="eng-dash"></span>Continuous build and strategy</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Unlimited systems within agreed scope</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Dedicated support and monthly strategy call</div>
-              <div class="eng-feat"><span class="eng-dash"></span>Direct access to the founder</div>
-            </div>
-          </div>
-        </div>
-        <p class="eng-note">No setup fee is quoted before the workflow is mapped. Quoting a number before understanding the operation is how most software projects go wrong.</p>
-
-        <div class="sub-h">Questions worth asking</div>
-        <div class="faq faq-list">
-          <details><summary class="faq-q">Why a monthly retainer instead of a one time fee?</summary><p class="faq-a">The system does not stop being useful the day it ships. Operations change, new problems show up, and a tool nobody maintains starts drifting from how the business actually works within months. The retainer covers that ongoing refinement. It is not a build and disappear engagement.</p></details>
-          <details><summary class="faq-q">Who owns the software once it's built?</summary><p class="faq-a">You get full, exclusive use of everything built for your business, permanently. Halcyon keeps the underlying codebase and architecture, the same way an engineering firm keeps its own tooling across projects. Your data and your system are yours to use without limitation.</p></details>
-          <details><summary class="faq-q">How is this different from a freelancer or a large IT agency?</summary><p class="faq-a">A freelancer finishes and moves to the next job, so maintenance becomes your problem. A large agency reuses the same template across clients because that is how they scale. Halcyon does neither. One person maps your actual workflow, builds specifically for it, and stays on to keep it working as the business changes.</p></details>
-          <details><summary class="faq-q">How long until something is live, and what is a stabilization window?</summary><p class="faq-a">Depends on scope, but the goal is always a working first version fast. Once a system goes live it gets a 15 working day stabilization window, the period where bugs and rough edges get sorted without it turning into new scope. Each system gets its own 15 day clock from its own go-live date. The retainer starts from the first system's delivery.</p></details>
-          <details><summary class="faq-q">Do you disappear after launch?</summary><p class="faq-a">No. Ongoing support, small enhancements, and fixes are part of the retainer, not billed separately. The point is the system keeps working as your operations evolve, not that you are handed something and left alone with it.</p></details>
-          <details><summary class="faq-q">What does this cost?</summary><p class="faq-a">It depends on scope, and there is no menu price because no two operations look the same. Engagements run as Starter, Growth, or Partner depending on how much of the business needs covering. Every one starts with a discovery conversation at no cost before anything is scoped or costed.</p></details>
-          <details><summary class="faq-q">You have worked with one client. Why should I trust that?</summary><p class="faq-a">Fair question. Two systems are live inside that business and a third is on the way, and every number on this site comes from that production data rather than a case study written after the fact. The methodology behind those figures is published on request, which is more than most firms with longer client lists will offer. References available on request.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="view" id="v-contact">
-      <div class="view-inner wide">
-        <span class="eyebrow">Contact</span>
-        <h2 class="view-h">Begin a conversation.</h2>
-
-        <div class="contact-grid">
+      <div class="cases">
+        <div class="case" data-reveal>
           <div>
-            <p class="founder-body">Halcyon is built and run by Sanjith Dhandapani, based in Chennai. Mechanical engineering from Leeds, data analytics from Sydney, and a family background in industrial contracting and manufacturing, which is where the instinct to map a workflow before writing a line of code actually comes from. Every engagement runs through one person. Direct, no account layer in between.</p>
-            <div class="c-block">
-              <div class="c-name">Sanjith Dhandapani</div>
-              <div class="c-role">Founder, Halcyon</div>
-              <div class="c-details">
-                <div><span class="c-detail-label">Email</span><a href="mailto:sanjith@halcyon.uno" class="c-email-link">sanjith@halcyon.uno</a></div>
-                <div><span class="c-detail-label">Location</span><span class="c-detail-val">Plot No. 2041, 15th Main Road,<br>H Block, Anna Nagar West,<br>Chennai 600040</span></div>
-                <div><span class="c-detail-label">Response</span><span class="c-detail-val">Personal, within 24 hours. If it makes sense, an in-person visit to see the operation.</span></div>
-              </div>
+            <div class="case-tags">
+              <span class="pill sector">Field operations</span>
+              <span class="pill live">Live</span>
+              <span class="case-client">Swathi Engineering Agencies</span>
             </div>
+            <h3>Supervisor Field App</h3>
+            <p>Every check-in GPS and time stamped, every completed job an automatic progress report. The owner sees the whole picture without making a call.</p>
           </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">28</div><div class="l">team members active</div></div>
+            <div class="metric"><div class="v">23</div><div class="l">sites tracked live</div></div>
+            <div class="metric"><div class="v">95%</div><div class="l">GPS verified</div></div>
+          </div>
+        </div>
 
-          <div id="ob-wrap">
-            <div class="ob-prog"><div class="ob-fill" id="ob-fill"></div></div>
-            <div class="ob-count" id="ob-count">01 / 03</div>
-
-            <div class="ob-step active" id="ob-s1">
-              <div class="ob-q">Tell me about your business.</div>
-              <div class="ob-cap">Industry</div>
-              <div class="ob-chips">
-                <button class="ob-chip" data-val="Manufacturing">Manufacturing</button>
-                <button class="ob-chip" data-val="Construction">Construction</button>
-                <button class="ob-chip" data-val="Industrial Supply">Industrial Supply</button>
-                <button class="ob-chip" data-val="Trading">Trading</button>
-                <button class="ob-chip" data-val="Services">Services</button>
-                <button class="ob-chip" data-val="Other">Other</button>
-              </div>
-              <div class="ob-fields">
-                <div class="field"><input id="ob-company" type="text" placeholder=" " required><label for="ob-company">Company name</label></div>
-                <div class="field"><input id="ob-does" type="text" placeholder=" " required><label for="ob-does">What does your business do?</label></div>
-              </div>
-              <button class="btn" id="s1-next">Continue &rarr;</button>
+        <div class="case" data-reveal>
+          <div>
+            <div class="case-tags">
+              <span class="pill sector">Sales operations</span>
+              <span class="pill live">Live</span>
+              <span class="case-client">Swathi Engineering Agencies</span>
             </div>
+            <h3>Quotation Engine</h3>
+            <p>Automated product recommendation and quotation, from enquiry to a ready-to-send PDF. What used to route through two people and take an hour now takes one step.</p>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">&lt; 1 min</div><div class="l">per quotation</div></div>
+            <div class="metric"><div class="v">40+</div><div class="l">products priced</div></div>
+            <div class="metric"><div class="v">8</div><div class="l">application categories</div></div>
+          </div>
+        </div>
 
-            <div class="ob-step" id="ob-s2">
-              <div class="ob-q">What's the main challenge you want to solve?</div>
-              <textarea class="ob-ta" id="ob-problem" rows="4" placeholder="Where is time, money, or accuracy being lost in your operation?"></textarea>
-              <div class="ob-cap">How is it handled today? <span>(optional)</span></div>
-              <textarea class="ob-ta" id="ob-current" rows="2" style="min-height:60px" placeholder="Spreadsheets, WhatsApp, paper, existing software, whatever's in place now."></textarea>
-              <div class="ob-nav">
-                <button class="ob-back" data-to="0">&larr; Back</button>
-                <button class="btn" id="s2-next">Continue &rarr;</button>
-              </div>
+        <div class="case" data-reveal>
+          <div>
+            <div class="case-tags">
+              <span class="pill sector">Procurement</span>
+              <span class="pill wip">In progress</span>
+              <span class="case-client">Swathi Engineering Agencies</span>
             </div>
-
-            <div class="ob-step" id="ob-s3">
-              <div class="ob-q">Where can you be reached?</div>
-              <div class="ob-fields">
-                <div class="field"><input id="ob-name" type="text" placeholder=" " required><label for="ob-name">Your name</label></div>
-                <div class="field"><input id="ob-role" type="text" placeholder=" "><label for="ob-role">Your role (optional)</label></div>
-                <div class="field"><input id="ob-city" type="text" placeholder=" "><label for="ob-city">City, helps plan a visit (optional)</label></div>
-                <div class="field"><input id="ob-email" type="email" placeholder=" " required><label for="ob-email">Email address</label></div>
-                <div class="field"><input id="ob-phone" type="tel" placeholder=" "><label for="ob-phone">WhatsApp / Phone (optional)</label></div>
-              </div>
-              <div class="ob-nav">
-                <button class="ob-back" data-to="1">&larr; Back</button>
-                <button class="btn" id="ob-submit">Send &rarr;</button>
-              </div>
-            </div>
-
-            <div class="ob-done" id="ob-done" style="display:none">
-              <div class="ob-done-head">Message sent.</div>
-              <p class="ob-done-body">Sanjith will reply personally within 24 hours, and if it makes sense, will come and see the operation in person.</p>
-            </div>
+            <h3>Tender Intelligence App</h3>
+            <p>Automated search and ranking across nine government procurement portals, four with automated CAPTCHA handling. Only genuine matches, never padded to look busy.</p>
+          </div>
+          <div class="metrics">
+            <div class="metric"><div class="v">5 min</div><div class="l">per scan, from 5 hours</div></div>
+            <div class="metric"><div class="v">129</div><div class="l">tenders surfaced in a scan</div></div>
+            <div class="metric"><div class="v">9</div><div class="l">sources ranked by fit</div></div>
           </div>
         </div>
       </div>
-    </section>
+      <p class="work-note" data-reveal>Two systems live, one more on the way, all inside one business. References available on request.</p>
+    </div>
+  </section>
 
-  </main>
-</div>
+  <!-- ENGAGEMENTS -->
+  <section class="band charcoal" id="engagements">
+    <div class="wrap sec-pad">
+      <div class="eng-head" data-reveal>
+        <span class="eyebrow">Engagements</span>
+        <h2 class="h2">Not packages.<br>Starting points.</h2>
+        <p class="sec-intro">Every project is scoped and costed after a first conversation.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier" data-reveal>
+          <div class="tier-name">Starter</div>
+          <h3>A single system, built right.</h3>
+          <p class="tier-desc">One operational gap, addressed with a purpose-built system.</p>
+          <div class="tier-rule"></div>
+          <div class="tier-points">
+            <div class="tier-point"><span class="b"></span>1 custom automation or workflow</div>
+            <div class="tier-point"><span class="b"></span>Ongoing improvements each month</div>
+            <div class="tier-point"><span class="b"></span>Email support</div>
+          </div>
+          <a class="tier-cta" href="#contact">Start a conversation →</a>
+        </div>
+        <div class="tier feat" data-reveal>
+          <div class="tier-name">Growth</div>
+          <h3>Multiple workflows, one partner.</h3>
+          <p class="tier-desc">Multiple inefficiencies across the business, addressed over time.</p>
+          <div class="tier-rule"></div>
+          <div class="tier-points">
+            <div class="tier-point"><span class="b"></span>3 systems built over time</div>
+            <div class="tier-point"><span class="b"></span>Regular feature additions</div>
+            <div class="tier-point"><span class="b"></span>WhatsApp support</div>
+          </div>
+          <a class="tier-cta" href="#contact">Start a conversation →</a>
+        </div>
+        <div class="tier" data-reveal>
+          <div class="tier-name">Partner</div>
+          <h3>Halcyon as your operational arm.</h3>
+          <p class="tier-desc">Larger in scale, deeper in scope, for serious operational complexity.</p>
+          <div class="tier-rule"></div>
+          <div class="tier-points">
+            <div class="tier-point"><span class="b"></span>Continuous build and strategy</div>
+            <div class="tier-point"><span class="b"></span>Unlimited systems in scope</div>
+            <div class="tier-point"><span class="b"></span>Direct access to the founder</div>
+          </div>
+          <a class="tier-cta" href="#contact">Start a conversation →</a>
+        </div>
+      </div>
+      <p class="eng-note" data-reveal>No setup fee is quoted before the workflow is mapped. Every engagement includes monthly improvements, support within 24 hours, and running costs up to a baseline.</p>
+    </div>
+  </section>
 
-<!-- ===== MOBILE MENU ===== -->
-<div id="mmenu" role="dialog" aria-modal="true">
-  <div class="mm-head"><button class="mm-close" id="mm-close" aria-label="Close menu">&times;</button></div>
-  <nav class="mm-links">
-    <button class="mm-link" data-view="home"><span class="rl-num">01</span><span class="rl-name">Home</span></button>
-    <button class="mm-link" data-view="work"><span class="rl-num">02</span><span class="rl-name">Work</span></button>
-    <button class="mm-link" data-view="approach"><span class="rl-num">03</span><span class="rl-name">Approach</span></button>
-    <button class="mm-link" data-view="engagements"><span class="rl-num">04</span><span class="rl-name">Engagements</span></button>
-    <button class="mm-link" data-view="contact"><span class="rl-num">05</span><span class="rl-name">Contact</span></button>
-  </nav>
-  <span class="mm-tag">Tranquility engineered.</span>
-</div>
+  <!-- PRINCIPLE -->
+  <section class="band">
+    <div class="sec-pad">
+      <div class="principle" data-reveal>
+        <div class="rule-row"><span class="ln"></span><span class="rd"></span><span class="ln"></span></div>
+        <p class="quote" style="margin-top:54px">"A halcyon is a spell of calm. Engineered, not found."</p>
+        <div class="cap">The Halcyon principle</div>
+        <div class="rule-row" style="margin-top:54px"><span class="ln"></span><span class="rd"></span><span class="ln"></span></div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  /* ===== View router ===== */
-  (function () {
-    const views = {
-      home: document.getElementById('v-home'),
-      work: document.getElementById('v-work'),
-      approach: document.getElementById('v-approach'),
-      engagements: document.getElementById('v-engagements'),
-      contact: document.getElementById('v-contact'),
-    };
-    const railLinks = document.querySelectorAll('.rail-link');
-    function setView(name, push) {
-      if (!views[name]) name = 'home';
-      Object.keys(views).forEach(k => views[k].classList.toggle('active', k === name));
-      railLinks.forEach(l => {
-        const on = l.dataset.view === name;
-        l.classList.toggle('active', on);
-        if (on) l.setAttribute('aria-current', 'page'); else l.removeAttribute('aria-current');
-      });
-      window.scrollTo(0, 0);
-      if (push) history.replaceState(null, '', '#' + name);
-      document.title = name === 'home' ? 'HALCYON | Operational Intelligence'
-        : 'HALCYON | ' + name.charAt(0).toUpperCase() + name.slice(1);
-    }
-    document.querySelectorAll('[data-view]').forEach(el => {
-      el.addEventListener('click', () => { setView(el.dataset.view, true); closeMenu(); });
-    });
-    const start = (location.hash || '').replace('#', '');
-    if (start && views[start]) setView(start, false);
+  <!-- CONTACT -->
+  <section class="band charcoal" id="contact">
+    <div class="wrap sec-pad">
+      <div class="contact-grid">
+        <div class="contact-head" data-reveal>
+          <span class="eyebrow">Contact</span>
+          <h2 class="h2" style="font-size:clamp(36px,4.6vw,52px)">Begin a conversation.</h2>
+          <p class="contact-lead">Halcyon takes on a small number of projects at a time. Tell me what you are building and you will hear back personally, within a day.</p>
+          <div class="contact-card-meta">
+            <div class="nm">Sanjith Dhandapani</div>
+            <div>Founder, Halcyon</div>
+            <div style="margin-top:14px"><a href="mailto:sanjith@halcyon.uno">sanjith@halcyon.uno</a></div>
+            <div style="margin-top:14px; line-height:1.6">Plot No. 2041, 15th Main Road,<br>H Block, Anna Nagar West,<br>Chennai 600040</div>
+          </div>
+        </div>
 
+        <div class="form-card" data-reveal id="ob-wrap">
+          <div class="ob-prog"><div class="ob-fill" id="ob-fill"></div></div>
+          <div class="ob-count" id="ob-count">01 / 03</div>
+
+          <div class="ob-step active" id="ob-s1">
+            <div class="ob-q">Tell me about your business.</div>
+            <div class="ob-cap">Industry</div>
+            <div class="ob-chips">
+              <button class="ob-chip" data-val="Manufacturing">Manufacturing</button>
+              <button class="ob-chip" data-val="Construction">Construction</button>
+              <button class="ob-chip" data-val="Industrial Supply">Industrial Supply</button>
+              <button class="ob-chip" data-val="Trading">Trading</button>
+              <button class="ob-chip" data-val="Services">Services</button>
+              <button class="ob-chip" data-val="Other">Other</button>
+            </div>
+            <div class="ob-fields">
+              <div class="field"><label for="ob-company">Company name</label><input id="ob-company" type="text" placeholder="Your company"></div>
+              <div class="field"><label for="ob-does">What does your business do?</label><input id="ob-does" type="text" placeholder="In a line"></div>
+            </div>
+            <a class="btn btn-block" id="s1-next">Continue →</a>
+          </div>
+
+          <div class="ob-step" id="ob-s2">
+            <div class="ob-q">What's the main challenge to solve?</div>
+            <div class="ob-cap">The challenge</div>
+            <textarea class="ob-ta" id="ob-problem" rows="3" placeholder="Where is time, money, or accuracy being lost in your operation?"></textarea>
+            <div class="ob-cap">How is it handled today? <span>(optional)</span></div>
+            <textarea class="ob-ta" id="ob-current" rows="2" style="min-height:64px" placeholder="Spreadsheets, WhatsApp, paper, existing software, whatever's in place now."></textarea>
+            <div class="ob-nav">
+              <button class="ob-back" data-to="0">← Back</button>
+              <a class="btn" id="s2-next">Continue →</a>
+            </div>
+          </div>
+
+          <div class="ob-step" id="ob-s3">
+            <div class="ob-q">Where can you be reached?</div>
+            <div class="ob-fields">
+              <div class="field"><label for="ob-name">Your name</label><input id="ob-name" type="text" placeholder="Name"></div>
+              <div class="field"><label for="ob-role">Your role <span style="color:var(--faint)">(optional)</span></label><input id="ob-role" type="text" placeholder="e.g. Managing Director"></div>
+              <div class="field"><label for="ob-city">City <span style="color:var(--faint)">(optional, helps plan a visit)</span></label><input id="ob-city" type="text" placeholder="City"></div>
+              <div class="field"><label for="ob-email">Email address</label><input id="ob-email" type="email" placeholder="you@company.com"></div>
+              <div class="field"><label for="ob-phone">WhatsApp / Phone <span style="color:var(--faint)">(optional)</span></label><input id="ob-phone" type="tel" placeholder="Number"></div>
+            </div>
+            <div class="ob-nav">
+              <button class="ob-back" data-to="1">← Back</button>
+              <a class="btn" id="ob-submit">Send →</a>
+            </div>
+          </div>
+
+          <div id="ob-done" style="display:none">
+            <div class="ob-done-head">Message sent.</div>
+            <p class="ob-done-body">Sanjith will reply personally within 24 hours, and if it makes sense, will come and see the operation in person.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site">
+    <div class="brand">
+      <svg width="22" height="24" viewBox="0 0 130 140" fill="none" aria-hidden="true">
+        <polygon points="65,10 115,40 115,100 65,130 15,100 15,40" stroke="#C49A38" stroke-width="2.4"></polygon>
+        <text x="65" y="89" font-family="'Cormorant Garamond',serif" font-weight="400" font-size="54" fill="#C49A38" text-anchor="middle">H</text>
+      </svg>
+      <span class="wm">HALCYON</span>
+      <span class="f-tag">Tranquility engineered.</span>
+    </div>
+    <div class="f-meta">Operational Intelligence · Chennai<br>© 2026 Halcyon. All rights reserved.</div>
+  </footer>
+
+  <!-- MOBILE MENU -->
+  <div id="mmenu" role="dialog" aria-modal="true">
+    <div class="mm-head"><button class="mm-close" id="mm-close" aria-label="Close menu">&times;</button></div>
+    <nav class="mm-links">
+      <a href="#what">What we do</a>
+      <a href="#how">How we work</a>
+      <a href="#work">Our work</a>
+      <a href="#engagements">Engagements</a>
+      <a href="#contact">Begin a conversation</a>
+    </nav>
+    <span class="mm-tag">Tranquility engineered.</span>
+  </div>
+
+  <script>
     /* Mobile menu */
-    const mm = document.getElementById('mmenu');
-    window.closeMenu = () => { mm.classList.remove('open'); document.body.style.overflow = ''; };
-    document.getElementById('ham').addEventListener('click', () => { mm.classList.add('open'); document.body.style.overflow = 'hidden'; });
-    document.getElementById('mm-close').addEventListener('click', closeMenu);
-  })();
+    (function () {
+      const mm = document.getElementById('mmenu');
+      const close = () => { mm.classList.remove('open'); document.body.style.overflow = ''; };
+      document.getElementById('ham').addEventListener('click', () => { mm.classList.add('open'); document.body.style.overflow = 'hidden'; });
+      document.getElementById('mm-close').addEventListener('click', close);
+      mm.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+    })();
 
-  /* ===== Magnetic buttons ===== */
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', e => {
-      const r = btn.getBoundingClientRect();
-      const x = (e.clientX - r.left - r.width / 2) * 0.18;
-      const y = (e.clientY - r.top - r.height / 2) * 0.22;
-      btn.style.transition = 'background .22s, color .22s, transform .12s ease';
-      btn.style.transform = `translate(${x}px, ${y}px)`;
-    });
-    btn.addEventListener('mouseleave', () => {
-      btn.style.transition = 'background .22s, color .22s, transform .55s cubic-bezier(0.34,1.56,0.64,1)';
-      btn.style.transform = '';
-    });
-  });
+    /* Reveal on scroll */
+    (function () {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; el.style.transition = 'opacity 520ms var(--ease,cubic-bezier(0.4,0,0.2,1)), transform 520ms cubic-bezier(0.4,0,0.2,1)'; });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(el => io.observe(el));
+    })();
 
-  /* ===== Proof showcase tabs ===== */
-  (function () {
-    const tabs = document.querySelectorAll('.proof-tab');
-    const panels = document.querySelectorAll('.proof-panel');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const i = tab.dataset.i;
-        tabs.forEach(t => t.classList.toggle('active', t === tab));
-        panels.forEach(p => p.classList.toggle('active', p.dataset.i === i));
-      });
-    });
-  })();
+    /* Active nav link */
+    (function () {
+      const links = [...document.querySelectorAll('.site-nav a.nl')];
+      const map = {};
+      links.forEach(l => { const id = l.getAttribute('href').slice(1); const s = document.getElementById(id); if (s) map[id] = l; });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { links.forEach(l => l.classList.remove('active')); if (map[e.target.id]) map[e.target.id].classList.add('active'); } });
+      }, { rootMargin: '-45% 0px -50% 0px' });
+      Object.keys(map).forEach(id => io.observe(document.getElementById(id)));
+    })();
 
-  /* ===== Onboarding flow ===== */
-  (function () {
-    const obSteps = [document.getElementById('ob-s1'), document.getElementById('ob-s2'), document.getElementById('ob-s3')];
-    const fill = document.getElementById('ob-fill');
-    const count = document.getElementById('ob-count');
-    const done = document.getElementById('ob-done');
-    let cur = 0;
-    const data = { sector:'', company:'', does:'', problem:'', current:'', name:'', role:'', city:'', email:'', phone:'' };
-    function pct(i){ return ((i + 1) / obSteps.length * 100).toFixed(2) + '%'; }
-    function goTo(next, back){
-      obSteps[cur].classList.remove('active', 'back-in');
-      cur = next;
-      obSteps[cur].classList.add('active');
-      if (back) obSteps[cur].classList.add('back-in');
-      fill.style.width = pct(cur);
-      count.textContent = `0${cur + 1} / 0${obSteps.length}`;
-    }
-    document.querySelectorAll('.ob-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
+    /* Onboarding flow */
+    (function () {
+      const obSteps = [document.getElementById('ob-s1'), document.getElementById('ob-s2'), document.getElementById('ob-s3')];
+      const fill = document.getElementById('ob-fill');
+      const count = document.getElementById('ob-count');
+      const done = document.getElementById('ob-done');
+      let cur = 0;
+      const data = { sector:'', company:'', does:'', problem:'', current:'', name:'', role:'', city:'', email:'', phone:'' };
+      const pct = i => ((i + 1) / obSteps.length * 100).toFixed(2) + '%';
+      function goTo(next, back) {
+        obSteps[cur].classList.remove('active', 'back-in');
+        cur = next;
+        obSteps[cur].classList.add('active');
+        if (back) obSteps[cur].classList.add('back-in');
+        fill.style.width = pct(cur);
+        count.textContent = `0${cur + 1} / 0${obSteps.length}`;
+      }
+      document.querySelectorAll('.ob-chip').forEach(chip => chip.addEventListener('click', () => {
         document.querySelectorAll('.ob-chip').forEach(c => c.classList.remove('sel'));
-        chip.classList.add('sel');
-        data.sector = chip.dataset.val;
+        chip.classList.add('sel'); data.sector = chip.dataset.val;
+      }));
+      document.getElementById('s1-next').addEventListener('click', () => {
+        const company = document.getElementById('ob-company').value.trim();
+        const does = document.getElementById('ob-does').value.trim();
+        if (!data.sector) return;
+        if (!company) { document.getElementById('ob-company').focus(); return; }
+        if (!does) { document.getElementById('ob-does').focus(); return; }
+        data.company = company; data.does = does; goTo(1, false);
       });
-    });
-    document.getElementById('s1-next').addEventListener('click', () => {
-      const company = document.getElementById('ob-company').value.trim();
-      const does = document.getElementById('ob-does').value.trim();
-      if (!data.sector) return;
-      if (!company) { document.getElementById('ob-company').focus(); return; }
-      if (!does) { document.getElementById('ob-does').focus(); return; }
-      data.company = company; data.does = does; goTo(1, false);
-    });
-    document.getElementById('s2-next').addEventListener('click', () => {
-      const v = document.getElementById('ob-problem').value.trim();
-      if (!v) { document.getElementById('ob-problem').focus(); return; }
-      data.problem = v;
-      data.current = document.getElementById('ob-current').value.trim();
-      goTo(2, false);
-    });
-    document.querySelectorAll('.ob-back').forEach(btn => {
-      btn.addEventListener('click', () => goTo(parseInt(btn.dataset.to), true));
-    });
-    document.getElementById('ob-submit').addEventListener('click', () => {
-      const name = document.getElementById('ob-name').value.trim();
-      const email = document.getElementById('ob-email').value.trim();
-      if (!name || !email) { (!name ? document.getElementById('ob-name') : document.getElementById('ob-email')).focus(); return; }
-      data.name = name; data.email = email;
-      data.role = document.getElementById('ob-role').value.trim();
-      data.city = document.getElementById('ob-city').value.trim();
-      data.phone = document.getElementById('ob-phone').value.trim();
-
-      const payload = {
-        name: data.name, role: data.role || 'Not provided', email: data.email,
-        phone: data.phone || 'Not provided', company: data.company, city: data.city || 'Not provided',
-        business_type: data.sector, business_detail: data.does, challenge: data.problem,
-        current_process: data.current || 'Not provided',
-      };
-      const body = JSON.stringify(payload);
-
-      fetch('https://script.google.com/macros/s/AKfycbyBys5ISNQzCsNEplcHt81oPM1MDOlcXXJJip-fOfC9hfP4yKTQEioqOaREr-MkeNw/exec', {
-        method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body,
+      document.getElementById('s2-next').addEventListener('click', () => {
+        const v = document.getElementById('ob-problem').value.trim();
+        if (!v) { document.getElementById('ob-problem').focus(); return; }
+        data.problem = v; data.current = document.getElementById('ob-current').value.trim(); goTo(2, false);
       });
-
-      const formBody = JSON.stringify({
-        '_subject': 'New enquiry: ' + (data.company || data.name),
-        'Name': data.name, 'Role': data.role || 'Not provided', 'Email': data.email,
-        'Phone / WhatsApp': data.phone || 'Not provided', 'Company': data.company,
-        'City': data.city || 'Not provided', 'Industry': data.sector,
-        'What the business does': data.does, 'Main challenge': data.problem,
-        'Handled today': data.current || 'Not provided',
+      document.querySelectorAll('.ob-back').forEach(btn => btn.addEventListener('click', () => goTo(parseInt(btn.dataset.to), true)));
+      document.getElementById('ob-submit').addEventListener('click', () => {
+        const name = document.getElementById('ob-name').value.trim();
+        const email = document.getElementById('ob-email').value.trim();
+        if (!name || !email) { (!name ? document.getElementById('ob-name') : document.getElementById('ob-email')).focus(); return; }
+        data.name = name; data.email = email;
+        data.role = document.getElementById('ob-role').value.trim();
+        data.city = document.getElementById('ob-city').value.trim();
+        data.phone = document.getElementById('ob-phone').value.trim();
+        const payload = {
+          name: data.name, role: data.role || 'Not provided', email: data.email,
+          phone: data.phone || 'Not provided', company: data.company, city: data.city || 'Not provided',
+          business_type: data.sector, business_detail: data.does, challenge: data.problem,
+          current_process: data.current || 'Not provided',
+        };
+        const body = JSON.stringify(payload);
+        fetch('https://script.google.com/macros/s/AKfycbyBys5ISNQzCsNEplcHt81oPM1MDOlcXXJJip-fOfC9hfP4yKTQEioqOaREr-MkeNw/exec', {
+          method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body,
+        });
+        const formBody = JSON.stringify({
+          '_subject': 'New enquiry: ' + (data.company || data.name),
+          'Name': data.name, 'Role': data.role || 'Not provided', 'Email': data.email,
+          'Phone / WhatsApp': data.phone || 'Not provided', 'Company': data.company,
+          'City': data.city || 'Not provided', 'Industry': data.sector,
+          'What the business does': data.does, 'Main challenge': data.problem,
+          'Handled today': data.current || 'Not provided',
+        });
+        fetch('https://formspree.io/f/xjgqkkkq', {
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: formBody,
+        })
+        .then(res => {
+          if (res.ok) {
+            obSteps.forEach(s => s.classList.remove('active'));
+            document.querySelector('.ob-prog').style.display = 'none';
+            count.style.display = 'none';
+            done.style.display = 'block';
+          } else { alert('Something went wrong. Please email sanjith@halcyon.uno directly.'); }
+        })
+        .catch(() => alert('Something went wrong. Please email sanjith@halcyon.uno directly.'));
       });
-
-      fetch('https://formspree.io/f/xjgqkkkq', {
-        method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: formBody,
-      })
-      .then(res => {
-        if (res.ok) {
-          obSteps.forEach(s => s.classList.remove('active'));
-          document.querySelector('.ob-prog').style.display = 'none';
-          count.style.display = 'none';
-          done.style.display = 'block';
-        } else { alert('Something went wrong. Please email sanjith@halcyon.uno directly.'); }
-      })
-      .catch(() => alert('Something went wrong. Please email sanjith@halcyon.uno directly.'));
-    });
-    fill.style.width = pct(0);
-  })();
-</script>
+      fill.style.width = pct(0);
+    })();
+  </script>
 </body>
 </html>
