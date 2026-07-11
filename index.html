@@ -145,11 +145,12 @@
 
     /* ===== How timeline ===== */
     .sub-h { margin-top:72px; font-family:var(--m); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--teal); }
-    .how-list { margin-top:30px; border-top:1px solid var(--smoke); }
-    .how-step { display:grid; grid-template-columns:96px 1fr; gap:30px; padding:30px 0; border-bottom:1px solid var(--smoke); align-items:start; }
-    .how-n { font-family:var(--d); font-weight:300; font-size:clamp(32px,4vw,46px); line-height:0.9; color:var(--gold); }
+    .how-list { position:relative; margin-top:34px; }
+    .how-list::before { content:''; position:absolute; left:26px; top:8px; bottom:8px; width:1px; background:var(--smoke); }
+    .how-step { position:relative; display:grid; grid-template-columns:96px 1fr; gap:34px; padding:20px 0; align-items:start; }
+    .how-n { position:relative; z-index:1; background:var(--obsidian); padding:2px 0 10px; font-family:var(--d); font-weight:300; font-size:clamp(36px,4.4vw,52px); line-height:0.82; color:var(--gold); }
     .how-t { font-family:var(--d); font-weight:400; font-size:22px; color:var(--offwhite); }
-    .how-b { margin-top:12px; font-family:var(--b); font-weight:300; font-size:14px; line-height:1.8; color:var(--stone); max-width:620px; }
+    .how-b { margin-top:10px; font-family:var(--b); font-weight:300; font-size:14px; line-height:1.75; color:var(--stone); max-width:540px; }
 
     /* ===== Proof showcase ===== */
     .stat-strip { display:grid; grid-template-columns:repeat(4,1fr); margin-top:44px; border:1px solid var(--smoke); }
@@ -337,7 +338,7 @@
         <span class="home-op">Operational Intelligence</span>
         <h1 class="home-name">HALCYON</h1>
         <div class="home-tag">Tranquility engineered.</div>
-        <p class="home-body">Halcyon takes the repetitive, manual, easily missed work of running your business and turns it into systems that just run. Fewer things to chase, fewer to remember, far less that can go wrong. <b>The operation stops living in your head.</b></p>
+        <p class="home-body">Halcyon learns how your business runs, then builds the exact systems it needs. Branded documents that build themselves. Field work tracked in real time. A simple tool that grows into a full operations app. <b>Made around how you work, and built to just run.</b></p>
         <div class="home-cta">
           <button class="btn" data-view="contact">Begin a Conversation</button>
           <button class="btn-ghost" data-view="work">See the proof</button>
@@ -418,10 +419,10 @@
 
         <div class="sub-h">How we work</div>
         <div class="how-list">
-          <div class="how-step"><div class="how-n">01</div><div><div class="how-t">Meet</div><p class="how-b">A conversation about your business, how it runs, and the problems worth solving. No cost for this conversation, no obligation after it.</p></div></div>
-          <div class="how-step"><div class="how-n">02</div><div><div class="how-t">Map</div><p class="how-b">Every workflow documented. Every breakdown point identified with clarity. The GPS check-in logic on the Supervisor app came out of watching how supervisors actually worked, not from a spec document.</p></div></div>
-          <div class="how-step"><div class="how-n">03</div><div><div class="how-t">Build</div><p class="how-b">Built from scratch. Progress visible at every stage. No black boxes.</p></div></div>
-          <div class="how-step"><div class="how-n">04</div><div><div class="how-t">Stay</div><p class="how-b">Your operational partner long after delivery. Every system gets a 15 working day stabilization window from its own go-live date, the period where rough edges get sorted without it turning into new scope. Monthly improvements continue after that.</p></div></div>
+          <div class="how-step"><div class="how-n">01</div><div><div class="how-t">Meet</div><p class="how-b">A conversation about the business and the problems worth solving. No cost, no obligation.</p></div></div>
+          <div class="how-step"><div class="how-n">02</div><div><div class="how-t">Map</div><p class="how-b">Every workflow watched and documented. Mapped from how the work really happens, not from a spec.</p></div></div>
+          <div class="how-step"><div class="how-n">03</div><div><div class="how-t">Build</div><p class="how-b">Built from scratch. Visible at every stage. No black boxes.</p></div></div>
+          <div class="how-step"><div class="how-n">04</div><div><div class="how-t">Stay</div><p class="how-b">A 15 working day stabilization window on each system, then monthly improvements. Never build and vanish.</p></div></div>
         </div>
       </div>
     </section>
