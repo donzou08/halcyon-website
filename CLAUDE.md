@@ -18,7 +18,8 @@ A single-page marketing website for **Halcyon**, an AI automation consultancy ba
 - The target audience is **MDs and business owners** of established SMEs, not tech-savvy buyers.
 - **Don't lead with AI** — position it as operational intelligence, not AI software.
 - Pricing is shown on the site as reference points; actual engagements are scoped in discovery.
-- **Live clients:** Neocrete (Supervisor Management System) and Swathi Engineering Agencies (Intelligent Quotation Engine).
+- **Client:** One live client — **Swathi Engineering Agencies** — with three systems: Supervisor Field App (live), Quotation Engine (live), Tender Intelligence App (in progress). The site's positioning is deliberately "one client, three systems, all numbers from production data" — do NOT reintroduce Neocrete or any second client unless told. (Neocrete was in earlier drafts; it is no longer referenced anywhere on the site.)
+- **Proof, not promises:** Every statistic on the site comes from Swathi production data. Never invent, round, extrapolate, or add a number that isn't confirmed. Methodology is "available on request."
 
 ---
 
@@ -47,15 +48,24 @@ A single-page marketing website for **Halcyon**, an AI automation consultancy ba
 - Gold bars: 18–20px wide, 1px tall, `--gold` — used as decorative dividers in cards
 
 ### Key rules from Sanjith
-- **No "I" or "we"** in body copy — write in direct, declarative sentences
-- **No "free"** anywhere — it cheapens the brand
+- **No "I" or "we"** in body copy — write in direct, declarative sentences. ⚠️ NOTE: the 2026-07 full-site upgrade copy (Results subhead, What We Do intro, Who This Is For) uses "we" verbatim from Sanjith's own brief — left as written but flagged to him; if he confirms the no-"we" rule still holds, convert those to declarative.
+- **No "free"** anywhere — it cheapens the brand. Use "no cost" / "Discovery session included". (The FAQ "what does this cost" answer was normalised from "free discovery conversation" → "a discovery conversation at no cost" to honour this.)
 - **No third-person "the founder"** — use "Sanjith Dhandapani / Founder, Halcyon"
 - **No "Indian"** qualifier — just "businesses"
 - **No sector tags row** — the Manufacturing · Construction · Trading line was removed
 
+### Visual non-negotiables (2026-07 upgrade)
+- **No gradients, no drop shadows, no glow, no icons — anywhere.** The cursor-glow radial gradients on cards and the button drop-shadow were removed in this pass. Do not reintroduce.
+- **Gold (`--gold`) is sparing** — numbers and emphasis only, never large fills.
+- **No stock icon grids, no client logo wall, no testimonials, no carousels.** Type scale + whitespace + a large gold number is the visual anchor. Restraint is the differentiator.
+- Stat tiles in `#results` use a **1px `--stone` border** (heavier than the 0.5px `--smoke` used elsewhere) — intentional, so the proof tiles read as distinct.
+- FAQ uses native `<details>`/`<summary>` (no JS, no library); the +/− affordance is built from two thin gold pseudo-element bars, not an icon.
+
 ---
 
 ## Page Architecture
+
+**Current section order (after 2026-07 upgrade):** Nav → Hero → **Results** (`#results`, the proof-first pitch: 5 stat tiles + 3 proof blocks) → **Methodology** (`#methodology`) → What We Do → **Who This Is For** (`#who`) → How We Work → Our Work → Engagements → **FAQ** (`#faq`) → **Founder** (`#founder`) → Contact → Footer. Nav links: Results · What We Do · How We Work · Our Work · Engagements · Contact. The detailed subsections below predate the upgrade and describe the older, shorter layout — treat the order above as canonical.
 
 Single page, one `index.html`. Sections in order:
 

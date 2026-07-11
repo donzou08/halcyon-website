@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HALCYON | Operational Intelligence</title>
-  <meta name="description" content="Operational systems built to remove friction within your business. Bespoke, intelligent, and precise. Halcyon — based in Chennai, India.">
+  <meta name="description" content="Halcyon builds the systems businesses actually run on. Operational systems for industrial and field-based businesses, mapped to how the work really happens. Chennai, India.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://halcyon.uno">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -14,12 +14,12 @@
   <meta property="og:url" content="https://halcyon.uno">
   <meta property="og:site_name" content="Halcyon">
   <meta property="og:title" content="Halcyon | Operational Intelligence">
-  <meta property="og:description" content="Operational systems built to remove friction within your business. Bespoke, intelligent, and precise. Based in Chennai, India.">
+  <meta property="og:description" content="Halcyon builds the systems businesses actually run on. Operational systems for industrial and field-based businesses, mapped to how the work really happens. Chennai, India.">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Halcyon | Operational Intelligence">
-  <meta name="twitter:description" content="Operational systems built to remove friction within your business. Bespoke, intelligent, and precise. Based in Chennai, India.">
+  <meta name="twitter:description" content="Halcyon builds the systems businesses actually run on. Operational systems for industrial and field-based businesses, mapped to how the work really happens. Chennai, India.">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Halcyon",
-    "description": "Bespoke operational systems built to remove friction within your business. Intelligent, precise, and built around how your business runs.",
+    "description": "Halcyon builds the systems businesses actually run on. Operational systems for industrial and field-based businesses, mapped to how the work really happens. Chennai, India.",
     "url": "https://halcyon.uno",
     "email": "sanjith@halcyon.uno",
     "address": {
@@ -176,12 +176,10 @@
       cursor: pointer;
       will-change: transform;
       transition: background 0.22s var(--ease), color 0.22s var(--ease),
-                  transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                  box-shadow 0.3s ease;
+                  transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .btn:hover {
       background: var(--gold); color: var(--obsidian);
-      box-shadow: 0 8px 32px rgba(196,154,56,0.2);
     }
 
     /* ── Nav ── */
@@ -305,7 +303,7 @@
       opacity: 0; animation: heroIn 0.8s var(--ease) 0.66s forwards;
     }
     .h-body {
-      max-width: 420px;
+      max-width: 540px;
       font-family: var(--b); font-weight: 300;
       font-size: 15px; line-height: 1.78; color: var(--stone);
       opacity: 0; animation: heroIn 0.8s var(--ease) 0.8s forwards;
@@ -342,13 +340,7 @@
       padding: 28px 26px; position: relative; overflow: hidden;
       transition: background 0.22s var(--ease);
     }
-    .card::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(280px circle at var(--mx,50%) var(--my,50%), rgba(196,154,56,0.07), transparent 65%);
-      opacity: 0; transition: opacity 0.4s ease;
-    }
     .card:hover { background: #1a1a1a; }
-    .card:hover::before { opacity: 1; }
     .card-bar { width: 0; height: 1px; background: var(--gold); transition: width 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s; }
     .r-scale.in .card-bar { width: 20px; }
     .card-title {
@@ -397,12 +389,6 @@
       padding: 30px; position: relative; overflow: hidden;
       transition: border-color 0.3s var(--ease), transform 0.5s cubic-bezier(0.16,1,0.3,1);
     }
-    .w-card::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(300px circle at var(--mx,50%) var(--my,50%), rgba(196,154,56,0.06), transparent 65%);
-      opacity: 0; transition: opacity 0.4s ease;
-    }
-    .w-card:hover::before { opacity: 1; }
     @media (hover: hover) {
       .w-card:not(.building):hover {
         border-color: rgba(196,154,56,0.3);
@@ -444,13 +430,7 @@
       position: relative; overflow: hidden;
       transition: background 0.3s var(--ease);
     }
-    .eng::before {
-      content: ''; position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(320px circle at var(--mx,50%) var(--my,50%), rgba(196,154,56,0.07), transparent 65%);
-      opacity: 0; transition: opacity 0.4s ease;
-    }
     .eng:hover { background: #191919; }
-    .eng:hover::before { opacity: 1; }
     .eng-t { font-family: var(--m); font-size: 10px; letter-spacing: 0.18em; color: var(--teal); }
     .eng-h {
       margin-top: 14px;
@@ -700,6 +680,166 @@
     @media (max-width: 500px) {
       .h-name { font-size: clamp(44px, 14vw, 68px); }
     }
+
+    /* ── Results ── */
+    #results { border-top: 1px solid var(--smoke); }
+    .r-lead {
+      margin-top: 18px;
+      font-family: var(--b); font-weight: 300;
+      font-size: 14px; line-height: 1.85; color: var(--stone);
+      max-width: 640px;
+    }
+    .stat-row {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-top: 46px;
+    }
+    .stat {
+      flex: 1 1 150px;
+      border: 1px solid var(--stone);
+      padding: 22px 20px;
+    }
+    .stat-v {
+      font-family: var(--d); font-weight: 400;
+      font-size: clamp(23px, 2.7vw, 31px);
+      line-height: 1.05; color: var(--gold);
+    }
+    .stat-l {
+      margin-top: 12px;
+      font-family: var(--b); font-weight: 400;
+      font-size: 12px; color: var(--offwhite);
+    }
+    .stat-d {
+      margin-top: 6px;
+      font-family: var(--b); font-weight: 300;
+      font-size: 11px; line-height: 1.6; color: var(--stone);
+    }
+
+    /* Proof blocks */
+    .proof-list { margin-top: 8px; }
+    .proof { padding: 36px 0; border-top: 0.5px solid var(--smoke); }
+    .proof-head {
+      display: flex; align-items: baseline;
+      justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .proof-name {
+      font-family: var(--d); font-weight: 400;
+      font-size: clamp(22px, 3vw, 28px); color: var(--offwhite);
+    }
+    .proof-status {
+      font-family: var(--m); font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 5px 12px; border: 1px solid; white-space: nowrap;
+    }
+    .proof-status.live { color: var(--teal); border-color: var(--teal); }
+    .proof-status.wip  { color: var(--stone); border-color: var(--smoke); }
+    .proof-client {
+      margin-top: 8px;
+      font-family: var(--m); font-size: 10px;
+      letter-spacing: 0.1em; color: var(--stone);
+    }
+    .proof-rows { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+    .proof-row { display: grid; grid-template-columns: 132px 1fr; gap: 20px; }
+    .proof-k {
+      font-family: var(--m); font-size: 9px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--teal); padding-top: 3px;
+    }
+    .proof-v {
+      font-family: var(--b); font-weight: 300;
+      font-size: 14px; line-height: 1.8; color: var(--stone);
+      max-width: 620px;
+    }
+    .proof-v .num { color: var(--gold); }
+    .results-close {
+      margin-top: 40px; padding-top: 28px;
+      border-top: 0.5px solid var(--smoke);
+      font-family: var(--b); font-weight: 300;
+      font-size: 13px; line-height: 1.85; color: var(--stone);
+      max-width: 640px;
+    }
+
+    /* ── Methodology ── */
+    #methodology { border-top: 1px solid var(--smoke); }
+    #methodology .wrap { padding-top: clamp(52px,6vw,64px); padding-bottom: clamp(52px,6vw,64px); }
+    .method-cap {
+      font-family: var(--m); font-size: 10px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--stone);
+      margin-bottom: 16px;
+    }
+    .method-body {
+      font-family: var(--b); font-weight: 300;
+      font-size: 13px; line-height: 1.9; color: var(--stone);
+      max-width: 660px;
+    }
+
+    /* ── Who this is for ── */
+    #who { border-top: 1px solid var(--smoke); }
+    .who-body {
+      margin-top: 22px;
+      font-family: var(--b); font-weight: 300;
+      font-size: clamp(15px, 1.8vw, 17px); line-height: 1.9;
+      color: var(--offwhite); max-width: 660px;
+    }
+    .who-body .aside { color: var(--stone); }
+
+    /* Work status tags */
+    .w-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .w-status {
+      font-family: var(--m); font-size: 8.5px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 4px 9px; border: 1px solid; white-space: nowrap;
+    }
+    .w-status.live { color: var(--teal); border-color: var(--teal); }
+    .w-status.wip  { color: var(--stone); border-color: var(--smoke); }
+
+    /* ── FAQ ── */
+    #faq { border-top: 1px solid var(--smoke); }
+    .faq-list { margin-top: 40px; border-top: 0.5px solid var(--smoke); }
+    #faq details { border-bottom: 0.5px solid var(--smoke); }
+    .faq-q {
+      list-style: none; cursor: pointer; position: relative;
+      padding: 24px 46px 24px 0;
+      font-family: var(--d); font-weight: 400;
+      font-size: clamp(17px, 2.2vw, 21px);
+      color: var(--stone); line-height: 1.3;
+      transition: color 0.25s var(--ease);
+    }
+    .faq-q::-webkit-details-marker { display: none; }
+    .faq-q:hover, details[open] .faq-q { color: var(--offwhite); }
+    .faq-q::before, .faq-q::after {
+      content: ''; position: absolute; background: var(--gold);
+      transition: opacity 0.25s var(--ease);
+    }
+    .faq-q::after  { right: 4px;  top: 50%; width: 12px; height: 1px; margin-top: -0.5px; }
+    .faq-q::before { right: 9.5px; top: 50%; width: 1px; height: 12px; margin-top: -6px; }
+    details[open] .faq-q::before { opacity: 0; }
+    .faq-a {
+      padding: 0 46px 26px 0;
+      font-family: var(--b); font-weight: 300;
+      font-size: 14px; line-height: 1.85; color: var(--stone);
+      max-width: 680px;
+    }
+
+    /* ── Founder ── */
+    #founder { border-top: 1px solid var(--smoke); }
+    .founder-body {
+      margin-top: 22px;
+      font-family: var(--b); font-weight: 300;
+      font-size: clamp(15px, 1.8vw, 17px); line-height: 1.9;
+      color: var(--offwhite); max-width: 660px;
+    }
+    .founder-vision {
+      margin-top: 26px; padding-top: 20px;
+      border-top: 0.5px solid var(--smoke);
+      font-family: var(--b); font-weight: 300;
+      font-size: 12px; line-height: 1.85; color: var(--stone);
+      max-width: 580px;
+    }
+
+    @media (max-width: 600px) {
+      .proof-row { grid-template-columns: 1fr; gap: 6px; }
+    }
+
     #scroll-track {
       position: fixed; right: 20px; top: 0;
       width: 1px; height: 100%;
@@ -724,6 +864,7 @@
       <path fill="#c49a38" d="M 628.277344 486.707031 L 628.277344 421.1875 C 628.277344 418.429688 628 416.339844 627.441406 414.917969 C 626.867188 413.496094 625.679688 412.507812 623.886719 411.949219 C 622.074219 411.375 619.324219 411.085938 615.636719 411.085938 C 615.347656 411.085938 615.207031 410.804688 615.207031 410.246094 C 615.207031 409.671875 615.347656 409.382812 615.636719 409.382812 C 617.820312 409.382812 620.308594 409.453125 623.101562 409.585938 C 625.890625 409.738281 628.90625 409.816406 632.136719 409.816406 C 635.167969 409.816406 638.101562 409.738281 640.945312 409.585938 C 643.789062 409.453125 646.300781 409.382812 648.484375 409.382812 C 648.753906 409.382812 648.890625 409.671875 648.890625 410.246094 C 648.890625 410.804688 648.753906 411.085938 648.484375 411.085938 C 644.878906 411.085938 642.15625 411.347656 640.3125 411.871094 C 638.449219 412.398438 637.214844 413.34375 636.605469 414.714844 C 635.996094 416.085938 635.691406 418.152344 635.691406 420.910156 L 635.691406 486.707031 C 635.691406 489.464844 635.996094 491.554688 636.605469 492.976562 C 637.214844 494.398438 638.449219 495.34375 640.3125 495.820312 C 642.15625 496.292969 644.878906 496.53125 648.484375 496.53125 C 648.753906 496.53125 648.890625 496.808594 648.890625 497.367188 C 648.890625 497.941406 648.753906 498.230469 648.484375 498.230469 C 646.300781 498.230469 643.789062 498.179688 640.945312 498.078125 C 638.101562 497.992188 635.167969 497.953125 632.136719 497.953125 C 628.90625 497.953125 625.890625 497.992188 623.101562 498.078125 C 620.308594 498.179688 617.820312 498.230469 615.636719 498.230469 C 615.347656 498.230469 615.207031 497.941406 615.207031 497.367188 C 615.207031 496.808594 615.347656 496.53125 615.636719 496.53125 C 619.324219 496.53125 622.074219 496.292969 623.886719 495.820312 C 625.679688 495.34375 626.867188 494.398438 627.441406 492.976562 C 628 491.554688 628.277344 489.464844 628.277344 486.707031 Z M 631.425781 453.300781 L 567.457031 453.300781 L 567.457031 450.609375 L 631.425781 450.609375 Z M 564.03125 486.707031 L 564.03125 420.910156 C 564.03125 418.152344 563.726562 416.085938 563.117188 414.714844 C 562.488281 413.34375 561.28125 412.398438 559.484375 411.871094 C 557.691406 411.347656 554.992188 411.085938 551.386719 411.085938 C 551.203125 411.085938 551.109375 410.804688 551.109375 410.246094 C 551.109375 409.671875 551.203125 409.382812 551.386719 409.382812 C 553.65625 409.382812 556.1875 409.453125 558.976562 409.585938 C 561.789062 409.738281 564.707031 409.816406 567.734375 409.816406 C 571.054688 409.816406 574.082031 409.738281 576.824219 409.585938 C 579.582031 409.453125 582.042969 409.382812 584.210938 409.382812 C 584.414062 409.382812 584.515625 409.671875 584.515625 410.246094 C 584.515625 410.804688 584.414062 411.085938 584.210938 411.085938 C 580.625 411.085938 577.921875 411.375 576.113281 411.949219 C 574.320312 412.507812 573.109375 413.496094 572.484375 414.917969 C 571.875 416.339844 571.570312 418.429688 571.570312 421.1875 L 571.570312 486.707031 C 571.570312 489.464844 571.855469 491.554688 572.433594 492.976562 C 572.992188 494.398438 574.191406 495.34375 576.035156 495.820312 C 577.898438 496.292969 580.625 496.53125 584.210938 496.53125 C 584.414062 496.53125 584.515625 496.808594 584.515625 497.367188 C 584.515625 497.941406 584.414062 498.230469 584.210938 498.230469 C 581.941406 498.230469 579.457031 498.179688 576.746094 498.078125 C 574.058594 497.992188 571.054688 497.953125 567.734375 497.953125 C 564.707031 497.953125 561.769531 497.992188 558.925781 498.078125 C 556.085938 498.179688 553.519531 498.230469 551.234375 498.230469 C 551.050781 498.230469 550.957031 497.941406 550.957031 497.367188 C 550.957031 496.808594 551.050781 496.53125 551.234375 496.53125 C 554.839844 496.53125 557.566406 496.292969 559.410156 495.820312 C 561.253906 495.34375 562.488281 494.398438 563.117188 492.976562 C 563.726562 491.554688 564.03125 489.464844 564.03125 486.707031 Z M 564.03125 486.707031 "/>
     </svg></a>
   <div class="nav-links">
+    <a class="nav-link" data-nav="results" href="#results">Results</a>
     <a class="nav-link" data-nav="what" href="#what">What We Do</a>
     <a class="nav-link" data-nav="how" href="#how">How We Work</a>
     <a class="nav-link" data-nav="work" href="#work">Our Work</a>
@@ -742,6 +883,7 @@
     <button class="mob-close" id="mob-close" aria-label="Close menu">&times;</button>
   </div>
   <nav class="mob-links">
+    <a class="mob-link" href="#results">Results</a>
     <a class="mob-link" href="#what">What We Do</a>
     <a class="mob-link" href="#how">How We Work</a>
     <a class="mob-link" href="#work">Our Work</a>
@@ -757,12 +899,84 @@
   <h1 class="h-name">HALCYON</h1>
   <span class="h-tag">Tranquility engineered.</span>
   <div class="h-rule"></div>
-  <p class="h-body">Operational systems built to remove friction within your business. Bespoke, intelligent, and precise.</p>
+  <p class="h-body">Your supervisors are on WhatsApp. Your quotes live in Excel. Your tender search is somebody's full-time job. Halcyon builds the systems that replace all of it, mapped to how your business actually runs.</p>
   <div class="h-cta">
     <a href="#contact" class="btn">Begin a Conversation</a>
   </div>
   <div class="h-scroll" aria-hidden="true">
     <div class="h-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── RESULTS ── -->
+<section id="results">
+  <div class="wrap">
+    <div class="r">
+      <span class="label">Results</span>
+      <h2 class="title r-title">Proof, not promises.</h2>
+      <p class="r-lead">Every number below comes from a live production system. Nothing here is an average, a projection across unrelated projects, or an estimate. Methodology is published — ask and we will send it.</p>
+    </div>
+
+    <div class="stat-row r">
+      <div class="stat"><div class="stat-v">38 hrs</div><div class="stat-l">saved every month</div><div class="stat-d">Coordination time recovered, projected from 9 days of live data.</div></div>
+      <div class="stat"><div class="stat-v">95%</div><div class="stat-l">GPS verified</div><div class="stat-d">Site visits proven by location, not self reported.</div></div>
+      <div class="stat"><div class="stat-v">1 hr → under 1 min</div><div class="stat-l">per quotation</div><div class="stat-d">Sales relay, manual pricing, PDF formatting, terms and warranty adjustment — now one step.</div></div>
+      <div class="stat"><div class="stat-v">5 hrs → 5 min</div><div class="stat-l">tender research</div><div class="stat-d">9 government procurement portals, 4 with automated CAPTCHA handling.</div></div>
+      <div class="stat"><div class="stat-v">Rs. 0</div><div class="stat-l">added running cost</div><div class="stat-d">Per client, per app.</div></div>
+    </div>
+
+    <div class="proof-list">
+      <div class="proof r">
+        <div class="proof-head">
+          <div class="proof-name">Supervisor Field App</div>
+          <span class="proof-status live">Live</span>
+        </div>
+        <div class="proof-client">Swathi Engineering Agencies</div>
+        <div class="proof-rows">
+          <div class="proof-row"><span class="proof-k">Problem</span><p class="proof-v">Knowing where field supervisors were and how work was progressing meant a stream of phone calls and WhatsApp messages. No record, no way to verify any of it.</p></div>
+          <div class="proof-row"><span class="proof-k">Numbers</span><p class="proof-v"><span class="num">28</span> team members active. <span class="num">42</span> site visits captured in <span class="num">9 days</span>. <span class="num">23</span> sites tracked live. <span class="num">95%</span> GPS verified.</p></div>
+          <div class="proof-row"><span class="proof-k">What changed</span><p class="proof-v">Every check-in is GPS stamped and time stamped. Every completed job gets an automatic progress report. The owner sees the full picture without making a call.</p></div>
+        </div>
+      </div>
+
+      <div class="proof r">
+        <div class="proof-head">
+          <div class="proof-name">Quotation Engine</div>
+          <span class="proof-status live">Live</span>
+        </div>
+        <div class="proof-client">Swathi Engineering Agencies</div>
+        <div class="proof-rows">
+          <div class="proof-row"><span class="proof-k">Problem</span><p class="proof-v">A quote meant relaying details from the sales person to the office, calculating pricing by hand, formatting a PDF, then manually adjusting terms, warranty language, and rounding. About an hour, every time.</p></div>
+          <div class="proof-row"><span class="proof-k">Numbers</span><p class="proof-v"><span class="num">1 hour</span> down to <span class="num">under 1 minute</span>. <span class="num">40+</span> products across <span class="num">8</span> application categories, matched automatically to the enquiry.</p></div>
+          <div class="proof-row"><span class="proof-k">What changed</span><p class="proof-v">What used to route through two people and several manual steps now happens in one, and the quote is already in the customer's inbox.</p></div>
+        </div>
+      </div>
+
+      <div class="proof r">
+        <div class="proof-head">
+          <div class="proof-name">Tender Intelligence App</div>
+          <span class="proof-status wip">In progress</span>
+        </div>
+        <div class="proof-client">Swathi Engineering Agencies</div>
+        <div class="proof-rows">
+          <div class="proof-row"><span class="proof-k">Problem</span><p class="proof-v">One person's job was searching and scraping tender listings across government sites by hand. Several hours most days, for a handful of relevant results.</p></div>
+          <div class="proof-row"><span class="proof-k">Numbers</span><p class="proof-v"><span class="num">5 hours</span> down to <span class="num">5 minutes</span> per scan. <span class="num">129</span> relevant tenders surfaced in a single validated scan across GeM, Defence, CPPP, etenders.gov.in and TN Tenders. <span class="num">9</span> sources checked every time, ranked by fit.</p></div>
+          <div class="proof-row"><span class="proof-k">What changed</span><p class="proof-v">The zero-result portals — BHEL, CPCL, NTPC, HLL Biotech — still get checked every scan. The system does not pad results to look busy. It only shows genuine matches.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="results-close r">Two systems live, one more on the way, all inside one business. Every engagement starts by mapping workflows like these, not by selling a template.</p>
+  </div>
+</section>
+
+<!-- ── METHODOLOGY ── -->
+<section id="methodology">
+  <div class="wrap">
+    <div class="r">
+      <div class="method-cap">Methodology</div>
+      <p class="method-body">Every figure above is a real count from a live production database, not a survey or an estimate. The time savings are calculated by multiplying a stated minutes-per-task assumption by the number of times that task actually occurred, and the assumptions are deliberately conservative. The full methodology, including every assumption and how to adjust it for your own rates, is available on request.</p>
+    </div>
   </div>
 </section>
 
@@ -772,7 +986,7 @@
     <div class="r">
       <span class="label">What We Do</span>
       <h2 class="title r-title">The systems your business runs on.</h2>
-      <p class="sub">Most businesses run on manual processes and memory. Every system is mapped to how your business actually works, then built to eliminate it.</p>
+      <p class="sub">Halcyon builds the systems businesses actually run on. We map how the work really happens before we build anything, and the tool gets shaped around that, not the other way round.</p>
     </div>
     <div class="cards">
       <div class="card r-scale">
@@ -794,6 +1008,16 @@
   </div>
 </section>
 
+<!-- ── WHO THIS IS FOR ── -->
+<section id="who">
+  <div class="wrap">
+    <div class="r">
+      <span class="label">Who This Is For</span>
+      <p class="who-body">Halcyon builds for businesses where the real complexity is on the ground, not in a browser tab. Contractors, industrial suppliers, manufacturers — anyone running field crews, physical inventory, or compliance-heavy operations. If your hardest problems live on a site or a shop floor, this is who we build for. If they don't, there are better firms for you than this one.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ── HOW WE WORK ── -->
 <section id="how">
   <div class="wrap">
@@ -805,12 +1029,12 @@
       <div class="step r-scale">
         <div class="step-n">01</div>
         <div class="step-t">Meet</div>
-        <p class="step-b">A conversation about your business, how it runs, and the problems worth solving.</p>
+        <p class="step-b">A conversation about your business, how it runs, and the problems worth solving. No cost for this conversation, no obligation after it.</p>
       </div>
       <div class="step r-scale d1">
         <div class="step-n">02</div>
         <div class="step-t">Map</div>
-        <p class="step-b">Every workflow documented. Every breakdown point identified with clarity.</p>
+        <p class="step-b">Every workflow documented. Every breakdown point identified with clarity. The GPS check-in logic on the Supervisor app came out of watching how supervisors actually worked, not from a spec document.</p>
       </div>
       <div class="step r-scale d2">
         <div class="step-n">03</div>
@@ -820,7 +1044,7 @@
       <div class="step r-scale d3">
         <div class="step-n">04</div>
         <div class="step-t">Stay</div>
-        <p class="step-b">Your operational partner long after delivery. Improving and building as the business grows.</p>
+        <p class="step-b">Your operational partner long after delivery. Improving and building as the business grows. Every system gets a 15 working day stabilization window from its own go-live date — the period where rough edges get sorted without it turning into new scope. Monthly improvements continue after that.</p>
       </div>
     </div>
   </div>
@@ -835,16 +1059,23 @@
     </div>
     <div class="work-grid">
       <div class="w-card r-scale">
-        <span class="w-sector">Field Operations</span>
-        <div class="w-title">Supervisor Management System</div>
-        <p class="w-body">GPS check-in and check-out, live manager dashboard, and AI analysis of planned vs. actual site work. Deployed across 10 active construction sites and 20+ supervisors.</p>
+        <div class="w-top"><span class="w-sector">Field Operations</span><span class="w-status live">Live</span></div>
+        <div class="w-title">Supervisor Field App</div>
+        <p class="w-body">Every check-in GPS and time stamped, every completed job an automatic progress report. 28 team members across 23 sites tracked live, 42 site visits captured in 9 days, 95% GPS verified.</p>
         <div class="w-div"></div>
         <span class="w-client">Swathi Engineering Agencies</span>
       </div>
       <div class="w-card r-scale d1">
-        <span class="w-sector">Sales Operations</span>
-        <div class="w-title">Intelligent Quotation Engine</div>
-        <p class="w-body">Automated product recommendation and quotation generation. Reduced quotation time from hours to minutes. 40+ products across 8 application categories.</p>
+        <div class="w-top"><span class="w-sector">Sales Operations</span><span class="w-status live">Live</span></div>
+        <div class="w-title">Quotation Engine</div>
+        <p class="w-body">Automated product recommendation and quotation generation. Reduced quotation time from 1 hour to under 1 minute. 40+ products across 8 application categories.</p>
+        <div class="w-div"></div>
+        <span class="w-client">Swathi Engineering Agencies</span>
+      </div>
+      <div class="w-card r-scale d2">
+        <div class="w-top"><span class="w-sector">Procurement</span><span class="w-status wip">In progress</span></div>
+        <div class="w-title">Tender Intelligence App</div>
+        <p class="w-body">Automated search and ranking across 9 government procurement portals. 5 hours of manual scanning down to 5 minutes. 129 relevant tenders surfaced in a single validated scan.</p>
         <div class="w-div"></div>
         <span class="w-client">Swathi Engineering Agencies</span>
       </div>
@@ -859,7 +1090,7 @@
     <div class="r">
       <span class="label">Engagements</span>
       <h2 class="title r-title">How we work together.</h2>
-      <p class="sub">Not packages. Starting points. Every project is scoped and costed after a first conversation.</p>
+      <p class="sub">Three shapes, not three price tags. Which one fits depends on how much of the business needs covering, and that only becomes clear after the first conversation. What is fixed: monthly improvements, same-day support, and running costs are included in every engagement, never billed as extras.</p>
     </div>
     <div class="eng-grid">
 
@@ -910,10 +1141,61 @@
       </div>
     </div>
 
-    <p class="eng-note r">All engagements include monthly improvements, same-day support, and running costs up to a baseline. Pricing is scoped individually after discovery.</p>
+    <p class="eng-note r">No setup fee is quoted before the workflow is mapped. Quoting a number before understanding the operation is how most software projects go wrong.</p>
 
     <div class="eng-cta-bar r">
       <a href="#contact" class="btn">Begin a Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="wrap">
+    <div class="r">
+      <span class="label">Questions</span>
+      <h2 class="title r-title">The things worth asking.</h2>
+    </div>
+    <div class="faq-list r">
+      <details>
+        <summary class="faq-q">Why a monthly retainer instead of a one time fee?</summary>
+        <p class="faq-a">The system does not stop being useful the day it ships. Operations change, new problems show up, and a tool nobody maintains starts drifting from how the business actually works within months. The retainer covers that ongoing refinement. It is not a build and disappear engagement.</p>
+      </details>
+      <details>
+        <summary class="faq-q">Who owns the software once it's built?</summary>
+        <p class="faq-a">You get full, exclusive use of everything built for your business, permanently. Halcyon keeps the underlying codebase and architecture, the same way an engineering firm keeps its own tooling across projects. Your data and your system are yours to use without limitation.</p>
+      </details>
+      <details>
+        <summary class="faq-q">How is this different from a freelancer or a large IT agency?</summary>
+        <p class="faq-a">A freelancer finishes and moves to the next job, so maintenance becomes your problem. A large agency reuses the same template across clients because that is how they scale. Halcyon does neither. One person maps your actual workflow, builds specifically for it, and stays on to keep it working as the business changes.</p>
+      </details>
+      <details>
+        <summary class="faq-q">How long until something is live, and what is a stabilization window?</summary>
+        <p class="faq-a">Depends on scope, but the goal is always a working first version fast. Once a system goes live it gets a 15 working day stabilization window, the period where bugs and rough edges get sorted without it turning into new scope. Each system gets its own 15 day clock from its own go-live date. The retainer starts from the first system's delivery.</p>
+      </details>
+      <details>
+        <summary class="faq-q">Do you disappear after launch?</summary>
+        <p class="faq-a">No. Ongoing support, small enhancements, and fixes are part of the retainer, not billed separately. The point is the system keeps working as your operations evolve, not that you are handed something and left alone with it.</p>
+      </details>
+      <details>
+        <summary class="faq-q">What does this cost?</summary>
+        <p class="faq-a">It depends on scope, and there is no menu price because no two operations look the same. Engagements run as Starter, Growth, or Partner depending on how much of the business needs covering. Every one starts with a discovery conversation at no cost before anything is scoped or costed.</p>
+      </details>
+      <details>
+        <summary class="faq-q">You have worked with one client. Why should I trust that?</summary>
+        <p class="faq-a">Fair question. Two systems are live inside that business and a third is on the way, and every number on this site comes from that production data rather than a case study written after the fact. The methodology behind those figures is published on request, which is more than most firms with longer client lists will offer. References available on request.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUNDER ── -->
+<section id="founder">
+  <div class="wrap">
+    <div class="r">
+      <span class="label">The Founder</span>
+      <p class="founder-body">Halcyon is built and run by Sanjith Dhandapani, based in Chennai. Mechanical engineering from Leeds, data analytics from Sydney, and a family background in industrial contracting and manufacturing — which is where the instinct to map a workflow before writing a line of code actually comes from. Every engagement runs through one person. Direct, no account layer in between.</p>
+      <p class="founder-vision">To be the default operational partner for businesses whose real complexity is on the ground, not the ones easy for a generic tech shop to already serve.</p>
     </div>
   </div>
 </section>
@@ -1021,7 +1303,7 @@
         <!-- Done -->
         <div class="ob-done" id="ob-done" style="display:none">
           <div class="ob-done-head">Message sent.</div>
-          <p class="ob-done-body">Sanjith will be in touch personally within 24 hours.</p>
+          <p class="ob-done-body">Sanjith will reply personally within 24 hours, and if it makes sense, will come and see the operation in person.</p>
         </div>
 
       </div>
@@ -1084,7 +1366,7 @@
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px' });
-  ['what','how','work','engagements','contact'].forEach(id => { const s = document.getElementById(id); if (s) navIO.observe(s); });
+  ['results','what','how','work','engagements','contact'].forEach(id => { const s = document.getElementById(id); if (s) navIO.observe(s); });
 
   /* ── Hero parallax + scroll line ── */
   const heroName   = document.querySelector('.h-name');
@@ -1117,21 +1399,12 @@
       const r = btn.getBoundingClientRect();
       const x = (e.clientX - r.left - r.width  / 2) * 0.18;
       const y = (e.clientY - r.top  - r.height / 2) * 0.22;
-      btn.style.transition = 'background 0.22s, color 0.22s, box-shadow 0.3s, transform 0.12s ease';
+      btn.style.transition = 'background 0.22s, color 0.22s, transform 0.12s ease';
       btn.style.transform  = `translate(${x}px, ${y}px)`;
     });
     btn.addEventListener('mouseleave', () => {
-      btn.style.transition = 'background 0.22s, color 0.22s, box-shadow 0.3s, transform 0.55s cubic-bezier(0.34,1.56,0.64,1)';
+      btn.style.transition = 'background 0.22s, color 0.22s, transform 0.55s cubic-bezier(0.34,1.56,0.64,1)';
       btn.style.transform  = '';
-    });
-  });
-
-  /* ── Cursor glow on cards ── */
-  document.querySelectorAll('.card, .eng, .w-card').forEach(el => {
-    el.addEventListener('mousemove', e => {
-      const r = el.getBoundingClientRect();
-      el.style.setProperty('--mx', `${e.clientX - r.left}px`);
-      el.style.setProperty('--my', `${e.clientY - r.top}px`);
     });
   });
 
