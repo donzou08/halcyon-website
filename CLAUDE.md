@@ -58,7 +58,7 @@ A single-page marketing website for **Halcyon**, an AI automation consultancy ba
 - **No gradients, no drop shadows, no glow, no icons — anywhere.** The cursor-glow radial gradients on cards and the button drop-shadow were removed in this pass. Do not reintroduce.
 - **Gold (`--gold`) is sparing** — numbers and emphasis only, never large fills.
 - **No stock icon grids, no client logo wall, no testimonials, no carousels.** Type scale + whitespace + a large gold number is the visual anchor. Restraint is the differentiator.
-- The `#results` stat strip is a single 5-column grid divided by 1px `--smoke` hairlines (not separate bordered boxes); values are single-token figures (`38 hrs`, `< 1 min`, `₹0`, etc.) so the labels beneath align.
+- The `#results` stat strip is a single 4-column grid divided by 1px `--smoke` hairlines (not separate bordered boxes); values are single-token figures (`38 hrs`, `< 1 min`, etc.) so the labels beneath align.
 - FAQ uses native `<details>`/`<summary>` (no JS, no library); the +/− affordance is built from two thin gold pseudo-element bars, not an icon.
 
 ---
@@ -68,7 +68,7 @@ A single-page marketing website for **Halcyon**, an AI automation consultancy ba
 **Current section order (after 2026-07 upgrade):** Nav → Hero → **Results** (`#results`) → What We Do → How We Work → Our Work → Engagements → **FAQ** (`#faq`) → **Founder** (`#founder`) → Contact → Footer. Nav links: Results · What We Do · How We Work · Our Work · Engagements · Contact. The detailed subsections below predate the upgrade and describe the older, shorter layout; treat the order above as canonical.
 
 Section design notes (2026-07 second revision):
-- **Results** = a 5-column divided **stat strip** (single dominant figures: `38 hrs`, `95%`, `< 1 min`, `5 min`, `₹0` — no ragged wrapping) + an **interactive tabbed proof showcase** (`.proof-tabs` buttons switch `.proof-panel`s via a small JS handler; three systems, each with Problem / Numbers / What changed in a 3-col grid). No stacked proof blocks.
+- **Results** = a 4-column divided **stat strip** (single dominant figures: `38 hrs`, `95%`, `< 1 min`, `5 min` — no ragged wrapping) + an **interactive tabbed proof showcase** (`.proof-tabs` buttons switch `.proof-panel`s via a small JS handler; three systems, each with Problem / Numbers / What changed in a 3-col grid). No stacked proof blocks.
 - **How We Work** = a vertical **timeline** (`.how-list` / `.how-step`): large gold Cormorant number on the left, title + body on the right, hairline dividers. Handles uneven step lengths cleanly.
 - **Removed** (were briefly live, then cut on Sanjith's feedback): the "Who This Is For" section, the "Methodology" section, and the founder "vision" line. Do not reinstate without being asked.
 - **No em dashes anywhere** in visible copy — Sanjith's rule as of this revision. Use commas, semicolons, or parentheses.
