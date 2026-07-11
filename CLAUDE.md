@@ -2,7 +2,9 @@
 
 ## What This Is
 
-A single-page marketing website for **Halcyon**, an AI automation consultancy based in Chennai, India. Founded by **Sanjith Dhandapani**. The site is entirely vanilla HTML/CSS/JS — no framework, no build step, no dependencies beyond Google Fonts.
+A marketing website for **Halcyon**, an AI automation consultancy based in Chennai, India. Founded by **Sanjith Dhandapani**. The site is entirely vanilla HTML/CSS/JS — no framework, no build step, no dependencies beyond Google Fonts.
+
+**Architecture (2026-07 rebuild):** It is now a **multi-view single-page app**, NOT a long scrolling page (Sanjith explicitly rejected the one-scroll layout). A fixed left **identity rail** (hexagon mark, vertical nav, "Tranquility engineered." + contact meta) sits beside a **stage** that shows one `.view` at a time. Five views: `#v-home`, `#v-work`, `#v-approach`, `#v-engagements`, `#v-contact`. A small JS router (`[data-view]` buttons) toggles `.view.active`, updates `location.hash` and `document.title`, and scrolls to top. On ≤900px the rail collapses to a fixed top bar with a hamburger that opens the `#mmenu` overlay. All content lives in the DOM (hidden views are `display:none`), so SEO is unaffected. Anything below describing a top-nav scroll page with `#hero`/`#results`/etc. sections is the OLD layout — superseded; the view structure above is canonical.
 
 **File:** `D:\Claude Projects\Halcyon Website\index.html` — the only file that matters.
 
