@@ -660,26 +660,32 @@
         data.role = document.getElementById('ob-role').value.trim();
         data.city = document.getElementById('ob-city').value.trim();
         data.phone = document.getElementById('ob-phone').value.trim();
-        const payload = {
-          name: data.name, role: data.role || 'Not provided', email: data.email,
-          phone: data.phone || 'Not provided', company: data.company, city: data.city || 'Not provided',
-          business_type: data.sector, business_detail: data.does, challenge: data.problem,
-          current_process: data.current || 'Not provided',
-        };
-        const body = JSON.stringify(payload);
-        fetch('https://script.google.com/macros/s/AKfycbyBys5ISNQzCsNEplcHt81oPM1MDOlcXXJJip-fOfC9hfP4yKTQEioqOaREr-MkeNw/exec', {
-          method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body,
-        });
-        const formBody = JSON.stringify({
-          '_subject': 'New enquiry: ' + (data.company || data.name),
-          'Name': data.name, 'Role': data.role || 'Not provided', 'Email': data.email,
-          'Phone / WhatsApp': data.phone || 'Not provided', 'Company': data.company,
-          'City': data.city || 'Not provided', 'Industry': data.sector,
-          'What the business does': data.does, 'Main challenge': data.problem,
+        /* One canonical record. Identical field labels across the site form,
+           Formspree, and the Google Sheet. To add/rename a field, change it here
+           and in the Apps Script `fields` array so all three stay in lockstep. */
+        const record = {
+          'Name': data.name,
+          'Role': data.role || 'Not provided',
+          'Email': data.email,
+          'Phone': data.phone || 'Not provided',
+          'Company': data.company,
+          'City': data.city || 'Not provided',
+          'Industry': data.sector,
+          'What the business does': data.does,
+          'Challenge': data.problem,
           'Handled today': data.current || 'Not provided',
+        };
+
+        /* Google Sheet + email notification (Apps Script) — same fields */
+        fetch('https://script.google.com/macros/s/AKfycbyBys5ISNQzCsNEplcHt81oPM1MDOlcXXJJip-fOfC9hfP4yKTQEioqOaREr-MkeNw/exec', {
+          method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(record),
         });
+
+        /* Formspree — same fields, plus a subject line */
         fetch('https://formspree.io/f/xjgqkkkq', {
-          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: formBody,
+          method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(Object.assign({ '_subject': 'New enquiry: ' + (data.company || data.name) }, record)),
         })
         .then(res => {
           if (res.ok) {
