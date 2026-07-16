@@ -20,7 +20,7 @@ A marketing website for **Halcyon**, an AI automation consultancy based in Chenn
 - The target audience is **MDs and business owners** of established SMEs, not tech-savvy buyers.
 - **Don't lead with AI** — position it as operational intelligence, not AI software.
 - Pricing is shown on the site as reference points; actual engagements are scoped in discovery.
-- **Client:** One live client — **Swathi Engineering Agencies** — with three systems: Supervisor Field App (live), Quotation Engine (live), Tender Intelligence App (in progress). The site's positioning is deliberately "one client, three systems, all numbers from production data" — do NOT reintroduce Neocrete or any second client unless told. (Neocrete was in earlier drafts; it is no longer referenced anywhere on the site.)
+- **Client:** One live client — **Swathi Engineering Agencies** — with **two live systems**: Supervisor Field App and Quotation Engine (all numbers from production data). The **Tender Intelligence App** is a **standalone demonstration build** (a working system built to show the capability, NOT deployed for any company) — on the site it carries a "Demonstration" pill + "Built to show the capability", never a client name or "In progress". Do NOT reframe it as a client system, and do NOT reintroduce Neocrete or any second client unless told. (Neocrete was in earlier drafts; no longer referenced.)
 - **Proof, not promises:** Every statistic on the site comes from Swathi production data. Never invent, round, extrapolate, or add a number that isn't confirmed. Methodology is "available on request."
 
 ---
