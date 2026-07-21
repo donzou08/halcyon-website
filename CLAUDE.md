@@ -124,17 +124,19 @@ Three cards:
 Footer: "Client names withheld. References available on request."
 
 ### 7. Engagements (`#engagements`)
-Three pricing tiers (updated to match Sanjith's current pricing structure):
+**Not fixed packages.** Each engagement is priced by **complexity** — scored internally across four axes and banded into **Light / Standard / Complex**; the visitor does not select a bundle. The section `h2` ("Not packages.<br>Starting points.") and `sec-intro` are unchanged. Three `.tier` cards, middle card carries `.tier feat` (gold-border emphasis — must stay on the centre card):
 
-| Tier | For | What | Setup | Monthly |
-|------|-----|------|-------|---------|
-| **Starter** | Small business, 1 problem | 1 custom automation or workflow | ₹15,000–40,000 | ₹8,000/mo |
-| **Growth** | Active SME, multiple workflows | 3 apps or agents built over time | ₹60,000–1,20,000 | ₹15,000–20,000/mo |
-| **Partner** | Serious operation, ongoing build | Continuous build + strategy | Quoted per project | ₹25,000–35,000/mo |
+| Band | Headline | Positioned for | Card points |
+|------|----------|----------------|-------------|
+| **Light** | "A single problem, solved right." | One clear operational gap | A single tool, solving one specific gap · 1 enhancement available per month · Email support |
+| **Standard** (`feat`) | "Real logic, real stakes." | Multiple workflows / real business logic, as one connected engagement | Multiple workflows, or real business logic under the hood · 1 enhancement available per month · WhatsApp support |
+| **Complex** | "Systems, not just tools." | Multiple systems + critical workflows carrying real operational weight | Multiple systems working together · Built for daily, mission-critical use · Direct access to the founder |
 
-Features per tier: 1 / 2 / Unlimited within scope. Support: Email / WhatsApp / Dedicated + monthly call. All include "Discovery session included."
+The **monthly enhancement is framed as *available*, not automatic/included** (Light + Standard only; **Complex omits it** deliberately, since that band already implies continuous, ongoing work rather than a monthly cadence). No fixed ₹ figures appear on the site — pricing is set per engagement from the internal complexity score.
 
-Footer note: "All retainers include monthly improvements, same-day support, and API usage up to a baseline. Every new application is scoped and quoted separately."
+`eng-note`: "No setup fee is quoted before the workflow is mapped. Every engagement includes support within 24 hours and running costs up to a baseline, with an additional enhancement available each month."
+
+(Earlier drafts used Starter/Growth/Partner bundles with fixed prices — superseded by the Light/Standard/Complex complexity banding above.)
 
 ### 8. Contact (`#contact`) — Onboarding Flow
 Two-column layout:
