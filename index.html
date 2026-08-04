@@ -131,8 +131,11 @@
     .work-head { text-align:center; margin-bottom:72px; }
     .work-head h2 { margin-top:20px; }
     .cases { display:flex; flex-direction:column; gap:28px; }
-    .case { background:var(--charcoal); border:1px solid var(--smoke); border-radius:12px; padding:48px; display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:center; transition:border-color .24s var(--ease); }
-    .case:hover { border-color:var(--stone); }
+    .case { background:var(--charcoal); border:1px solid var(--smoke); border-radius:12px; padding:48px; display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:center; transition:border-color .24s var(--ease); color:inherit; }
+    .case:hover { border-color:var(--stone); color:inherit; }
+    a.case:hover { border-color:var(--gold-dim); }
+    .case-link { display:inline-block; margin-top:20px; font-family:var(--font-ui); font-weight:400; font-size:13.5px; letter-spacing:0.02em; color:var(--gold); transition:color .2s var(--ease); }
+    a.case:hover .case-link { color:var(--gold-hover); }
     .case-tags { display:flex; align-items:center; gap:12px; margin-bottom:22px; flex-wrap:wrap; }
     .pill { font-family:var(--font-ui); font-weight:400; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; border-radius:4px; padding:5px 11px; }
     .pill.sector { color:var(--teal); border:1px solid rgba(30,122,114,0.4); }
@@ -370,7 +373,7 @@
         <h2 class="h2">What's been built.</h2>
       </div>
       <div class="cases">
-        <div class="case" data-reveal>
+        <a class="case" href="/work/supervisor-field-app" data-reveal>
           <div>
             <div class="case-tags">
               <span class="pill sector">Field operations</span>
@@ -379,15 +382,16 @@
             </div>
             <h3>Supervisor Field App</h3>
             <p>Every check-in GPS and time stamped, every completed job an automatic progress report. The owner sees the whole picture without making a call.</p>
+            <span class="case-link">Read the case study &rarr;</span>
           </div>
           <div class="metrics">
-            <div class="metric"><div class="v">28</div><div class="l">team members active</div></div>
-            <div class="metric"><div class="v">23</div><div class="l">sites tracked live</div></div>
-            <div class="metric"><div class="v">100%</div><div class="l">GPS verified</div></div>
+            <div class="metric"><div class="v">289</div><div class="l">site visits logged</div></div>
+            <div class="metric"><div class="v">97</div><div class="l">sites on the system</div></div>
+            <div class="metric"><div class="v">92%</div><div class="l">site visits GPS verified</div></div>
           </div>
-        </div>
+        </a>
 
-        <div class="case" data-reveal>
+        <a class="case" href="/work/quotation-engine" data-reveal>
           <div>
             <div class="case-tags">
               <span class="pill sector">Sales operations</span>
@@ -395,14 +399,15 @@
               <span class="case-client">Swathi Engineering Agencies</span>
             </div>
             <h3>Quotation Engine</h3>
-            <p>Automated product recommendation and quotation, from enquiry to a ready-to-send PDF. What used to route through two people and take an hour now takes one step.</p>
+            <p>Automated pricing and quotation, from enquiry to a ready-to-send PDF. What used to route through two people and take an hour now takes one step.</p>
+            <span class="case-link">Read the case study &rarr;</span>
           </div>
           <div class="metrics">
+            <div class="metric"><div class="v">&#8377;47.5 cr</div><div class="l">quoted through it</div></div>
+            <div class="metric"><div class="v">36</div><div class="l">quotations issued</div></div>
             <div class="metric"><div class="v">&lt; 1 min</div><div class="l">per quotation</div></div>
-            <div class="metric"><div class="v">40+</div><div class="l">products priced</div></div>
-            <div class="metric"><div class="v">8</div><div class="l">application categories</div></div>
           </div>
-        </div>
+        </a>
 
         <div class="case" data-reveal>
           <div>
@@ -421,7 +426,7 @@
           </div>
         </div>
       </div>
-      <p class="work-note" data-reveal>Two systems live inside one business, plus a working demonstration of what else can be built. References available on request.</p>
+      <p class="work-note" data-reveal>Two systems live inside one business, plus a working demonstration of what else can be built. Every number above is read from the production database. References available on request.</p>
     </div>
   </section>
 
