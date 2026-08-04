@@ -148,6 +148,26 @@ section.band.charcoal { background:var(--charcoal); }
 .replay { margin-top:18px; background:none; border:1px solid var(--hairline); color:var(--stone); font-family:var(--font-ui); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; padding:9px 16px; border-radius:6px; cursor:pointer; transition:color .2s, border-color .2s; }
 .replay:hover { color:var(--gold); border-color:var(--gold-dim); }
 
+/* Try the demo */
+.hero-demo { display:inline-flex; align-items:center; gap:10px; margin-top:26px;
+  font-family:var(--font-ui); font-weight:400; font-size:14px; color:var(--gold); }
+.hero-demo::after { content:''; width:24px; height:1px; background:currentColor; transition:width .25s var(--ease-out); }
+.hero-demo:hover::after { width:34px; }
+
+.trydemo { border:1px solid var(--gold-dim); border-radius:12px; padding:clamp(26px,3.6vw,42px);
+  display:grid; grid-template-columns:1fr auto; gap:clamp(24px,3vw,40px); align-items:center;
+  transition:border-color .24s var(--ease); }
+.trydemo:hover { border-color:var(--gold); }
+.trydemo .k { font-family:var(--font-ui); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); }
+.trydemo h3 { margin:14px 0 12px; font-size:clamp(24px,3vw,32px); font-weight:300; }
+.trydemo p { font-size:15px; line-height:1.75; max-width:52ch; }
+.trydemo .note { margin-top:14px; font-size:12.5px; color:var(--faint); }
+.trydemo-cta { display:flex; flex-direction:column; gap:12px; align-items:stretch; }
+@media (max-width:760px) {
+  .trydemo { grid-template-columns:1fr; }
+  .trydemo-cta { align-items:flex-start; }
+}
+
 /* Quote */
 .pullquote { max-width:760px; }
 .pullquote p { font-family:var(--font-display); font-style:italic; font-weight:300; font-size:clamp(24px,3.4vw,34px); line-height:1.4; color:var(--offwhite); }

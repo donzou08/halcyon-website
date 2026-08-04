@@ -13,6 +13,15 @@ Two deep-dive pages linked from the homepage "Our work" cards (the cards are `<a
 
 **Motion rules for these pages:** counters animate from 0 but the *real* value is hard-coded in the HTML as the fallback (never ship `>0<` — crawlers and no-JS visitors would read zero). The reveal is scoped to `.js [data-reveal]` with an inline `<script>` in `<head>` adding the class, so content stays visible if scripting fails. Everything is gated behind `prefers-reduced-motion`.
 
+### Demo deployments (safe to link publicly)
+Each case study links a **purpose-built demo**, not the production app:
+- Supervisor → `https://halcyon-supervisor-demo.vercel.app/`
+- Quotation → `https://halcyon-quotation-demo.vercel.app/`
+
+Both run on **self-contained sample data** for a fictional "Meridian Industrial Flooring" (verified: the bundles make no Supabase call and contain none of the production project refs), carry a "DEMO — SAMPLE DATA" banner, and need no password. Each case study has a subtle hero link plus a `.trydemo` band after the UI schematic, cross-linking the other demo. All external links use `target="_blank" rel="noopener"`.
+
+⚠️ **Never publish the production app URLs.** `https://swathi-supervisor.vercel.app` is the live client system (97 sites, 46 real client companies, contact phone on every site, supervisor names/PINs). Per that repo's own `CLAUDE.md`, its operational tables use **permissive RLS (anon full CRUD)** and security rests on "the obscure URL + PIN gate" — the anon key ships in the JS bundle, so publishing the URL would expose real client data regardless of the PIN. The Quotation app records no live URL at all.
+
 ### Source of truth for every number
 All statistics come from the **live Supabase production databases**, read via the Supabase MCP. Project refs: Supervisor = `urrrwpekgmehpfjvfzpf`, Quotation = `skjdtlezdcnqdmhwsapz`, Tender = `dnowfenlgdpnrkkjoxmc`. **Re-query before changing any figure.** Verified 4 Aug 2026:
 - **Supervisor:** 289 visits (281 completed), 97 sites (86 active, 79 visited), 19 supervisors logging of 30, 64,369 sqm, 204 progress assessments, 331 work days, 26 issues (13 resolved), 62 teams / 39 applicators, live since 22 Jun 2026. **GPS: 92% of completed site visits** (81/88 `kind='visit'`); 79% across all 289 records. The earlier "100% GPS verified" and "28 members / 23 sites / 42 visits in 9 days" claims were **not supported by the data** and have been corrected.
