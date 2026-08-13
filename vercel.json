@@ -1,9 +1,9 @@
 {
   "cleanUrls": true,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/theworks/demos/([^/]+)/?$", "dest": "/theworks/demos/$1/index.html" },
-    { "src": "/theworks(/.*)?", "dest": "/theworks/index.html" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/theworks/demos/:slug", "destination": "/theworks/demos/:slug/index.html" },
+    { "source": "/theworks", "destination": "/theworks/index.html" },
+    { "source": "/theworks/:path*", "destination": "/theworks/index.html" },
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
