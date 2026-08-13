@@ -168,6 +168,14 @@
     .tier-point span.b { width:4px; height:4px; border-radius:50%; background:var(--gold-dim); margin-top:9px; flex-shrink:0; }
     .tier-cta { margin-top:auto; font-family:var(--font-ui); font-weight:400; font-size:14px; }
     .eng-note { text-align:center; font-size:14px; line-height:1.7; color:var(--stone); max-width:64ch; margin:48px auto 0; }
+    /* What decides the cost. Replaced the three bands: a package grid teaches a
+       reader to pick one and ask what it includes, which is the opposite of the
+       conversation worth having, and it framed the work before anyone had seen
+       the work. */
+    .factors { display:grid; grid-template-columns:repeat(3,1fr); gap:44px; max-width:1020px; margin:0 auto; }
+    .factor .fb { width:20px; height:1px; background:var(--gold); margin-bottom:22px; }
+    .factor h3 { font-family:var(--font-display); font-weight:400; font-size:26px; line-height:1.22; color:var(--offwhite); margin:0 0 12px; }
+    .factor p { font-size:15px; line-height:1.7; color:var(--body); margin:0; }
 
     /* Principle */
     .principle { max-width:860px; margin:0 auto; text-align:center; }
@@ -245,6 +253,7 @@
       .cap, .cap + .cap { padding:34px 0 6px 0; border-left:none; border-top:1px solid var(--hairline); }
       .caps > .cap:first-child { border-top:none; }
       .tiers { grid-template-columns:1fr; }
+      .factors { grid-template-columns:1fr; gap:34px; }
       .tier h3 { min-height:0; }
       .tier-desc { min-height:0; }
       .tl-rail { display:none; }
@@ -277,7 +286,7 @@
       <a class="nl" href="#what">What we do</a>
       <a class="nl" href="#how">How we work</a>
       <a class="nl" href="#work">Our work</a>
-      <a class="nl" href="#engagements">Engagements</a>
+      <a class="nl" href="#engagements">What it costs</a>
       <a class="btn btn-ghost btn-sm" href="#contact">Begin</a>
     </nav>
     <button class="hamburger" id="ham" aria-label="Open menu"><span></span><span></span></button>
@@ -434,49 +443,28 @@
   <section class="band charcoal" id="engagements">
     <div class="wrap sec-pad">
       <div class="eng-head" data-reveal>
-        <span class="eyebrow">Engagements</span>
-        <h2 class="h2">Not packages.<br>Starting points.</h2>
-        <p class="sec-intro">Every project is scoped and costed after a first conversation.</p>
+        <span class="eyebrow">What it costs</span>
+        <h2 class="h2">Priced on the work,<br>not on a package.</h2>
+        <p class="sec-intro">There is no tier to pick and no per-seat licence. Every system is quoted on the complexity of the job, after the workflow has been mapped and not before.</p>
       </div>
-      <div class="tiers">
-        <div class="tier" data-reveal>
-          <div class="tier-name">Light</div>
-          <h3>A single problem, solved right.</h3>
-          <p class="tier-desc">One clear operational gap, addressed with a focused, purpose-built tool.</p>
-          <div class="tier-rule"></div>
-          <div class="tier-points">
-            <div class="tier-point"><span class="b"></span>A single tool, solving one specific gap</div>
-            <div class="tier-point"><span class="b"></span>1 enhancement available per month</div>
-            <div class="tier-point"><span class="b"></span>Email support</div>
-          </div>
-          <a class="tier-cta" href="#contact">Start a conversation →</a>
+      <div class="factors">
+        <div class="factor" data-reveal>
+          <div class="fb"></div>
+          <h3>How much has to be built</h3>
+          <p>A single workflow that already runs on a spreadsheet is a different job from an operation held together in one person's head. What has to be invented, rather than transcribed, is most of the cost.</p>
         </div>
-        <div class="tier feat" data-reveal>
-          <div class="tier-name">Standard</div>
-          <h3>Real logic, real stakes.</h3>
-          <p class="tier-desc">Multiple workflows or real business logic, addressed as one connected engagement.</p>
-          <div class="tier-rule"></div>
-          <div class="tier-points">
-            <div class="tier-point"><span class="b"></span>Multiple workflows, or real business logic under the hood</div>
-            <div class="tier-point"><span class="b"></span>1 enhancement available per month</div>
-            <div class="tier-point"><span class="b"></span>WhatsApp support</div>
-          </div>
-          <a class="tier-cta" href="#contact">Start a conversation →</a>
+        <div class="factor" data-reveal>
+          <div class="fb"></div>
+          <h3>How many people touch it</h3>
+          <p>A tool for one estimator is simple. The same tool used by supervisors on site, an office that prices it and an owner who signs it off has to survive three different working habits.</p>
         </div>
-        <div class="tier" data-reveal>
-          <div class="tier-name">Complex</div>
-          <h3>Systems, not just tools.</h3>
-          <p class="tier-desc">Multiple systems and critical workflows, built to carry real operational weight.</p>
-          <div class="tier-rule"></div>
-          <div class="tier-points">
-            <div class="tier-point"><span class="b"></span>Multiple systems working together</div>
-            <div class="tier-point"><span class="b"></span>Built for daily, mission-critical use</div>
-            <div class="tier-point"><span class="b"></span>Direct access to the founder</div>
-          </div>
-          <a class="tier-cta" href="#contact">Start a conversation →</a>
+        <div class="factor" data-reveal>
+          <div class="fb"></div>
+          <h3>What it has to keep up with</h3>
+          <p>Systems that stop being maintained stop being used within a year, so every engagement carries an enhancement each month, support within 24 hours, and running costs up to a baseline.</p>
         </div>
       </div>
-      <p class="eng-note" data-reveal>No setup fee is quoted before the workflow is mapped. Every engagement includes support within 24 hours and running costs up to a baseline, with an additional enhancement available each month.</p>
+      <p class="eng-note" data-reveal>The first conversation, and the map of your operation it produces, are included at no cost and are yours whether or not you go ahead. Nothing is quoted before the workflow is mapped.</p>
     </div>
   </section>
 
@@ -586,7 +574,7 @@
       <a href="#what">What we do</a>
       <a href="#how">How we work</a>
       <a href="#work">Our work</a>
-      <a href="#engagements">Engagements</a>
+      <a href="#engagements">What it costs</a>
       <a href="#contact">Begin a conversation</a>
     </nav>
     <span class="mm-tag">Tranquility engineered.</span>
