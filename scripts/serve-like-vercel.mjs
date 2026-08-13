@@ -52,6 +52,17 @@ function fromDisk(urlPath) {
 
 createServer((req, res) => {
   const path = (req.url ?? '/').split('?')[0]
+
+  /* Injected by the platform and absent locally. Falling back to index.html
+     hands the browser HTML where it asked for JavaScript, and the resulting
+     "Unexpected token '<'" looks like a bug in the site rather than a file that
+     was never there. Refuse it, the way production does. */
+  if (path.startsWith('/_vercel/')) {
+    res.writeHead(404, { 'content-type': 'text/plain' })
+    res.end('Not found')
+    return
+  }
+
   let file = fromDisk(path)
 
   if (!file) {
