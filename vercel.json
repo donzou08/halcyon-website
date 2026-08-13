@@ -2,19 +2,8 @@
   "cleanUrls": true,
   "routes": [
     { "handle": "filesystem" },
-
-    {
-      "//": "Each demo is a separate application with its own index.html. Naming it explicitly means a directory request can never fall through to the rule below, which would render the portfolio's own shell inside the demo's iframe. That failure is silent and reads as a broken demo rather than a broken route.",
-      "src": "/theworks/demos/([^/]+)/?$",
-      "dest": "/theworks/demos/$1/index.html"
-    },
-
-    {
-      "//": "The portfolio is a single page application with its own router. Its real files are served by the filesystem handler above; anything else under /theworks is one of its client-side routes and must reach its shell, not the marketing page.",
-      "src": "/theworks(/.*)?",
-      "dest": "/theworks/index.html"
-    },
-
+    { "src": "/theworks/demos/([^/]+)/?$", "dest": "/theworks/demos/$1/index.html" },
+    { "src": "/theworks(/.*)?", "dest": "/theworks/index.html" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
