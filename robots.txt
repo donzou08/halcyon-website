@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+# The demos are applications, not pages. Each built index.html is an empty
+# shell, so indexing them puts contentless results in front of people searching
+# for Halcyon.
+Disallow: /theworks/demos/
+
 Sitemap: https://halcyon.uno/sitemap.xml

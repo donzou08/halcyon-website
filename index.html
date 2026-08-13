@@ -149,6 +149,10 @@
     .metric .v { font-family:var(--font-display); font-weight:300; font-size:clamp(26px,3vw,34px); line-height:1.05; color:var(--gold); margin-bottom:8px; }
     .metric .l { font-size:13px; line-height:1.4; color:var(--stone); }
     .work-note { text-align:center; margin-top:34px; font-size:13px; letter-spacing:0.04em; color:var(--stone); }
+    /* The portfolio lives at /theworks. This is the only route to it from the
+       home page, so it is a button rather than a link in a paragraph. */
+    .work-cta { text-align:center; margin-top:38px; }
+    .work-cta p { margin-top:16px; font-size:13px; letter-spacing:0.04em; color:var(--stone); }
 
     /* Engagements */
     .eng-head { text-align:center; margin-bottom:64px; }
@@ -286,6 +290,7 @@
       <a class="nl" href="#what">What we do</a>
       <a class="nl" href="#how">How we work</a>
       <a class="nl" href="#work">Our work</a>
+      <a class="nl" href="/theworks">The Works</a>
       <a class="nl" href="#engagements">What it costs</a>
       <a class="btn btn-ghost btn-sm" href="#contact">Begin</a>
     </nav>
@@ -436,6 +441,10 @@
         </div>
       </div>
       <p class="work-note" data-reveal>Two systems live inside one business, plus a working demonstration of what else can be built. Every number above is read from the production database. References available on request.</p>
+      <div class="work-cta" data-reveal>
+        <a class="btn" href="/theworks">Open the working systems →</a>
+        <p>Five of them, running in your browser on sample data. Press anything.</p>
+      </div>
     </div>
   </section>
 
@@ -574,6 +583,7 @@
       <a href="#what">What we do</a>
       <a href="#how">How we work</a>
       <a href="#work">Our work</a>
+      <a href="/theworks">The Works</a>
       <a href="#engagements">What it costs</a>
       <a href="#contact">Begin a conversation</a>
     </nav>
