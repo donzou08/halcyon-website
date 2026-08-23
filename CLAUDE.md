@@ -16,9 +16,9 @@ Two deep-dive pages linked from the homepage "Our work" cards (the cards are `<a
 ### Demo deployments (safe to link publicly)
 Each case study links a **purpose-built demo**, not the production app:
 - Supervisor → `https://halcyon-supervisor-demo.vercel.app/`
-- Quotation → `https://halcyon-quotation-demo.vercel.app/`
+- Quotation → `/theworks/quotation` (same origin; the standalone deploy was retired 2026-08-23)
 
-Both run on **self-contained sample data** for a fictional "Meridian Industrial Flooring" (verified: the bundles make no Supabase call and contain none of the production project refs), carry a "DEMO — SAMPLE DATA" banner, and need no password. Each case study has a subtle hero link plus a `.trydemo` band after the UI schematic, cross-linking the other demo. All external links use `target="_blank" rel="noopener"`.
+Both run on **self-contained sample data** and need no password, and neither makes a Supabase call or carries a production project ref. The quotation demo is a fictional general contractor, "Meridian Contracts Pvt Ltd"; it was an industrial flooring company until 2026-08-17. As of 2026-08-23 it carries **no on-screen sample-data banner**: the page around it says so instead, and the disclosure it does carry is printed on the generated PDF. The supervisor demo still shows its banner. Each case study has a subtle hero link plus a `.trydemo` band after the UI schematic, cross-linking the other demo. All external links use `target="_blank" rel="noopener"`.
 
 ⚠️ **Never publish the production app URLs.** `https://swathi-supervisor.vercel.app` is the live client system (97 sites, 46 real client companies, contact phone on every site, supervisor names/PINs). Per that repo's own `CLAUDE.md`, its operational tables use **permissive RLS (anon full CRUD)** and security rests on "the obscure URL + PIN gate" — the anon key ships in the JS bundle, so publishing the URL would expose real client data regardless of the PIN. The Quotation app records no live URL at all. Both production apps have sat on the **same** Supabase project since the 2026-08-22 merge, so this is one blast radius now, not two: exposing `urrrwpekgmehpfjvfzpf` exposes the quotation data too.
 
