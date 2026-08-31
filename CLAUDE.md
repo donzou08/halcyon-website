@@ -47,7 +47,7 @@ Figures verified 4 Aug 2026, against the databases as they stood then:
 
 - Halcyon builds **bespoke operational systems** for SMEs in manufacturing, construction, industrial supply, and trading.
 - Clients come via **referral only** — no cold outreach. The site's job is to give a referred prospect confidence before they reach out.
-- Sanjith **visits clients in person** in Chennai. There is no "online" service. Never imply remote/online delivery.
+- **Meetings are held online.** In Chennai, meeting at the operation in person is possible. Never promise an in-person visit outside Chennai. (Corrected 2026-08-20: this line previously said Sanjith visits clients in person and that there is no online service. Retired by Sanjith in his own words on 2026-08-20; see `halcyon-studio/brand/proof-ledger.md`.)
 - The target audience is **MDs and business owners** of established SMEs, not tech-savvy buyers.
 - **Don't lead with AI** — position it as operational intelligence, not AI software.
 - Pricing is shown on the site as reference points; actual engagements are scoped in discovery.
@@ -189,7 +189,7 @@ Two-column layout:
 3. **Step 3: "Where can you be reached?"**
    - Your name — **required**
    - Your role — optional (e.g. Managing Director)
-   - City — optional ("helps plan a visit", since Sanjith delivers in person)
+   - City, optional (the hint reads just "optional"; the city is what tells Sanjith whether a meeting at the client's own office is possible, which is Chennai only)
    - Email — **required**
    - WhatsApp / Phone — optional
 
