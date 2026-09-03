@@ -1,9 +1,27 @@
 {
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/contractors", "destination": "/flooring", "permanent": true },
+    { "source": "/contractors/:path*", "destination": "/flooring/:path*", "permanent": true },
+    { "source": "/theworks/flooring", "destination": "/flooring", "permanent": true },
+    { "source": "/theworks/industrial-flooring", "destination": "/flooring", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/flooring/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "source": "/flooring/demo/(.*)/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ],
   "rewrites": [
     { "source": "/theworks/demos/:slug", "destination": "/theworks/demos/:slug/index.html" },
     { "source": "/theworks", "destination": "/theworks/index.html" },
     { "source": "/theworks/:path*", "destination": "/theworks/index.html" },
+    { "source": "/flooring/demo/quote/(.*)", "destination": "/flooring/demo/quote" },
+    { "source": "/flooring/demo/crew/(.*)", "destination": "/flooring/demo/crew" },
     { "source": "/:path*", "destination": "/index.html" }
   ]
 }

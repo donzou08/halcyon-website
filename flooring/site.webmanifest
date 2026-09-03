@@ -1,0 +1,28 @@
+{
+  "name": "Halcyon for flooring contractors",
+  "short_name": "Halcyon",
+  "description": "Two apps for industrial flooring, coatings, waterproofing and painting contractors. A quotation in under a minute on your own letterhead, and every site visit GPS stamped. Set up on your rate card and your sites.",
+  "start_url": "/flooring/",
+  "scope": "/flooring/",
+  "display": "browser",
+  "background_color": "#F5F4F0",
+  "theme_color": "#1D4074",
+  "icons": [
+    {
+      "src": "/flooring/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/flooring/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/flooring/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

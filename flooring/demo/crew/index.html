@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Order matters. A browser that understands SVG takes the first line and
+         everything else falls through to the ICO, which carries 16, 32 and 48
+         as PNG payloads. -->
+    <link rel="icon" type="image/svg+xml" href="/flooring/demo/crew/favicon.svg" />
+    <link rel="icon" href="/flooring/demo/crew/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/flooring/demo/crew/apple-touch-icon.png" />
+    <link rel="manifest" href="/flooring/demo/crew/manifest.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- The paper ground, not the accent. A navy status bar above a warm
+         paper app reads as a rendering fault. -->
+    <meta name="theme-color" content="#F5F4F0" />
+    <!-- Home-screen app name on iOS Safari + Android Chrome -->
+    <meta name="apple-mobile-web-app-title" content="Crew" />
+    <meta name="application-name" content="Crew" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content="Site supervisor check-in, check-out and progress, for industrial flooring and coatings" />
+    <title>Crew</title>
+    <!-- Both faces are self-hosted. The app has an offline shell and is opened
+         inside warehouses with no signal, so it must never wait on a font CDN
+         that will not answer. -->
+    <link rel="preload" href="/flooring/demo/crew/fonts/onest-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/flooring/demo/crew/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <script type="module" crossorigin src="/flooring/demo/crew/assets/index-CPryAUaC.js"></script>
+    <link rel="stylesheet" crossorigin href="/flooring/demo/crew/assets/index-Brq96ICz.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Fallback shown only if the app fails to start (e.g. very old browser or
+         a bad/interrupted load). Prevents a pure blank white screen.
+
+         It is fixed to the viewport rather than laid out after #root. #root
+         carries height:100%, so an empty one still occupies a full screen and
+         pushed this panel to top:806 on a 720 tall viewport: the message
+         written specifically to avoid a blank screen rendered a whole screen
+         below the fold, and a visitor who does not scroll sees exactly the
+         blank screen it exists to prevent. It is only ever displayed when the
+         app has not mounted, so it can never cover working UI. -->
+    <div id="boot-fallback" style="display:none; position:fixed; inset:0; z-index:2147483647; overflow:auto; background:#F5F4F0; font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif; padding:12vh 1.5rem 2rem; text-align:center; color:#575B62;">
+      <div style="max-width:23rem; margin:0 auto;">
+        <h1 style="font-size:1.15rem; color:#1C1F25; margin:0 0 .6rem;">Couldn't open Crew</h1>
+        <p style="font-size:.95rem; line-height:1.55; margin:0 0 1rem;">Please try these, in order:</p>
+        <ol style="font-size:.92rem; line-height:1.6; text-align:left; margin:0 0 1.25rem; padding-left:1.2rem;">
+          <li>Check your internet, then tap Reload.</li>
+          <li>In Chrome: <b>&#8942; menu &rarr; Settings &rarr; Site settings &rarr; Cookies</b> and choose <b>Allow</b>.</li>
+          <li>Chrome <b>&#8942; menu &rarr; Settings &rarr; Privacy &rarr; Clear browsing data &rarr; Cached images and files</b>, then reopen.</li>
+          <li>Update Chrome from the Play Store.</li>
+        </ol>
+        <button onclick="try{location.reload()}catch(e){}" style="background:#1D4074; color:#fff; border:0; border-radius:14px; padding:.9rem 1.4rem; font-size:1rem; font-weight:600;">Reload</button>
+        <p id="boot-detail" style="font-size:.75rem; color:#A0A4AB; margin:1rem 0 0; word-break:break-word;"></p>
+      </div>
+    </div>
+
+    <script>
+      // Safety net: if the app fails to mount for ANY reason, show the guidance
+      // above instead of a blank white screen. Covers blocked script/style
+      // loads, uncaught startup errors, and a silent failure to render.
+      (function () {
+        var shown = false;
+        function showFallback(detail) {
+          if (shown) return;
+          var root = document.getElementById("root");
+          if (root && root.childElementCount > 0) return; // app mounted fine
+          shown = true;
+          var fb = document.getElementById("boot-fallback");
+          if (fb) fb.style.display = "block";
+          if (detail) {
+            var d = document.getElementById("boot-detail");
+            if (d) d.textContent = String(detail).slice(0, 160);
+          }
+        }
+        window.addEventListener("error", function (e) {
+          if (e && e.target && (e.target.tagName === "SCRIPT" || e.target.tagName === "LINK")) {
+            showFallback("Could not load app files.");
+          } else if (e && e.message) {
+            // Uncaught startup error - give the app a moment, then show help.
+            window.setTimeout(function () { showFallback(e.message); }, 1200);
+          }
+        }, true);
+        window.addEventListener("unhandledrejection", function (e) {
+          window.setTimeout(function () {
+            showFallback((e && e.reason && e.reason.message) || "Startup problem.");
+          }, 1500);
+        });
+        window.setTimeout(function () { showFallback(""); }, 8000);
+      })();
+    </script>
+
+  </body>
+</html>

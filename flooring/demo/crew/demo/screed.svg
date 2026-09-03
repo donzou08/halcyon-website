@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Sample image">
+<rect width="800" height="600" fill="#C8CBD0"/>
+<rect x="0" y="0" width="800" height="180" fill="#D6D9DE"/>
+<path d="M0 180h800" stroke="#ABAEB3" stroke-width="4"/>
+<rect x="90" y="250" width="620" height="240" rx="6" fill="#AEB0B6"/>
+<path d="M90 330h620M90 410h620" stroke="#9C9EA4" stroke-width="4"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Sample image">
+<rect width="800" height="600" fill="#C1C4C9"/>
+<rect x="0" y="120" width="800" height="480" fill="#8B8C8F"/>
+<rect x="0" y="120" width="800" height="18" fill="#77787B"/>
+<ellipse cx="300" cy="380" rx="240" ry="90" fill="#97989B" opacity="0.6"/>
+<rect x="0" y="0" width="800" height="120" fill="#D5D8DD"/>
+</svg>
