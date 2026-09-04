@@ -28,9 +28,9 @@
 <link rel="icon" href="/flooring/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/flooring/apple-touch-icon.png">
 <link rel="manifest" href="/flooring/site.webmanifest">
-<link rel="preload" href="/flooring/assets/fonts/onest-subset.8473d9a3c5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/onest-subset.f2dbaac463.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/flooring/assets/fonts/instrument-serif-italic-subset.be8c9b1484.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.2c8931290b.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root {
   
@@ -166,14 +166,14 @@
 }
 @font-face {
   font-family: 'Onest';
-  src: url('/flooring/assets/fonts/onest-subset.8473d9a3c5.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/onest-subset.f2dbaac463.woff2') format('woff2-variations');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono';
-  src: url('/flooring/assets/fonts/geist-mono-subset.2c8931290b.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2') format('woff2-variations');
   font-weight: 500 600;
   font-style: normal;
   font-display: swap;
@@ -1421,7 +1421,111 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
   animation: answer-in 200ms var(--hq-ease-out) both;
 }
 .faq .answer p + p { margin-top: var(--hq-s-4); }
+.answer-more { margin-top: var(--hq-s-5); }
 @keyframes answer-in { from { opacity: 0; } to { opacity: 1; } }
+.doc-top { padding-bottom: var(--rh-md); }
+
+.doc-body { padding-top: var(--rh-md); }
+.doc-head { display: grid; gap: var(--hq-s-4); max-width: 68ch; }
+.doc-title { max-width: 18ch; }
+.doc-version {
+  font-family: var(--hq-font-mono);
+  font-size: var(--hq-t-site-small);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--hq-ink-3);
+}
+.doc-standfirst { max-width: 56ch; }
+.doc-intro { color: var(--hq-ink-2); }
+
+.doc-toc {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-sm);
+  border-top: 1px solid var(--hq-line);
+  max-width: 68ch;
+}
+.doc-toc-h {
+  font-family: var(--hq-font-mono);
+  font-size: var(--hq-t-site-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hq-ink-3);
+}
+.doc-toc-list { margin-top: var(--hq-s-2); }
+
+@media (min-width: 768px) {
+  .doc-toc-list { columns: 2; column-gap: var(--rh-md); }
+  .doc-toc-list li { break-inside: avoid; }
+}
+.doc-toc-list a {
+  display: flex;
+  gap: var(--hq-s-4);
+  min-height: 36px;
+  padding-block: 4px;
+  font-size: var(--hq-t-site-small);
+  line-height: 1.5;
+  color: var(--hq-ink-2);
+  text-decoration: none;
+}
+.doc-toc-n { flex: none; min-width: 3.2ch; font-family: var(--hq-font-mono); color: var(--hq-ink-faint); }
+@media (hover: hover) and (pointer: fine) {
+  .doc-toc-list a:hover { color: var(--hq-ink); }
+  .doc-toc-list a:hover .doc-toc-n { color: var(--hq-accent-600); }
+}
+
+.doc { max-width: 68ch; }
+.doc-sec + .doc-sec {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-hairline);
+}
+.doc-h {
+  display: flex;
+  gap: var(--hq-s-4);
+  font-size: var(--hq-t-site-h3);
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+}
+.doc-n { flex: none; font-family: var(--hq-font-mono); font-size: 0.82em; color: var(--hq-accent-600); }
+.doc-item { margin-top: var(--hq-s-5); color: var(--hq-ink-2); }
+.doc-item p + p { margin-top: var(--hq-s-4); }
+.doc-lead { color: var(--hq-ink); font-weight: 600; }
+.doc-num { font-family: var(--hq-font-mono); font-size: 0.9em; font-weight: 600; color: var(--hq-ink-3); }
+.doc-strong { color: var(--hq-ink); font-weight: 600; }
+
+.doc-list { margin-top: var(--hq-s-3); display: grid; gap: var(--hq-s-2); }
+.doc-list li { display: flex; gap: var(--hq-s-3); }
+.doc-mark { flex: none; font-family: var(--hq-font-mono); font-size: 0.9em; color: var(--hq-ink-3); }
+.doc-notice {
+  margin-top: var(--hq-s-5);
+  padding: var(--hq-s-5);
+  background: var(--hq-surface);
+  border: 1px solid var(--hq-hairline);
+  border-radius: var(--hq-r-md);
+}
+.doc-notice p + p { margin-top: var(--hq-s-4); }
+.doc-notice-h { color: var(--hq-ink); font-weight: 600; }
+
+.doc-foot {
+  display: grid;
+  gap: var(--hq-s-4);
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-line);
+  max-width: 68ch;
+  font-size: var(--hq-t-site-small);
+  color: var(--hq-ink-3);
+}
+.billing-how {
+  display: grid;
+  gap: var(--hq-s-5);
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-hairline);
+  max-width: 68ch;
+}
 #talk { padding-bottom: var(--rh-lg); }
 .talk { max-width: 720px; }
 .talk-card {
@@ -1539,6 +1643,9 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
 .nav-links { display: flex; flex-wrap: wrap; gap: var(--hq-s-5); margin-top: var(--rh-md); font-size: var(--hq-t-site-small); }
 .nav-links a { display: inline-flex; align-items: center; min-height: 40px; color: var(--hq-ink-2); text-decoration: none; }
 @media (hover: hover) and (pointer: fine) { .nav-links a:hover { color: var(--hq-ink); } }
+
+.nav-docs { margin-top: var(--hq-s-3); gap: var(--hq-s-5); color: var(--hq-ink-3); }
+.nav-docs a { color: var(--hq-ink-3); min-height: 32px; }
 .lift { animation: lift 620ms var(--hq-ease-expo) both; animation-delay: calc(var(--i, 0) * 80ms); }
 @keyframes lift {
   from { opacity: 0; transform: translateY(14px); }
@@ -1702,6 +1809,17 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
     </div>
 
     <p class="count-note price-setup">Setup is charged once and never again, not at a renewal and not if you add the second product later; adding the second product costs only the difference in setup. It covers your rate card and your own systems loaded in, your letterhead and GSTIN on the output, your team set up and your people trained. All prices are exclusive of GST.</p>
+
+    <!-- How billing works, under the cards.
+         Below the first screen on purpose: the measured acceptance item is
+         that a price figure renders above 640px at 390 wide, and this block
+         sits under the setup line where a buyer has stopped arriving and
+         started deciding. -->
+    <div class="billing-how">
+      <h2 class="h3">How billing works.</h2>
+      <ul class="plain"><li>You pay at the start of each period, never after it. Every date runs from your go-live date, which we confirm to you in writing on the day we hand the account over.</li><li>We remind you five times before a payment is due: 14 days before, 7 days before, 2 days before, 1 day before, and on the day itself. The first one carries the request for payment.</li><li>If the money has not reached us on the due date, you have the next three days. Nothing changes in your account, nobody is switched off and no fee is added.</li><li>If it has not arrived by 11:59 pm on the third day, the account goes read only that night. Everybody can still sign in, open everything and export it all. Nothing is deleted.</li><li>When the payment reaches us, full access is back within one working day, and the same day if the money arrives inside working hours. There is no charge for switching it back on.</li></ul>
+      <p><a class="link" href="/flooring/agreement">Read the agreement<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+    </div>
   </div>
 </section>
 
@@ -1740,7 +1858,8 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       <p><b>A change can only start on a renewal date, and you hear about it first.</b> 60 days, in writing, before that date. If you do not want the new price, you stop on that date and take everything with you.</p>
       <p><b>Growing past a published line costs you nothing until your next renewal.</b> If your field team or your company count crosses a line, your price does not change and nothing is switched off. We write to you, and the new price starts at your next renewal.</p>
       <p><b>Your data is yours, every day.</b> Export the whole of it to Excel and PDF whenever you want, without asking us and without a support ticket.</p>
-      <p><b>If you stop paying, your account goes read only. We do not delete your data.</b> You can still open it, read it and export it. We will never hold your records to get you to pay.</p>
+      <p><b>If you stop paying, your account goes read only. We do not delete your data.</b> You can still open it, read it and export it. We will never hold your records to get you to pay. We delete an account only on your written instruction, after ninety (90) days’ written notice with your full extract sent to you first, and never inside the first twelve months after your last payment.</p>
+      <p><a class="link" href="/flooring/agreement">Read the agreement<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
     </div>
   </div>
 </section>
@@ -1764,7 +1883,8 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       </details>
       <details id="if-we-stop-paying">
         <summary>What happens to our data if we stop paying?</summary>
-        <div class="answer"><p>Your account goes read only. You can still sign in, open every quotation and every site record, and export the whole thing to Excel and PDF. We do not delete your data and we will not hold your records to make you pay. You can also export everything on any ordinary day of your subscription, without asking us, so you are never dependent on us being reasonable about it later.</p></div>
+        <div class="answer"><p>Your account goes read only. You can still sign in, open every quotation and every site record, and export the whole thing to Excel and PDF. We do not delete your data and we will not hold your records to make you pay. You can also export everything on any ordinary day of your subscription, without asking us, so you are never dependent on us being reasonable about it later.</p>
+        <p class="answer-more"><a class="link" href="/flooring/agreement">Clause 5 and clause 6 of the agreement<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p></div>
       </details>
       <details id="is-a-pin-safe-enough">
         <summary>Is a PIN safe enough for the site team?</summary>
@@ -1857,6 +1977,14 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       <a href="/flooring/crew">Crew</a>
       <a href="/flooring/pricing">Pricing</a>
       <a href="/flooring/questions">Questions</a>
+    </nav>
+    <!-- The two documents, on every page, and kept in a row of their own.
+         They are not a sixth and seventh marketing page and a reader looking
+         for them is looking for the foot of the page, which is where every
+         other site keeps them. -->
+    <nav class="nav-links nav-docs" aria-label="Documents">
+      <a href="/flooring/agreement">The agreement</a>
+      <a href="/flooring/privacy">Privacy</a>
     </nav>
     <p class="tb-foot">Halcyon, Chennai. Every screen on this site is a real capture from a public demo running on invented data.</p>
   </div>

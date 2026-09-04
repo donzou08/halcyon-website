@@ -28,9 +28,9 @@
 <link rel="icon" href="/flooring/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/flooring/apple-touch-icon.png">
 <link rel="manifest" href="/flooring/site.webmanifest">
-<link rel="preload" href="/flooring/assets/fonts/onest-subset.8473d9a3c5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/onest-subset.f2dbaac463.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/flooring/assets/fonts/instrument-serif-italic-subset.be8c9b1484.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.2c8931290b.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root {
   
@@ -166,14 +166,14 @@
 }
 @font-face {
   font-family: 'Onest';
-  src: url('/flooring/assets/fonts/onest-subset.8473d9a3c5.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/onest-subset.f2dbaac463.woff2') format('woff2-variations');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono';
-  src: url('/flooring/assets/fonts/geist-mono-subset.2c8931290b.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2') format('woff2-variations');
   font-weight: 500 600;
   font-style: normal;
   font-display: swap;
@@ -1421,7 +1421,111 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
   animation: answer-in 200ms var(--hq-ease-out) both;
 }
 .faq .answer p + p { margin-top: var(--hq-s-4); }
+.answer-more { margin-top: var(--hq-s-5); }
 @keyframes answer-in { from { opacity: 0; } to { opacity: 1; } }
+.doc-top { padding-bottom: var(--rh-md); }
+
+.doc-body { padding-top: var(--rh-md); }
+.doc-head { display: grid; gap: var(--hq-s-4); max-width: 68ch; }
+.doc-title { max-width: 18ch; }
+.doc-version {
+  font-family: var(--hq-font-mono);
+  font-size: var(--hq-t-site-small);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--hq-ink-3);
+}
+.doc-standfirst { max-width: 56ch; }
+.doc-intro { color: var(--hq-ink-2); }
+
+.doc-toc {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-sm);
+  border-top: 1px solid var(--hq-line);
+  max-width: 68ch;
+}
+.doc-toc-h {
+  font-family: var(--hq-font-mono);
+  font-size: var(--hq-t-site-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hq-ink-3);
+}
+.doc-toc-list { margin-top: var(--hq-s-2); }
+
+@media (min-width: 768px) {
+  .doc-toc-list { columns: 2; column-gap: var(--rh-md); }
+  .doc-toc-list li { break-inside: avoid; }
+}
+.doc-toc-list a {
+  display: flex;
+  gap: var(--hq-s-4);
+  min-height: 36px;
+  padding-block: 4px;
+  font-size: var(--hq-t-site-small);
+  line-height: 1.5;
+  color: var(--hq-ink-2);
+  text-decoration: none;
+}
+.doc-toc-n { flex: none; min-width: 3.2ch; font-family: var(--hq-font-mono); color: var(--hq-ink-faint); }
+@media (hover: hover) and (pointer: fine) {
+  .doc-toc-list a:hover { color: var(--hq-ink); }
+  .doc-toc-list a:hover .doc-toc-n { color: var(--hq-accent-600); }
+}
+
+.doc { max-width: 68ch; }
+.doc-sec + .doc-sec {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-hairline);
+}
+.doc-h {
+  display: flex;
+  gap: var(--hq-s-4);
+  font-size: var(--hq-t-site-h3);
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+}
+.doc-n { flex: none; font-family: var(--hq-font-mono); font-size: 0.82em; color: var(--hq-accent-600); }
+.doc-item { margin-top: var(--hq-s-5); color: var(--hq-ink-2); }
+.doc-item p + p { margin-top: var(--hq-s-4); }
+.doc-lead { color: var(--hq-ink); font-weight: 600; }
+.doc-num { font-family: var(--hq-font-mono); font-size: 0.9em; font-weight: 600; color: var(--hq-ink-3); }
+.doc-strong { color: var(--hq-ink); font-weight: 600; }
+
+.doc-list { margin-top: var(--hq-s-3); display: grid; gap: var(--hq-s-2); }
+.doc-list li { display: flex; gap: var(--hq-s-3); }
+.doc-mark { flex: none; font-family: var(--hq-font-mono); font-size: 0.9em; color: var(--hq-ink-3); }
+.doc-notice {
+  margin-top: var(--hq-s-5);
+  padding: var(--hq-s-5);
+  background: var(--hq-surface);
+  border: 1px solid var(--hq-hairline);
+  border-radius: var(--hq-r-md);
+}
+.doc-notice p + p { margin-top: var(--hq-s-4); }
+.doc-notice-h { color: var(--hq-ink); font-weight: 600; }
+
+.doc-foot {
+  display: grid;
+  gap: var(--hq-s-4);
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-line);
+  max-width: 68ch;
+  font-size: var(--hq-t-site-small);
+  color: var(--hq-ink-3);
+}
+.billing-how {
+  display: grid;
+  gap: var(--hq-s-5);
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-hairline);
+  max-width: 68ch;
+}
 #talk { padding-bottom: var(--rh-lg); }
 .talk { max-width: 720px; }
 .talk-card {
@@ -1539,6 +1643,9 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
 .nav-links { display: flex; flex-wrap: wrap; gap: var(--hq-s-5); margin-top: var(--rh-md); font-size: var(--hq-t-site-small); }
 .nav-links a { display: inline-flex; align-items: center; min-height: 40px; color: var(--hq-ink-2); text-decoration: none; }
 @media (hover: hover) and (pointer: fine) { .nav-links a:hover { color: var(--hq-ink); } }
+
+.nav-docs { margin-top: var(--hq-s-3); gap: var(--hq-s-5); color: var(--hq-ink-3); }
+.nav-docs a { color: var(--hq-ink-3); min-height: 32px; }
 .lift { animation: lift 620ms var(--hq-ease-expo) both; animation-delay: calc(var(--i, 0) * 80ms); }
 @keyframes lift {
   from { opacity: 0; transform: translateY(14px); }
@@ -1611,7 +1718,7 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
 <script>(function(){var d=document.documentElement,q=window.matchMedia;d.className+=' js';
 if(!(window.CSS&&CSS.supports&&CSS.supports('animation-timeline','view()')))d.className+=' no-sda';
 if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced-motion: reduce)').matches)d.className+=' cine'})()</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this replace Tally or our ERP?","acceptedAnswer":{"@type":"Answer","text":"Your accounts stay where they are. We do not replace Tally or your ERP and we do not ask you to. When a quotation is won, the app exports it in a format your accounts software can import, so nobody retypes line items. If you use a system we have not exported to yet, send us one sample import file and we will add it."}},{"@type":"Question","name":"Whose data is it?","acceptedAnswer":{"@type":"Answer","text":"Yours. Export everything any day. If you stop paying, the app goes read-only. Nothing is deleted."}},{"@type":"Question","name":"What happens where there is no signal?","acceptedAnswer":{"@type":"Answer","text":"Halcyon Crew installs to the home screen and opens without a signal once it is installed, and shows you what it last loaded. Sending a check in still needs a signal, and a check in typed without one is not held for later: it fails, and it has to be typed again once the phone is back in range."}},{"@type":"Question","name":"Is a PIN safe enough for the site team?","acceptedAnswer":{"@type":"Answer","text":"Yes, for what it does, and we hardened it rather than replacing it. Your supervisor is standing in a warehouse with one hand on a phone, and an email and a password there is how you end up with one login shared by six people, which is the thing that actually destroys a record.\n\nSo: every PIN is stored scrambled and never in readable form, and nobody at Halcyon can read one. Two people can never hold the same PIN; the app refuses it. The owner can change somebody's PIN or switch them off from inside the app the day they leave, without ringing us. Repeated wrong PINs lock that name out for a while, so nobody can sit and work through the possibilities. And a PIN only ever opens the field app: your rate card, your quotations and your customer list are a separate system with a separate sign-in, and a field PIN cannot reach them."}},{"@type":"Question","name":"What phones and computers does it need?","acceptedAnswer":{"@type":"Answer","text":"Halcyon Quote needs Chrome 108 or later, or Safari 15.4 or later, which on an iPhone means iOS 15.4 or later. On a laptop or desktop, a current Chrome, Edge, Safari or Firefox. It reaches the server every time it is used, so it wants a 4G or Wi-Fi connection whenever it is open.\n\nHalcyon Crew needs Chrome 111 or later on Android 8 or later, on a phone with 2 GB of memory or more, or iOS 16.4 or later, which is an iPhone 8 or newer. On a laptop or desktop, a current Chrome, Edge, Safari or Firefox. Chrome updates itself from the Play Store, so it is the Chrome version that decides this and rarely the Android one.\n\nHalcyon Crew installs to the home screen and opens without a signal once it is installed, and shows you what it last loaded. Sending a check in still needs a signal, and a check in typed without one is not held for later: it fails, and it has to be typed again once the phone is back in range."}},{"@type":"Question","name":"How is the progress percentage calculated? Is it a guess?","acceptedAnswer":{"@type":"Answer","text":"No, and it is two separate steps. First, a language model (we use Claude) reads your supervisor's check-out note, including Tamil-English shorthand, and pulls out only the measured quantities: 400 sqm primer, 250 sqm top coat. It does not decide the percentage. Second, the app does the arithmetic in code, against the site's recorded floor area, stage by stage, weighted by area. That is why the bar and the written explanation can never disagree with each other. Progress never moves backwards unless someone marks the work as rework. And if a site's floor area has not been entered, the app says the percentage cannot be worked out and asks you to add the area, instead of inventing a number. Every assessment shows its working on the ‘How is this worked out?’ page. Open one and check it against your own measurement."}},{"@type":"Question","name":"Who do we call when something breaks?","acceptedAnswer":{"@type":"Answer","text":"Sanjith, personally, on WhatsApp, within 24 hours on working days. Improvements every month, included."}},{"@type":"Question","name":"Who signs in, and who sees what?","acceptedAnswer":{"@type":"Answer","text":"Each person has their own PIN; the owner can change or switch it off. Salespeople see their own quotes, the owner sees everything, and only the owner changes rates or bank details."}},{"@type":"Question","name":"Who else uses it?","acceptedAnswer":{"@type":"Answer","text":"One contracting company, in industrial flooring. Both apps were built for that business and both have run inside it every working day since the middle of 2026: 171 quotations under their own serial numbers, and 487 site visits across 124 sites with 18 supervisors active in the last thirty days, counted on their systems on 1 September 2026. We do not name them on this page, and we would not name you on it either.\n\nIf you want to see it working rather than read about it, try both apps on sample data from this site. In the scoping call we walk you through them for your own kind of work."}},{"@type":"Question","name":"Can we see it before we decide?","acceptedAnswer":{"@type":"Answer","text":"Yes. Try both apps on sample data from this site any time. In the scoping call we walk through them for your kind of work. Once you sign, setup builds them on your rate card and letterhead, and the first real quotation you send is the finish line."}},{"@type":"Question","name":"When can the price change?","acceptedAnswer":{"@type":"Answer","text":"Only on a renewal date. On Yearly, your price is fixed for the whole year you have paid for. On Monthly, we will never change your price without at least 60 days’ written notice, and never by more than 10 percent at one time, and your first twelve months are fixed from the day you start. If you do not want the new price, you stop on that date and take all of your data with you."}},{"@type":"Question","name":"How long until we go live?","acceptedAnswer":{"@type":"Answer","text":"About ten working days from the day we receive your setup pack. Your first real quotation sent from the app is the finish line."}},{"@type":"Question","name":"Where do the meetings happen?","acceptedAnswer":{"@type":"Answer","text":"Online. In Chennai, in person is possible. No visits to your sites."}},{"@type":"Question","name":"Is it priced per user?","acceptedAnswer":{"@type":"Answer","text":"No. Flat per company. Crew is priced by the number of field users on the account, up to 25 at the published rate and 26 to 50 at the published higher rate, and crossing that line never changes what you are paying before your next renewal."}},{"@type":"Question","name":"We measure in square metres, carry several brands, and quote sites in other states.","acceptedAnswer":{"@type":"Answer","text":"Yes to each. Square feet or square metres, as many brands as your rate card carries, and the GST split follows the site’s state."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does this replace Tally or our ERP?","acceptedAnswer":{"@type":"Answer","text":"Your accounts stay where they are. We do not replace Tally or your ERP and we do not ask you to. When a quotation is won, the app exports it in a format your accounts software can import, so nobody retypes line items. If you use a system we have not exported to yet, send us one sample import file and we will add it."}},{"@type":"Question","name":"Whose data is it?","acceptedAnswer":{"@type":"Answer","text":"Yours. Export everything any day. If you stop paying, the app goes read-only. Nothing is deleted."}},{"@type":"Question","name":"What happens where there is no signal?","acceptedAnswer":{"@type":"Answer","text":"Halcyon Crew installs to the home screen and opens without a signal once it is installed, and shows you what it last loaded. Sending a check in still needs a signal, and a check in typed without one is not held for later: it fails, and it has to be typed again once the phone is back in range."}},{"@type":"Question","name":"Is a PIN safe enough for the site team?","acceptedAnswer":{"@type":"Answer","text":"Yes, for what it does, and we hardened it rather than replacing it. Your supervisor is standing in a warehouse with one hand on a phone, and an email and a password there is how you end up with one login shared by six people, which is the thing that actually destroys a record.\n\nSo: every PIN is stored scrambled and never in readable form, and nobody at Halcyon can read one. Two people can never hold the same PIN; the app refuses it. The owner can change somebody's PIN or switch them off from inside the app the day they leave, without ringing us. Repeated wrong PINs lock that name out for a while, so nobody can sit and work through the possibilities. And a PIN only ever opens the field app: your rate card, your quotations and your customer list are a separate system with a separate sign-in, and a field PIN cannot reach them."}},{"@type":"Question","name":"What phones and computers does it need?","acceptedAnswer":{"@type":"Answer","text":"Halcyon Quote needs Chrome 108 or later, or Safari 15.4 or later, which on an iPhone means iOS 15.4 or later. On a laptop or desktop, a current Chrome, Edge, Safari or Firefox. It reaches the server every time it is used, so it wants a 4G or Wi-Fi connection whenever it is open.\n\nHalcyon Crew needs Chrome 111 or later on Android 8 or later, on a phone with 2 GB of memory or more, or iOS 16.4 or later, which is an iPhone 8 or newer. On a laptop or desktop, a current Chrome, Edge, Safari or Firefox. Chrome updates itself from the Play Store, so it is the Chrome version that decides this and rarely the Android one.\n\nHalcyon Crew installs to the home screen and opens without a signal once it is installed, and shows you what it last loaded. Sending a check in still needs a signal, and a check in typed without one is not held for later: it fails, and it has to be typed again once the phone is back in range."}},{"@type":"Question","name":"How is the progress percentage calculated? Is it a guess?","acceptedAnswer":{"@type":"Answer","text":"No, and it is two separate steps. First, a language model (we use Claude) reads your supervisor's check-out note, including Tamil-English shorthand, and pulls out only the measured quantities: 400 sqm primer, 250 sqm top coat. It does not decide the percentage. Second, the app does the arithmetic in code, against the site's recorded floor area, stage by stage, weighted by area. That is why the bar and the written explanation can never disagree with each other. Progress never moves backwards unless someone marks the work as rework. And if a site's floor area has not been entered, the app says the percentage cannot be worked out and asks you to add the area, instead of inventing a number. Every assessment shows its working on the ‘How is this worked out?’ page. Open one and check it against your own measurement."}},{"@type":"Question","name":"Who do we call when something breaks?","acceptedAnswer":{"@type":"Answer","text":"Sanjith, personally, on WhatsApp, within 24 hours on working days. Improvements every month, included."}},{"@type":"Question","name":"Who signs in, and who sees what?","acceptedAnswer":{"@type":"Answer","text":"Each person has their own PIN; the owner can change or switch it off. Salespeople see their own quotes, the owner sees everything, and only the owner changes rates or bank details."}},{"@type":"Question","name":"Who else uses it?","acceptedAnswer":{"@type":"Answer","text":"One contracting company, in industrial flooring. Both apps were built for that business and both have run inside it every working day since the middle of 2026: 171 quotations under their own serial numbers, and 487 site visits across 124 sites with 18 supervisors active in the last thirty days, counted on their systems on 1 September 2026. We do not name them on this page, and we would not name you on it either.\n\nIf you want to see it working rather than read about it, try both apps on sample data from this site. In the scoping call we walk you through them for your own kind of work."}},{"@type":"Question","name":"Can we see it before we decide?","acceptedAnswer":{"@type":"Answer","text":"Yes. Try both apps on sample data from this site any time. In the scoping call we walk through them for your kind of work. Once you sign, setup builds them on your rate card and letterhead, and the first real quotation you send is the finish line."}},{"@type":"Question","name":"When can the price change?","acceptedAnswer":{"@type":"Answer","text":"Only on a renewal date. On Yearly, your price is fixed for the whole year you have paid for. On Monthly, we will never change your price without at least 60 days’ written notice, and never by more than 10 percent at one time, and your first twelve months are fixed from the day you start. If you do not want the new price, you stop on that date and take all of your data with you."}},{"@type":"Question","name":"How do I pay?","acceptedAnswer":{"@type":"Answer","text":"In advance, at the start of each period. We send a request for payment 14 days before the due date, showing the amount, the GST and the period it covers, and you pay it by bank transfer or UPI to the account on it, or from a payment link we send on WhatsApp if that is easier. We do not take cards and we hold no mandate on your account, so no money ever leaves your bank without you sending it.\n\nThe GST tax invoice follows the payment: we raise it when the money reaches us, within two working days, and send it to the email address on your order. If your accountant needs a document before you pay, ask and we will send the receipt voucher or advance document. If you deduct TDS, deduct it on the value before GST and not on the GST itself, and send us the certificate when you file; a payment short by nothing but a correct TDS deduction is a full payment here."}},{"@type":"Question","name":"What happens if I pay late?","acceptedAnswer":{"@type":"Answer","text":"You get three days of grace. If the money has not reached us on the due date, the 23rd, the 24th and the 25th are yours if the due date was the 22nd: nothing changes in the account, nobody is switched off, nothing slows down and no late fee is added.\n\nIf it still has not arrived by 11:59 pm on the third day, the account goes read only that night. Everybody can still sign in. Every quotation, every site record, every photograph and every export can still be opened, read and taken away, and the Excel export still runs in full. What stops is new writing: no new quotation, no amendment, no check-in and no check-out. Your supervisors see one line telling them to speak to the office and are never shown an amount or a due date. Nothing is deleted, at any point.\n\nWhen the payment reaches us we switch it back on within one working day, and the same day if it arrives inside working hours. There is no reactivation fee and no back-charge. Paying late costs you the days you could not use, and it never moves your renewal date. If you know a payment is going to be late, tell us in writing before the due date and we will hold the read only until the day you name."}},{"@type":"Question","name":"How long until we go live?","acceptedAnswer":{"@type":"Answer","text":"About ten working days from the day we receive your setup pack. Your first real quotation sent from the app is the finish line."}},{"@type":"Question","name":"Where do the meetings happen?","acceptedAnswer":{"@type":"Answer","text":"Online. In Chennai, in person is possible. No visits to your sites."}},{"@type":"Question","name":"Is it priced per user?","acceptedAnswer":{"@type":"Answer","text":"No. Flat per company. Crew is priced by the number of field users on the account, up to 25 at the published rate and 26 to 50 at the published higher rate, and crossing that line never changes what you are paying before your next renewal."}},{"@type":"Question","name":"We measure in square metres, carry several brands, and quote sites in other states.","acceptedAnswer":{"@type":"Answer","text":"Yes to each. Square feet or square metres, as many brands as your rate card carries, and the GST split follows the site’s state."}}]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to the content</a>
@@ -1706,6 +1813,19 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
         <summary>When can the price change?</summary>
         <div class="answer"><p>Only on a renewal date. On Yearly, your price is fixed for the whole year you have paid for. On Monthly, we will never change your price without at least 60 days’ written notice, and never by more than 10 percent at one time, and your first twelve months are fixed from the day you start. If you do not want the new price, you stop on that date and take all of your data with you.</p></div>
       </details>
+      <details id="how-do-i-pay">
+        <summary>How do I pay?</summary>
+        <div class="answer"><p>In advance, at the start of each period. We send a request for payment 14 days before the due date, showing the amount, the GST and the period it covers, and you pay it by bank transfer or UPI to the account on it, or from a payment link we send on WhatsApp if that is easier. We do not take cards and we hold no mandate on your account, so no money ever leaves your bank without you sending it.</p>
+        <p>The GST tax invoice follows the payment: we raise it when the money reaches us, within two working days, and send it to the email address on your order. If your accountant needs a document before you pay, ask and we will send the receipt voucher or advance document. If you deduct TDS, deduct it on the value before GST and not on the GST itself, and send us the certificate when you file; a payment short by nothing but a correct TDS deduction is a full payment here.</p>
+        <p class="answer-more"><a class="link" href="/flooring/agreement">Clause 4 of the agreement<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p></div>
+      </details>
+      <details id="if-we-pay-late">
+        <summary>What happens if I pay late?</summary>
+        <div class="answer"><p>You get three days of grace. If the money has not reached us on the due date, the 23rd, the 24th and the 25th are yours if the due date was the 22nd: nothing changes in the account, nobody is switched off, nothing slows down and no late fee is added.</p>
+        <p>If it still has not arrived by 11:59 pm on the third day, the account goes read only that night. Everybody can still sign in. Every quotation, every site record, every photograph and every export can still be opened, read and taken away, and the Excel export still runs in full. What stops is new writing: no new quotation, no amendment, no check-in and no check-out. Your supervisors see one line telling them to speak to the office and are never shown an amount or a due date. Nothing is deleted, at any point.</p>
+        <p>When the payment reaches us we switch it back on within one working day, and the same day if it arrives inside working hours. There is no reactivation fee and no back-charge. Paying late costs you the days you could not use, and it never moves your renewal date. If you know a payment is going to be late, tell us in writing before the due date and we will hold the read only until the day you name.</p>
+        <p class="answer-more"><a class="link" href="/flooring/agreement">Clause 5 of the agreement<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p></div>
+      </details>
       <details id="how-long-to-go-live">
         <summary>How long until we go live?</summary>
         <div class="answer"><p>About ten working days from the day we receive your setup pack. Your first real quotation sent from the app is the finish line.</p></div>
@@ -1773,6 +1893,14 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       <a href="/flooring/crew">Crew</a>
       <a href="/flooring/pricing">Pricing</a>
       <a href="/flooring/questions">Questions</a>
+    </nav>
+    <!-- The two documents, on every page, and kept in a row of their own.
+         They are not a sixth and seventh marketing page and a reader looking
+         for them is looking for the foot of the page, which is where every
+         other site keeps them. -->
+    <nav class="nav-links nav-docs" aria-label="Documents">
+      <a href="/flooring/agreement">The agreement</a>
+      <a href="/flooring/privacy">Privacy</a>
     </nav>
     <p class="tb-foot">Halcyon, Chennai. Every screen on this site is a real capture from a public demo running on invented data.</p>
   </div>

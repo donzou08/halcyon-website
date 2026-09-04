@@ -28,9 +28,9 @@
 <link rel="icon" href="/flooring/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/flooring/apple-touch-icon.png">
 <link rel="manifest" href="/flooring/site.webmanifest">
-<link rel="preload" href="/flooring/assets/fonts/onest-subset.8473d9a3c5.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/onest-subset.f2dbaac463.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/flooring/assets/fonts/instrument-serif-italic-subset.be8c9b1484.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.2c8931290b.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root {
   
@@ -166,14 +166,14 @@
 }
 @font-face {
   font-family: 'Onest';
-  src: url('/flooring/assets/fonts/onest-subset.8473d9a3c5.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/onest-subset.f2dbaac463.woff2') format('woff2-variations');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono';
-  src: url('/flooring/assets/fonts/geist-mono-subset.2c8931290b.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2') format('woff2-variations');
   font-weight: 500 600;
   font-style: normal;
   font-display: swap;
@@ -1421,7 +1421,111 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
   animation: answer-in 200ms var(--hq-ease-out) both;
 }
 .faq .answer p + p { margin-top: var(--hq-s-4); }
+.answer-more { margin-top: var(--hq-s-5); }
 @keyframes answer-in { from { opacity: 0; } to { opacity: 1; } }
+.doc-top { padding-bottom: var(--rh-md); }
+
+.doc-body { padding-top: var(--rh-md); }
+.doc-head { display: grid; gap: var(--hq-s-4); max-width: 68ch; }
+.doc-title { max-width: 18ch; }
+.doc-version {
+  font-family: var(--hq-font-mono);
+  font-size: var(--hq-t-site-small);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--hq-ink-3);
+}
+.doc-standfirst { max-width: 56ch; }
+.doc-intro { color: var(--hq-ink-2); }
+
+.doc-toc {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-sm);
+  border-top: 1px solid var(--hq-line);
+  max-width: 68ch;
+}
+.doc-toc-h {
+  font-family: var(--hq-font-mono);
+  font-size: var(--hq-t-site-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--hq-ink-3);
+}
+.doc-toc-list { margin-top: var(--hq-s-2); }
+
+@media (min-width: 768px) {
+  .doc-toc-list { columns: 2; column-gap: var(--rh-md); }
+  .doc-toc-list li { break-inside: avoid; }
+}
+.doc-toc-list a {
+  display: flex;
+  gap: var(--hq-s-4);
+  min-height: 36px;
+  padding-block: 4px;
+  font-size: var(--hq-t-site-small);
+  line-height: 1.5;
+  color: var(--hq-ink-2);
+  text-decoration: none;
+}
+.doc-toc-n { flex: none; min-width: 3.2ch; font-family: var(--hq-font-mono); color: var(--hq-ink-faint); }
+@media (hover: hover) and (pointer: fine) {
+  .doc-toc-list a:hover { color: var(--hq-ink); }
+  .doc-toc-list a:hover .doc-toc-n { color: var(--hq-accent-600); }
+}
+
+.doc { max-width: 68ch; }
+.doc-sec + .doc-sec {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-hairline);
+}
+.doc-h {
+  display: flex;
+  gap: var(--hq-s-4);
+  font-size: var(--hq-t-site-h3);
+  font-weight: 600;
+  letter-spacing: -0.014em;
+  line-height: 1.25;
+}
+.doc-n { flex: none; font-family: var(--hq-font-mono); font-size: 0.82em; color: var(--hq-accent-600); }
+.doc-item { margin-top: var(--hq-s-5); color: var(--hq-ink-2); }
+.doc-item p + p { margin-top: var(--hq-s-4); }
+.doc-lead { color: var(--hq-ink); font-weight: 600; }
+.doc-num { font-family: var(--hq-font-mono); font-size: 0.9em; font-weight: 600; color: var(--hq-ink-3); }
+.doc-strong { color: var(--hq-ink); font-weight: 600; }
+
+.doc-list { margin-top: var(--hq-s-3); display: grid; gap: var(--hq-s-2); }
+.doc-list li { display: flex; gap: var(--hq-s-3); }
+.doc-mark { flex: none; font-family: var(--hq-font-mono); font-size: 0.9em; color: var(--hq-ink-3); }
+.doc-notice {
+  margin-top: var(--hq-s-5);
+  padding: var(--hq-s-5);
+  background: var(--hq-surface);
+  border: 1px solid var(--hq-hairline);
+  border-radius: var(--hq-r-md);
+}
+.doc-notice p + p { margin-top: var(--hq-s-4); }
+.doc-notice-h { color: var(--hq-ink); font-weight: 600; }
+
+.doc-foot {
+  display: grid;
+  gap: var(--hq-s-4);
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-line);
+  max-width: 68ch;
+  font-size: var(--hq-t-site-small);
+  color: var(--hq-ink-3);
+}
+.billing-how {
+  display: grid;
+  gap: var(--hq-s-5);
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-md);
+  border-top: 1px solid var(--hq-hairline);
+  max-width: 68ch;
+}
 #talk { padding-bottom: var(--rh-lg); }
 .talk { max-width: 720px; }
 .talk-card {
@@ -1539,6 +1643,9 @@ figcaption.scene-cap { max-width: 44ch; margin-inline: auto; }
 .nav-links { display: flex; flex-wrap: wrap; gap: var(--hq-s-5); margin-top: var(--rh-md); font-size: var(--hq-t-site-small); }
 .nav-links a { display: inline-flex; align-items: center; min-height: 40px; color: var(--hq-ink-2); text-decoration: none; }
 @media (hover: hover) and (pointer: fine) { .nav-links a:hover { color: var(--hq-ink); } }
+
+.nav-docs { margin-top: var(--hq-s-3); gap: var(--hq-s-5); color: var(--hq-ink-3); }
+.nav-docs a { color: var(--hq-ink-3); min-height: 32px; }
 .lift { animation: lift 620ms var(--hq-ease-expo) both; animation-delay: calc(var(--i, 0) * 80ms); }
 @keyframes lift {
   from { opacity: 0; transform: translateY(14px); }
@@ -2262,6 +2369,14 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       <a href="/flooring/crew">Crew</a>
       <a href="/flooring/pricing">Pricing</a>
       <a href="/flooring/questions">Questions</a>
+    </nav>
+    <!-- The two documents, on every page, and kept in a row of their own.
+         They are not a sixth and seventh marketing page and a reader looking
+         for them is looking for the foot of the page, which is where every
+         other site keeps them. -->
+    <nav class="nav-links nav-docs" aria-label="Documents">
+      <a href="/flooring/agreement">The agreement</a>
+      <a href="/flooring/privacy">Privacy</a>
     </nav>
     <p class="tb-foot">Halcyon, Chennai. Every screen on this site is a real capture from a public demo running on invented data.</p>
   </div>
