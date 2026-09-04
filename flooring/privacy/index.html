@@ -28,9 +28,9 @@
 <link rel="icon" href="/flooring/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/flooring/apple-touch-icon.png">
 <link rel="manifest" href="/flooring/site.webmanifest">
-<link rel="preload" href="/flooring/assets/fonts/onest-subset.f2dbaac463.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/onest-subset.fcc4e1afa0.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/flooring/assets/fonts/instrument-serif-italic-subset.be8c9b1484.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/flooring/assets/fonts/geist-mono-subset.2048d7b0e4.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root {
   
@@ -166,14 +166,14 @@
 }
 @font-face {
   font-family: 'Onest';
-  src: url('/flooring/assets/fonts/onest-subset.f2dbaac463.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/onest-subset.fcc4e1afa0.woff2') format('woff2-variations');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Geist Mono';
-  src: url('/flooring/assets/fonts/geist-mono-subset.cb52b0c68a.woff2') format('woff2-variations');
+  src: url('/flooring/assets/fonts/geist-mono-subset.2048d7b0e4.woff2') format('woff2-variations');
   font-weight: 500 600;
   font-style: normal;
   font-display: swap;
@@ -1805,7 +1805,7 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       <section class="doc-sec" id="sp3">
         <h2 class="doc-h"><span class="doc-n num">P3</span> Halcyon Quote</h2>
         <div class="doc-item">
-        <p><b class="doc-lead"><span class="doc-num num">P3.1</span> The people who sign in.</b> Name, email address and role. Passwords are stored scrambled by our hosting provider’s sign-in service. Nobody at Halcyon can read a password.</p>
+        <p><b class="doc-lead"><span class="doc-num num">P3.1</span> The people who sign in.</b> Name, role, and a four digit PIN. There is no email address and no password. Every PIN is stored as a bcrypt hash, so what is stored cannot be turned back into the PIN, and the table it sits in cannot be read with the key the app ships with.</p>
       </div>
         <div class="doc-item">
         <p><b class="doc-lead"><span class="doc-num num">P3.2</span> The work itself.</b> Your customers’ names, their site addresses, their contact details and their GSTINs. Your rate card, your catalogue and your systems. Every quotation and every revision, with its serial number, its line items, its rates, its tax working and its totals. The PDF that went out. Who created it, who amended it, and when.</p>
@@ -1818,7 +1818,7 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
       <section class="doc-sec" id="sp4">
         <h2 class="doc-h"><span class="doc-n num">P4</span> Halcyon Crew</h2>
         <div class="doc-item">
-        <p><b class="doc-lead"><span class="doc-num num">P4.1</span> The people who sign in.</b> Supervisor and manager names, their role, and their PIN. Every PIN is stored scrambled, never in readable form. Nobody at Halcyon can read a PIN, and the app refuses to let two people hold the same one.</p>
+        <p><b class="doc-lead"><span class="doc-num num">P4.1</span> The people who sign in.</b> Supervisor and manager names, their role, their phone number if you enter one, and their four digit PIN. The table the PINs sit in cannot be read with the key the app ships with, every sign-in check runs inside the database, and the app refuses to let two people who are switched on hold the same PIN.</p>
       </div>
         <div class="doc-item">
         <p><b class="doc-lead"><span class="doc-num num">P4.2</span> Location.</b> The phone’s location is recorded at four moments and no others: when a supervisor starts the work day, when they check in at a site, when they check out, and when they end the work day. That is it. The app does not follow anybody between those moments, it records no location while it is closed, and it takes no location in the background. The distance flag on a check-in is worked out from that single check-in point against the site’s own recorded location.</p>
