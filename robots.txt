@@ -4,5 +4,8 @@ Allow: /
 # shell, so indexing them puts contentless results in front of people searching
 # for Halcyon.
 Disallow: /theworks/demos/
+# The same is true of the two apps embedded under /flooring: each built
+# index.html mounts an application and carries no readable page of its own.
+Disallow: /flooring/demo/
 
 Sitemap: https://halcyon.uno/sitemap.xml
