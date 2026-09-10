@@ -1,7 +1,7 @@
 {
-  "name": "Halcyon for flooring contractors",
+  "name": "Halcyon: software for flooring contractors",
   "short_name": "Halcyon",
-  "description": "Two apps for industrial flooring, coatings, waterproofing and painting contractors. A quotation in under a minute on your own letterhead, and every site visit GPS stamped. Set up on your rate card and your sites.",
+  "description": "Halcyon builds software for flooring, coatings, waterproofing and painting contractors. Two apps: Quote writes the quotation, Crew records the site visit.",
   "start_url": "/flooring/",
   "scope": "/flooring/",
   "display": "browser",
