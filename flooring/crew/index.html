@@ -1209,6 +1209,104 @@ a.mark { box-sizing: content-box; padding-block: 18px; }
   }
   .fx-card:hover { transform: translateY(-2px); box-shadow: var(--hq-shadow-2); }
 }
+.fr { display: grid; gap: var(--rh-lg); margin-top: var(--rh-md); }
+.fr-panel { display: grid; gap: var(--rh-sm); }
+.fr-copy .eyebrow { margin-bottom: var(--hq-s-3); }
+.fr-title {
+  font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  text-wrap: balance;
+  max-width: 20ch;
+}
+.fr-copy p { margin-top: var(--hq-s-4); color: var(--hq-ink-2); max-width: 46ch; }
+
+.fr-fig { position: relative; margin: 0; }
+.fr-shot {
+  position: relative;
+  aspect-ratio: 480 / 880;
+  max-width: 360px;
+  border: 1px solid var(--hq-line);
+  border-radius: var(--hq-r-lg);
+  background: var(--hq-paper);
+  overflow: hidden;
+}
+.fr-shot img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.fr-mark {
+  position: absolute;
+  left: calc(100% * var(--xn));
+  top: calc(100% * var(--yn));
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--hq-r-full);
+  background: var(--hq-accent-600);
+  box-shadow: 0 0 0 2px var(--hq-surface);
+  color: var(--hq-ink-inverse);
+  font-size: 11px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1;
+}
+
+.fr-notes { list-style: none; margin: var(--hq-s-5) 0 0; padding: 0; display: grid; gap: var(--hq-s-3); }
+.fr-note { display: flex; align-items: flex-start; gap: var(--hq-s-3); }
+.fr-key {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: var(--hq-r-full);
+  background: var(--hq-accent-600);
+  color: var(--hq-ink-inverse);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+}
+.fr-text { font-size: var(--hq-t-site-small); line-height: 1.45; color: var(--hq-ink-2); }
+.fr-wire { display: none; }
+
+@media (min-width: 640px) and (max-width: 1023.98px) {
+  .fr-panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--hq-s-8); align-items: center; }
+}
+
+@media (min-width: 1024px) {
+  .fr { gap: calc(var(--rh-lg) * 0.72); }
+  .fr-panel { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: var(--hq-s-10); align-items: center; }
+
+  
+  .fr-fig { --gr: 196px; --fr-text: 148px; width: min(100%, calc(360px + var(--gr))); margin-left: auto; }
+  .fr-shot { width: calc(100% - var(--gr)); max-width: none; }
+  .fr-notes { position: absolute; inset: 0; margin: 0; display: block; }
+  .fr-note {
+    position: absolute;
+    top: calc(100% * var(--yn));
+    left: calc((100% - var(--gr)) * var(--xn));
+    right: 0;
+    transform: translateY(-50%);
+    align-items: center;
+    gap: var(--hq-s-2);
+  }
+  .fr-wire { display: block; flex: 1 1 auto; min-width: 12px; height: 1px; background: var(--hq-line); }
+  .fr-key { margin-top: 0; }
+  .fr-text { flex: 0 0 var(--fr-text); }
+}
+
+@media (min-width: 1280px) {
+  .fr-panel { gap: var(--hq-s-16); }
+  .fr-fig { --gr: 224px; --fr-text: 176px; width: min(100%, calc(384px + var(--gr))); }
+}
+
+.fr-tail {
+  margin-top: var(--rh-md);
+  padding-top: var(--rh-sm);
+  border-top: 1px solid var(--hq-hairline);
+}
 .beats { display: grid; gap: var(--rh-md); }
 @media (min-width: 768px) { .beats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--rh-md); } }
 .beat h3 { font-size: 1.1875rem; font-weight: 600; letter-spacing: -0.012em; line-height: 1.3; }
@@ -2252,6 +2350,199 @@ if(q&&q('(min-width: 1024px) and (pointer: fine)').matches&&!q('(prefers-reduced
         <figcaption class="scene-cap">Every stage, the area credited to it, and the sentence that explains the arithmetic. Sample data.</figcaption>
       </figure>
     </div>
+  </div>
+</section>
+
+
+<section class="section section-rule">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Features</span>
+      <h2 class="h2 measure-lead" style="margin-top:14px">The features, one screen at a time.</h2>
+    </div>
+    <div class="fr">
+      <article class="fr-panel reveal">
+        <div class="fr-copy">
+          <span class="eyebrow">01 / 06</span>
+          <h3 class="fr-title">Who is on site, right now.</h3>
+          <p>The owner’s screen counts who went out, who is standing on a site as you read it, and how many visits have closed. It moves as the day does.</p>
+        </div>
+        <figure class="fr-fig">
+          <div class="fr-shot">
+            <picture>
+              <source type="image/webp" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" srcset="/flooring/assets/features/crew-live-520.67c936fc42.webp 520w, /flooring/assets/features/crew-live-780.70eebf84a0.webp 780w">
+              <img src="/flooring/assets/features/crew-live-780.9c86d1679a.jpg" alt="The owner's screen, counting who is out today and who is on site now, above the supervisors currently checked in and the time each of them arrived." width="780" height="1430" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" loading="lazy" decoding="async">
+            </picture>
+            <i class="fr-mark num" style="--xn:0.9237;--yn:0.1635" aria-hidden="true">1</i>
+            <i class="fr-mark num" style="--xn:0.9347;--yn:0.3404" aria-hidden="true">2</i>
+          </div>
+          <ol class="fr-notes">
+            <li class="fr-note" style="--xn:0.9237;--yn:0.1635">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">1</b>
+              <span class="fr-text">On site as you read it</span>
+            </li>
+            <li class="fr-note" style="--xn:0.9347;--yn:0.3404">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">2</b>
+              <span class="fr-text">The site, and the time he reached it</span>
+            </li>
+          </ol>
+        </figure>
+      </article>
+      <article class="fr-panel reveal">
+        <div class="fr-copy">
+          <span class="eyebrow">02 / 06</span>
+          <h3 class="fr-title">Check in, with the GPS distance and the photographs.</h3>
+          <p>The phone reads its location at the moment he checks in, so the record carries how far he was from the site pin, and the photographs he took on arrival sit on the visit rather than in a chat thread.</p>
+        </div>
+        <figure class="fr-fig">
+          <div class="fr-shot">
+            <picture>
+              <source type="image/webp" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" srcset="/flooring/assets/features/crew-checkin-520.8c9c6c488a.webp 520w, /flooring/assets/features/crew-checkin-780.909dd02ad5.webp 780w">
+              <img src="/flooring/assets/features/crew-checkin-780.a3663cbe3b.jpg" alt="A check-in screen showing the distance from the site pin read by GPS, the photographs taken on arrival, and the number of people on the floor." width="780" height="1430" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" loading="lazy" decoding="async">
+            </picture>
+            <i class="fr-mark num" style="--xn:0.857;--yn:0.3032" aria-hidden="true">1</i>
+            <i class="fr-mark num" style="--xn:0.9162;--yn:0.4153" aria-hidden="true">2</i>
+          </div>
+          <ol class="fr-notes">
+            <li class="fr-note" style="--xn:0.857;--yn:0.3032">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">1</b>
+              <span class="fr-text">How far from the site pin, by GPS</span>
+            </li>
+            <li class="fr-note" style="--xn:0.9162;--yn:0.4153">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">2</b>
+              <span class="fr-text">Photographs, on the visit itself</span>
+            </li>
+          </ol>
+        </figure>
+      </article>
+      <article class="fr-panel reveal">
+        <div class="fr-copy">
+          <span class="eyebrow">03 / 06</span>
+          <h3 class="fr-title">Each site, stage by stage.</h3>
+          <p>Surface prep, primer, screed, top coat. Every stage carries the share of the floor it has covered, and the figure at the top is the arithmetic across them rather than somebody’s impression of the week.</p>
+        </div>
+        <figure class="fr-fig">
+          <div class="fr-shot">
+            <picture>
+              <source type="image/webp" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" srcset="/flooring/assets/features/crew-stages-520.5486a0a6e9.webp 520w, /flooring/assets/features/crew-stages-780.b33830ac42.webp 780w">
+              <img src="/flooring/assets/features/crew-stages-780.37df7e4982.jpg" alt="A site's stage tracker, with each stage and the share of the floor it has covered, under the overall figure and the sentence that says where that figure came from." width="780" height="1430" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" loading="lazy" decoding="async">
+            </picture>
+            <i class="fr-mark num" style="--xn:0.8825;--yn:0.2267" aria-hidden="true">1</i>
+            <i class="fr-mark num" style="--xn:0.8995;--yn:0.5579" aria-hidden="true">2</i>
+          </div>
+          <ol class="fr-notes">
+            <li class="fr-note" style="--xn:0.8825;--yn:0.2267">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">1</b>
+              <span class="fr-text">Worked out, not guessed</span>
+            </li>
+            <li class="fr-note" style="--xn:0.8995;--yn:0.5579">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">2</b>
+              <span class="fr-text">The stage it has reached today</span>
+            </li>
+          </ol>
+        </figure>
+      </article>
+      <article class="fr-panel reveal">
+        <div class="fr-copy">
+          <span class="eyebrow">04 / 06</span>
+          <h3 class="fr-title">A check-in that was never closed is flagged.</h3>
+          <p>If a supervisor checks in and never checks out, that site is on the owner’s screen the same day, beside the issues and the stock that also need him.</p>
+        </div>
+        <figure class="fr-fig">
+          <div class="fr-shot">
+            <picture>
+              <source type="image/webp" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" srcset="/flooring/assets/features/crew-open-520.f8c268e82b.webp 520w, /flooring/assets/features/crew-open-780.7060de1b33.webp 780w">
+              <img src="/flooring/assets/features/crew-open-780.5048546310.jpg" alt="The owner's needs-attention panel, with a check-in that was never closed at the top of it, then an open quality issue and a site running low on material." width="780" height="1430" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" loading="lazy" decoding="async">
+            </picture>
+            <i class="fr-mark num" style="--xn:0.8885;--yn:0.0927" aria-hidden="true">1</i>
+            <i class="fr-mark num" style="--xn:0.8633;--yn:0.2557" aria-hidden="true">2</i>
+          </div>
+          <ol class="fr-notes">
+            <li class="fr-note" style="--xn:0.8885;--yn:0.0927">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">1</b>
+              <span class="fr-text">Everything that needs you today</span>
+            </li>
+            <li class="fr-note" style="--xn:0.8633;--yn:0.2557">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">2</b>
+              <span class="fr-text">Checked in, never checked out</span>
+            </li>
+          </ol>
+        </figure>
+      </article>
+      <article class="fr-panel reveal">
+        <div class="fr-copy">
+          <span class="eyebrow">05 / 06</span>
+          <h3 class="fr-title">Issues from site, and what is left in the store.</h3>
+          <p>A quality or safety issue is raised on site with photographs and stays open until it is closed on the record. The stock standing at that site is counted beside it.</p>
+        </div>
+        <figure class="fr-fig">
+          <div class="fr-shot">
+            <picture>
+              <source type="image/webp" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" srcset="/flooring/assets/features/crew-issues-520.12111e1386.webp 520w, /flooring/assets/features/crew-issues-780.0d4c9c88e5.webp 780w">
+              <img src="/flooring/assets/features/crew-issues-780.a3acd98d7e.jpg" alt="A site's quality and safety panel with one open issue, above the stock counted at that site and the warning on the line that is running out." width="780" height="1430" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" loading="lazy" decoding="async">
+            </picture>
+            <i class="fr-mark num" style="--xn:0.8325;--yn:0.2419" aria-hidden="true">1</i>
+            <i class="fr-mark num" style="--xn:0.8995;--yn:0.5649" aria-hidden="true">2</i>
+            <i class="fr-mark num" style="--xn:0.687;--yn:0.646" aria-hidden="true">3</i>
+          </div>
+          <ol class="fr-notes">
+            <li class="fr-note" style="--xn:0.8325;--yn:0.2419">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">1</b>
+              <span class="fr-text">Raised on site, open until it is closed</span>
+            </li>
+            <li class="fr-note" style="--xn:0.8995;--yn:0.5649">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">2</b>
+              <span class="fr-text">What is left, against what was sent</span>
+            </li>
+            <li class="fr-note" style="--xn:0.687;--yn:0.646">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">3</b>
+              <span class="fr-text">It says so before the crew stops</span>
+            </li>
+          </ol>
+        </figure>
+      </article>
+      <article class="fr-panel reveal">
+        <div class="fr-copy">
+          <span class="eyebrow">06 / 06</span>
+          <h3 class="fr-title">The day as a message, the year as a workbook.</h3>
+          <p>One tap sends the day’s report to a WhatsApp group, and everything the company has recorded comes out as a spreadsheet of sixteen sheets when somebody wants the numbers.</p>
+        </div>
+        <figure class="fr-fig">
+          <div class="fr-shot">
+            <picture>
+              <source type="image/webp" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" srcset="/flooring/assets/features/crew-exports-520.f07eec8e12.webp 520w, /flooring/assets/features/crew-exports-780.8707f6dbd5.webp 780w">
+              <img src="/flooring/assets/features/crew-exports-780.30586eeed8.jpg" alt="The data and exports screen, with the sixteen-sheet workbook above the tiles for the daily report, the team and the activity log." width="780" height="1430" sizes="(min-width: 1024px) 384px, (min-width: 430px) min(360px, calc(100vw - 112px)), calc(100vw - 68px)" loading="lazy" decoding="async">
+            </picture>
+            <i class="fr-mark num" style="--xn:0.857;--yn:0.4083" aria-hidden="true">1</i>
+            <i class="fr-mark num" style="--xn:0.9263;--yn:0.5753" aria-hidden="true">2</i>
+          </div>
+          <ol class="fr-notes">
+            <li class="fr-note" style="--xn:0.857;--yn:0.4083">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">1</b>
+              <span class="fr-text">Sixteen sheets, one workbook</span>
+            </li>
+            <li class="fr-note" style="--xn:0.9263;--yn:0.5753">
+              <i class="fr-wire" aria-hidden="true"></i>
+              <b class="fr-key num" aria-hidden="true">2</b>
+              <span class="fr-text">The day, as a message or a sheet</span>
+            </li>
+          </ol>
+        </figure>
+      </article>
+    </div>
+    <p class="count-note fr-tail reveal">Drawn from the app. <a class="link" href="/flooring/demo/crew/">Try the real thing on sample data<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
   </div>
 </section>
 
